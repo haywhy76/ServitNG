@@ -976,9 +976,10 @@ text-align: center;
     }
     .contactus{
         width:350px !important;
-        
+        margin-left: -15px; 
     }
     .faq{
         width:350px !important;
+        margin-left: -15px; 
     }
 } 
