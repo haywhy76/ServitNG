@@ -3,14 +3,14 @@ var router = express.Router();
 var middleware = require("../middleware");
 var internjob = require("../models/internjobs");
 var corperjob = require("../models/corperjobs");
-var premiumJob = require("../models/premiumjobs");
+var premiumjob = require("../models/premiumjobs");
 var setting = require("../models/settings");
 
 
 //ALL JOBS
 
 
-router.get("/jobs", middleware.isLoggedIn, function(req, res){
+router.get("/jobs",  function(req, res){
     
     corperjob.find({},  function(err, allCorperJobs){
 
@@ -32,7 +32,7 @@ router.get("/jobs", middleware.isLoggedIn, function(req, res){
         }
     }).sort({'_id':-1});
 
-    premiumJob.find({}, function(err, allPremiumJobs){
+    premiumjob.find({}, function(err, allPremiumJobs){
         if (err){
             console.log(err);
         }
