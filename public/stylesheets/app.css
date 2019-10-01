@@ -5,6 +5,7 @@ html {
 
   /* HOMEPAGE */
 
+
 .homepageweconnect{
     padding-top:100px;
    
@@ -868,79 +869,16 @@ text-align: center;
         display:none;
     }
 
+   
   }
 
-/* @media screen and (max-width: 520px) {
+@media screen and (min-width: 520px) {
 
-    .homepageweconnect{
-        padding-top:0px;
-    }
-    .nyscbutton{
-        margin-top:10px;
-        margin-bottom:20px;
-    }
-
-    .homepageimage{
+    .mobiledescription{
         display:none;
-    }
-
-    .aboutus{
-        margin-top:50px;
-    }
-
-    .faq{
-        margin-top:50px;
-    }
-
-    .contactus{
-        margin-top:50px;
-    }
-
-   
-
-    .loginpageimage{
-        display:none;
-    }
-  
-   .loginbox{
-        margin-top:0px;
-    }
-
-    .logincontainer{
-        margin-bottom:50px;
-    }
-
-   
-    .registerboxheading{
-        margin-top:0px;
-    }
-
-    .registerpageimage{
-        display:none;
-    }
-
- 
-
-    
-
-    .registerbox{
-        margin-top:0px;
-    }
-
-    .logincontainer{
-        margin-bottom:50px;
-    }
-
-   
-
-    .d1{
-        display:none;
-    }
-    .registerfieldusername{
-        width:100%;
     }
 }
-*/
+
 @media screen and (min-width: 10px) and (max-width: 480px){
     .registerusername{
         width:150px !important;
@@ -983,7 +921,22 @@ text-align: center;
         margin-left: -15px; 
     }
 
+    #homepageimage{
+        display:none;
+    }
     .homepageimage{
         display:none;
+    }
+    #typedtext{
+        display:none;
+    }
+
+    .mobiledescription{
+        font-size:40px; 
+        display:show;
+    }
+    .homepagebuttons{
+        padding-top: 50px;
+        
     }
 } 

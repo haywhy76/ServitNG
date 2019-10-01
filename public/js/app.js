@@ -73,13 +73,13 @@ $(document).ready(function(){
 
 //Fadein Homepage Image
 
-$(document).ready(function(){
+// $(document).ready(function(){
 
-    /*! Fades in page on load */
-    $('.homepageimage').css('display', 'none');
-    $('.homepageimage').fadeIn(10000);
+//     /*! Fades in page on load */
+//     $('.homepageimage').css('display', 'show');
+//     $('.homepageimage').fadeIn(10000);
     
-    });
+//     });
 
 
 
