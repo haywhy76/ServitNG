@@ -129,7 +129,7 @@ var url = 'mongodb+srv://itandppa:itandppa@clusteritandppa-ffmfj.mongodb.net/tes
 
 
 
-
-app.listen(3000, function (){
-    console.log("The Server Has Been Triggered");
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log(`The Server Has Been Triggered ${ PORT }`);
 });
