@@ -872,4 +872,68 @@ text-align: center;
 
 @media screen and (max-width: 520px) {
 
+    .homepageweconnect{
+        padding-top:0px;
+    }
+    .nyscbutton{
+        margin-top:10px;
+        margin-bottom:20px;
+    }
+
+    .homepageimage{
+        display:none;
+    }
+
+    .aboutus{
+        margin-top:50px;
+    }
+
+    .faq{
+        margin-top:50px;
+    }
+
+    .contactus{
+        margin-top:50px;
+    }
+
+    /* LOGIN PAGE */
+
+    .loginpageimage{
+        display:none;
+    }
+  
+   .loginbox{
+        margin-top:0px;
+    }
+
+    .logincontainer{
+        margin-bottom:50px;
+    }
+
+    /* MEMBERSHIP PAGE */
+    .registerboxheading{
+        margin-top:0px;
+    }
+
+    .registerpageimage{
+        display:none;
+    }
+
+  /* LOGIN PAGE */
+
+    
+
+    .registerbox{
+        margin-top:0px;
+    }
+
+    .logincontainer{
+        margin-bottom:50px;
+    }
+
+    /* JOBS PAGE */
+
+    .d1{
+        display:none;
+    }
 }
