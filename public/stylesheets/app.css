@@ -972,7 +972,7 @@ text-align: center;
     .aboutus{
         margin-top:50px;
         width:350px !important;
-        
+        margin-left: -15px; 
     }
     .contactus{
         width:350px !important;
