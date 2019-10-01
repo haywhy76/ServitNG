@@ -974,7 +974,8 @@ text-align: center;
         width:300px !important;
         margin-left:-38px;
     }
-    /* .contactus{
-        width:100%;
-    } */
+    .contactus{
+        width:300px !important;
+        margin-left:-38px;
+    }
 } 
