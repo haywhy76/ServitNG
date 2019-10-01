@@ -982,4 +982,8 @@ text-align: center;
         width:350px !important;
         margin-left: -15px; 
     }
+
+    .homepageimage{
+        display:none;
+    }
 } 
