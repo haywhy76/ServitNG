@@ -31,7 +31,7 @@ router.post("/settings",  function(req, res){
             req.flash("error", "something went wrong!");
             console.log(err);
         }else{
-            res.redirect("/internjobs");
+            res.redirect("/jobs");
         }
     })
 });
