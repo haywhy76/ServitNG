@@ -940,68 +940,9 @@ text-align: center;
         width:100%;
     }
 }
-
+*/
 @media only screen and (min-width: 560px) {
-    .homepageweconnect{
-        padding-top:0px;
-    }
-    .nyscbutton{
-        margin-top:10px;
-        margin-bottom:20px;
-    }
-
-    .homepageimage{
-        display:none;
-    }
-
-    .aboutus{
-        margin-top:50px;
-    }
-
-    .faq{
-        margin-top:50px;
-    }
-
-    .contactus{
-        margin-top:50px;
-    }
-
-
-    .loginpageimage{
-        display:none;
-    }
-  
-   .loginbox{
-        margin-top:0px;
-    }
-
-    .logincontainer{
-        margin-bottom:50px;
-    }
-
-    .registerboxheading{
-        margin-top:0px;
-    }
-
-    .registerpageimage{
-        display:none;
-    }
-
- 
-    .registerbox{
-        margin-top:0px;
-    }
-
-    .logincontainer{
-        margin-bottom:50px;
-    }
-
-   
-
-    .d1{
-        display:none;
-    }
-    .registerfieldusername{
+    .registerusername{
         width:100%;
     }
-} */
+} 
