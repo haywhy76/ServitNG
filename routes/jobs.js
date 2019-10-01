@@ -10,7 +10,7 @@ var setting = require("../models/settings");
 //ALL JOBS
 
 
-router.get("/jobs",  function(req, res){
+router.get("/jobs", middleware.isLoggedIn, function(req, res){
     
     corperjob.find({},  function(err, allCorperJobs){
 
