@@ -968,4 +968,13 @@ text-align: center;
         margin-left: -75px; 
         
     }
+
+    .aboutus{
+        margin-top:50px;
+        width:300px !important;
+        margin-left:-38px;
+    }
+    /* .contactus{
+        width:100%;
+    } */
 } 
