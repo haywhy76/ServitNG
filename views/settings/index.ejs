@@ -1,0 +1,27 @@
+<% include ../partials/header %>
+<span class="border border-danger">
+<div class="container">
+<div class="jumbotron">
+  
+    <div class="row">
+      
+          <div class="col-md-9 col-sm-6">
+            <h1 class="currentuser"><%= currentUser.username %></h1>  
+            <a href="/settings/<%=settings._id%>/edit"><button type="button" class="btn btn-info btn-lg settingsbutton"><b>EDIT PROFILE</b></button>
+
+          </div>
+
+          <div class="col-md-3 col-sm-6 otherdetails">
+              <h4>Name<br/><%=settings.fullname%> </h4>
+              <h4>Email<br/><%=currentUser.email%> </h4>
+              <h4>Phone Number<br/><%=settings.phonenumber%> </h4>
+              <h4>Joined<br><%= settings.created.toDateString() %></h4>
+          </div>
+
+    </div>
+
+  </div>
+  </div>
+  </span>
+
+        

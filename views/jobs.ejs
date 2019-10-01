@@ -1,0 +1,84 @@
+<% include ./partials/header %>
+          <div class="container">
+            <div class="row">
+                  <div class="col-md-3 d1 ui segment">
+                    <h5 class="design">Navigation</h5>
+
+                   
+
+                    <p><a href="/corperjobs">Sort By PPA Listings</a></p>
+                    <p><a href="/internjobs">Sort by Siwes Listings</a></p>
+                  
+                  </div>
+        
+                 <div class="col-md-6 ">
+
+                    
+                     
+           
+                
+                   <p class="jobpageheading">FREE LISTINGS</p>
+
+                   <form class="example" action="/internjobs">
+                    <input type="text" class="searchterm" placeholder="Search..e.g(corp member, intern, corper)" name="search">
+                    <button type="submit" class="searchButton">
+                        <i class="fa fa-search"></i>
+                     </button>
+                  </form>
+
+                    <% internjobs.forEach(function(internjob){ %>
+
+                      <div id="forumposts" class="ui segment">
+                        <h3><a class="header" href="/internjobs/<%=internjob._id%>"><%=internjob.company%> </a></h3>
+                         <p><span>Location: <%=internjob.location%>  </span></p>
+                          <p> <span>Position : <%=internjob.title%></span></p>
+                          <span>Created on : <%= internjob.created.toDateString() %></span>
+                            <p><a href="/internjobs/<%=internjob._id%>"> <button type="button" class="btn btn-success btn-xs jobbutton">More Details</button></a></p>
+                      </div>  
+                     <% }); %>    
+                  
+                    <% corperjobs.forEach(function(corperjob){ %>
+
+                      <div id="forumposts" class="ui segment">
+                        <h3><a class="header" href="/corperjobs/<%=corperjob._id%>"><%=corperjob.company%> </a></h3>
+                         <p><span>Location: <%=corperjob.location%>  </span></p>
+                          <p> <span>Position : <%=corperjob.title%></span></p>
+                          <span>Created on : <%= corperjob.created.toDateString() %></span>
+                            <p><a href="/corperjobs/<%=corperjob._id%>"> <button type="button" class="btn btn-success btn-xs jobbutton">More Details</button></a></p>
+                      </div>  
+                     <% }); %>  
+                  </div>
+
+            <div class="col-md-3 d3 ui segment" >
+              <div >
+                <h3 class="us"><a href="/premiumjobs">Premium Listings</a></h3>
+                <p class="premiumdescription">With premium, there is 100% guarantee you get an IT Placement or NYSC PPA.</p>
+              </div>  
+              <p class="createlisting"><a href="/premiumjobs">- View All -</a></p>
+
+              <% premiumjobs.forEach(function(premiumjob){ %>
+                <div id="forumposts" class="showpremiumjobonhomepage">
+                  <h3><a class="header" href="/jobs/<%=premiumjob._id%>">- Premium Listing at <%=premiumjob.company%> </a></h3>
+                       <a href="/premiumjobs/<%=premiumjob._id%>">More Details</a>    
+                </div>  
+               <% }); %>  
+
+              
+
+            </div>                 
+            </div>
+        
+          </div>
+        
+        
+<br>
+<br>
+<br>
+<br>
+<br>
+<% include ./partials/footer %>
+
+
+
+
+

@@ -1,0 +1,31 @@
+<% include ./partials/header %>
+
+<div class="container logincontainer">
+        <div class="row">
+                <div class=" loginbox col-md-5 col-sm-12 col-xs-12">
+                        <div class="loginboxheading">FORGOT PASSWORD</div>
+                        <form class="ui form form col-md-12 col-xs-12 loginform" action="/forgot" method="POST"> 
+                        <div class="field">
+                                <input type="email" name="email" placeholder="email" required>
+                        </div>
+                        <button type="submit" class="btn btn-default btn-lg loginsubmitbutton">SUBMIT </button>     
+                        </form>               
+                </div>
+
+        <div class="col-md-7 loginpageimage">
+                <img alt="Image" height="420" width="600" src="/images/loginpageimage.jpg">
+        </div>
+     </div>         
+</div>
+<!-- <br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/> -->
+<% include ./partials/footer %>

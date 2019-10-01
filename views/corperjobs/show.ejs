@@ -1,0 +1,42 @@
+<% include ../partials/header %>
+
+<div class="container">
+    <div class="row">
+        <div class="ui main text  segment col-md-8 show2">  
+            <p class="showpagetitle">- An Opening At <%=corperjob.company%> -</p>
+                <p class="jobcompany"><i class="fa fa-university" aria-hidden="true"></i><b>Company Name:</b> <%=corperjob.company%></p>
+                <p class="joblocation"><i class="fa fa-map-marker" aria-hidden="true"></i><b>        Location:</b> <%=corperjob.location%></p>
+                <p class="jobtitle"><i class="fa fa-users" aria-hidden="true"></i><b>  Looking For:</b> <%=corperjob.title%></p>
+                <p class="jobcreated"><i class="fa fa-calendar"></i><b>Created On:</b> <%= corperjob.created.toDateString() %></p>
+               <a href="/home"> <button type="button" class="btn btn-success">Apply Now</button></a>
+                <div class="item">     
+                <br>
+                <br>
+                <hr>
+               
+                <div class="description">
+                    <p class="jobdescription"><%=corperjob.description%></p>
+                </div>
+                <br>
+                
+                    <a class="btn btn-warning" href="/corperjobs/<%=corperjob._id%>/edit">EDIT</a>
+                    <form id="delete" action="/corperjobs/<%=corperjob._id%>?_method=DELETE" method="POST"> 
+                        <button class="btn btn-danger">DELETE</button>
+                    </form>
+               </p>
+                </div>
+                <br>
+                
+
+                
+        </div>
+                <div class="col-md-4 ">
+                     
+                </div>
+    </div>
+</div>
+
+
+
+
+<% include ../partials/footer %>

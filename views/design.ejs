@@ -1,0 +1,23 @@
+<% include partials/header %>
+
+<h2 class="tags">Category: Design</h2>
+
+<% forumposts.forEach(function(forumpost){ %>
+    <div id="forumposts" class="ui segment">
+      
+    <h3><a class="header" href="/forum/<%=forumpost._id%>"><%=forumpost.title%> </a></h3>
+    
+       
+        <span><%=forumpost.author.username%> ||</span>
+        <span><%= forumpost.created.toDateString() %></span>
+        <br/>
+        <p><span><%= forumpost.tags %>  </span></p>
+        <p> <%=forumpost.bodymarkdown.substring(0,0)%></p>
+      
+        <a href="/forum/<%=forumpost._id%>">Read More</a>   
+        
+      </div>  
+          <% }); %>
+
+
+<% include partials/footer %>

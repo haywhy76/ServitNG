@@ -1,0 +1,30 @@
+<% include ../partials/header %>
+
+
+<div class="ui main text  container">
+        <div class="openingheader">LIST A PREMIUM OPENING</div>
+        <form class="ui form" action="/premiumjobs" method="POST"> 
+
+                <div class="field">
+                        <input type="text" name="company" placeholder="Company Name" required>
+                 </div>
+
+                <div class="field">
+                        <input type="text" name="title" placeholder="Corp Member or Intern" required>
+                </div>
+                
+                 <div class="field">
+                        <input type="text" name="location" placeholder="Location (State)" required>
+                 </div>
+                 
+                <div class="field">
+                        <textarea name="description" placeholder="Enter A Description (e.g An intern needed for 2 months, How to apply )"></textarea>
+                </div>
+
+                
+              <p class="pjobsubmitbutton">  <button type="submit" class="btn btn-default btn-lg jobsubmitbutton">SUBMIT </button></p>
+                
+        </form>
+</div>
+
+        

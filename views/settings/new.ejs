@@ -1,0 +1,25 @@
+<% include ../partials/header %>
+
+<div class="ui main text container ">
+        <div class="completeregistrationheading">COMPLETE YOUR REGISTRATION</div>
+        <form class="ui form form col-md-12 col-xs-12" action="/settings/<%=settings._id %>" method="POST"> 
+               
+        <div class="field">
+                <input type="text" name="fullname" placeholder="Firstname Surname" required >
+        </div>
+        <!-- <div class="field">
+                <input type="email" name="email" placeholder="email address" required>
+        </div> -->
+
+        <div class="field">
+                <input type="text" name="location" placeholder="location (State)"required >
+        </div>
+        
+        <div class="field">
+                <input type="text" name="phonenumber" placeholder="Phone Number" required>
+        </div>
+        
+        <p class="itcorperscompleteregbutton"><button type="submit" class="btn btn-default btn-lg loginsubmitbutton">SUBMIT </button></p>
+        
+        </form>
+</div>

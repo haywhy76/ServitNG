@@ -1,0 +1,51 @@
+<% include ../partials/header %>
+          <div class="container">
+            <div class="row">
+                  <div class="col-md-3 d1 ui segment">
+                    <h5 class="design">Advertisement</h5>
+                    <!-- ADCODE GOES HERE -->
+                  </div>
+        
+                 <div class="col-md-6 ">
+                   <p class="jobpageheading">ALL PREMIUM LISTINGS</p>
+                   <p class="premiumdescription">With premium, there is 100% guarantee you get an IT Placement or NYSC PPA.</p>
+                
+                    <% premiumjobs.forEach(function(premiumjob){ %>
+
+                      <div id="forumposts" class="ui segment">
+                        <h3><a class="header" href="/jobs/<%=premiumjob._id%>"><%=premiumjob.company%> </a></h3>
+                         <p><span>Location: <%=premiumjob.location%>  </span></p>
+                          <p> <span>Position : <%=premiumjob.title%></span></p>
+                          <span>Created on : <%= premiumjob.created.toDateString() %></span>
+                          <p> <%=premiumjob.description.substring(0,0)%></p>
+                             <a href="/premiumjobs/<%=premiumjob._id%>">More Details</a>    
+                      </div>  
+                     <% }); %>    
+                  
+                  </div>
+
+            <div class="col-md-3 d3 ui segment" >
+              <div >
+                <p class="us"><a href="/jobs">Advertisement</a></p>
+                
+                
+              </div>  
+              
+            </div>
+                                
+              </div>
+        
+          </div>
+        
+        
+<br>
+<br>
+<br>
+<br>
+<br>
+<% include ../partials/footer %>
+
+
+
+
+
