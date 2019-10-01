@@ -870,7 +870,7 @@ text-align: center;
 
   }
 
-@media screen and (max-width: 520px) {
+/* @media screen and (max-width: 520px) {
 
     .homepageweconnect{
         padding-top:0px;
@@ -896,7 +896,7 @@ text-align: center;
         margin-top:50px;
     }
 
-    /* LOGIN PAGE */
+   
 
     .loginpageimage{
         display:none;
@@ -910,7 +910,7 @@ text-align: center;
         margin-bottom:50px;
     }
 
-    /* MEMBERSHIP PAGE */
+   
     .registerboxheading{
         margin-top:0px;
     }
@@ -919,7 +919,7 @@ text-align: center;
         display:none;
     }
 
-  /* LOGIN PAGE */
+ 
 
     
 
@@ -931,7 +931,7 @@ text-align: center;
         margin-bottom:50px;
     }
 
-    /* JOBS PAGE */
+   
 
     .d1{
         display:none;
@@ -966,7 +966,6 @@ text-align: center;
         margin-top:50px;
     }
 
-    /* LOGIN PAGE */
 
     .loginpageimage{
         display:none;
@@ -980,7 +979,6 @@ text-align: center;
         margin-bottom:50px;
     }
 
-    /* MEMBERSHIP PAGE */
     .registerboxheading{
         margin-top:0px;
     }
@@ -989,10 +987,7 @@ text-align: center;
         display:none;
     }
 
-  /* LOGIN PAGE */
-
-    
-
+ 
     .registerbox{
         margin-top:0px;
     }
@@ -1001,7 +996,7 @@ text-align: center;
         margin-bottom:50px;
     }
 
-    /* JOBS PAGE */
+   
 
     .d1{
         display:none;
@@ -1009,4 +1004,4 @@ text-align: center;
     .registerfieldusername{
         width:100%;
     }
-}
+} */
