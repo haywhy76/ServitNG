@@ -936,6 +936,9 @@ text-align: center;
     .d1{
         display:none;
     }
+    .registerfieldusername{
+        width:100%;
+    }
 }
 
 @media only screen and (min-width: 560px) {
@@ -1002,5 +1005,8 @@ text-align: center;
 
     .d1{
         display:none;
+    }
+    .registerfieldusername{
+        width:100%;
     }
 }
