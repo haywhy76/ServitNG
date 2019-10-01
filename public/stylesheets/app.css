@@ -943,9 +943,29 @@ text-align: center;
 */
 @media screen and (min-width: 10px) and (max-width: 480px){
     .registerusername{
-        width:200px !important;
-        text-align:left;
+        width:150px !important;
+        margin-left: -75px; 
+        
+    }
+    .registeremail{
+        width:150px !important;
+        margin-left: -75px; 
+        
+    }
+    .registerpassword{
+        width:150px !important;
+        margin-left: -75px; 
+        
     }
     
-    
+    .loginusername{
+        width:150px !important;
+        margin-left: -75px; 
+        
+    }
+    .loginpassword{
+        width:150px !important;
+        margin-left: -75px; 
+        
+    }
 } 
