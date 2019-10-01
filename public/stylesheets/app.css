@@ -945,4 +945,10 @@ text-align: center;
     .registerusername{
         width:500px !important
     }
+    .registerform{
+        text-align:left;
+    }
+    .registerboxheading{
+        text-align:left;
+    }
 } 
