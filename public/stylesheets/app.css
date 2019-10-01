@@ -943,10 +943,9 @@ text-align: center;
 */
 @media screen and (min-width: 10px) and (max-width: 480px){
     .registerusername{
-        width:200px !important
-    }
-    .registerform{
+        width:200px !important;
         text-align:left;
     }
+    
     
 } 
