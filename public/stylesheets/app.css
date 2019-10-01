@@ -943,6 +943,6 @@ text-align: center;
 */
 @media screen and (min-width: 10px) and (max-width: 480px){
     .registerusername{
-        width:130px !important
+        width:500px !important
     }
 } 
