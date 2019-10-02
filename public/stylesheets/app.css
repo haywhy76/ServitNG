@@ -959,8 +959,10 @@ text-align: center;
     }
     .jobpagesubheading1{
         display:show;
+        text-align:center;
     }
     .jobpagesubheading2{
         display:show;
+        text-align:center;
     }
 } 
