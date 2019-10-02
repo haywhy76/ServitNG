@@ -882,7 +882,11 @@ text-align: center;
 
 @media screen and (min-width: 10px) and (max-width: 480px){
     .corperformfield{
-        width:150px !important;
+        width:200px !important;
+        margin-left: -75px;
+    }
+    .internformfield{
+        width:200px !important;
         margin-left: -75px;
     }
     .registerusername{
