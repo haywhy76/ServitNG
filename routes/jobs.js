@@ -3,7 +3,7 @@ var router = express.Router();
 var middleware = require("../middleware");
 var internjob = require("../models/internjobs");
 var corperjob = require("../models/corperjobs");
-var premiumjob = require("../models/premiumjobs");
+var premiumJob = require("../models/premiumjobs");
 var setting = require("../models/settings");
 
 
@@ -32,7 +32,7 @@ router.get("/jobs", middleware.isLoggedIn, function(req, res){
         }
     }).sort({'_id':-1});
    
-    premiumjob.find({}, function(err, allPremiumJobs){
+    premiumJob.find({}, function(err, allPremiumJobs){
         if (err){
             console.log(err);
         }
