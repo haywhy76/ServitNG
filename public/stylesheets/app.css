@@ -878,6 +878,12 @@ text-align: center;
     .mobiledescription{
         display:none;
     }
+    .jobpagesubheading1{
+    display:none;
+}
+.jobpagesubheading2{
+    display:none;
+}
 }
 
 @media screen and (min-width: 10px) and (max-width: 480px){
@@ -950,5 +956,11 @@ text-align: center;
     }
     .employerbutton{
         margin-top:30px;
+    }
+    .jobpagesubheading1{
+        display:inline;
+    }
+    .jobpagesubheading2{
+        display:inline;
     }
 } 
