@@ -37,7 +37,7 @@ var commentRoutes = require("./routes/comments"),
     companyRoutes = require("./routes/company")
     positionRoutes = require("./routes/position")
     locationRoutes = require("./routes/location")
-    membershipRoutes = require("./routes/membership")
+   
     imageUploadRoutes = require("./routes/imageupload")
    
     faqRoutes = require("./routes/faq")
@@ -87,7 +87,7 @@ app.use(locationRoutes);
 app.use(resetRoutes);
 app.use(forgotRoutes);
 app.use(imageUploadRoutes);
-app.use(membershipRoutes);
+
 
 app.use(faqRoutes);
 app.use(contactRoutes);

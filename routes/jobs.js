@@ -48,6 +48,8 @@ router.get("/jobs", middleware.isLoggedIn, function(req, res){
 router.get("/jobs/new", middleware.isLoggedIn,function(req, res){
     res.render("jobs/new")
 });
+
+
 //INTERNS
 // VIEW ALL INTERN JOBS
 
