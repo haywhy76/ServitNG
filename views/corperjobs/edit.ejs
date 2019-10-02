@@ -5,21 +5,19 @@
         <div class="editjobheading">Edit Listing</div>
         <form class="ui form" action="/corperjobs/<%=corperjob._id%>?_method=PUT" method="POST"> 
 
+               
                 <div class="field">
-                        <input type="text" name="corperjob[title]" value="<%= corperjob.title %>">
-                </div>
-                <div class="field">
-                        <input type="text" name="corperjob[location]" value="<%= corperjob.location %>">
+                       <p class="corperformfield"> <input type="text" name="corperjob[location]" value="<%= corperjob.location %>"></p>
                  </div>
                  <div class="field">
-                        <input type="text" name="corperjob[company]" value="<%= corperjob.company %>">
+                        <p class="corperformfield">  <input type="text" name="corperjob[company]" value="<%= corperjob.company %>"></p>
                  </div>
                  <div class="field">
-                        <input type="text" name="corperjob[salary]" value="<%= corperjob.salary %>">
+                        <p class="corperformfield">   <input type="text" name="corperjob[salary]" value="<%= corperjob.salary %>"></p>
                  </div>
                
                 <div class="field">
-                        <textarea name="corperjob[description]"> <%= corperjob.description %> </textarea>
+                        <p class="corperformfield">  <textarea name="corperjob[description]"> <%= corperjob.description %> </textarea></p>
                 </div>
 
                 

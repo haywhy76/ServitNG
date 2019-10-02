@@ -307,10 +307,11 @@ a{
 
 .membershipbuttons{
     text-align:center;
+   
 }
 
 .employerbutton{
-    margin-top:30px;
+    
     font-family: 'Cantarell', sans-serif;
     background: #404040;
 }
@@ -880,6 +881,10 @@ text-align: center;
 }
 
 @media screen and (min-width: 10px) and (max-width: 480px){
+    .corperformfield{
+        width:150px !important;
+        margin-left: -75px;
+    }
     .registerusername{
         width:150px !important;
         margin-left: -75px; 
@@ -938,5 +943,8 @@ text-align: center;
     .homepagebuttons{
         padding-top: 0px;
         
+    }
+    .employerbutton{
+        margin-top:30px;
     }
 } 
