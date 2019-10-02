@@ -12,16 +12,6 @@ var setting = require("../models/settings");
 
 router.get("/jobs", middleware.isLoggedIn, function(req, res){
     
-    corperjob.find({},  function(err, allCorperJobs){
-
-        if (err){
-            console.log(err);
-        }
-        else{
-            corperjobs=allCorperJobs;
-        }
-    }).sort({'_id':-1});
-   
     internjob.find({},  function(err, allInternJobs){
 
         if (err){
@@ -32,13 +22,23 @@ router.get("/jobs", middleware.isLoggedIn, function(req, res){
         }
     }).sort({'_id':-1});
 
+    corperjob.find({},  function(err, allCorperJobs){
+
+        if (err){
+            console.log(err);
+        }
+        else{
+            corperjobs=allCorperJobs;
+        }
+    }).sort({'_id':-1});
+   
     premiumjob.find({}, function(err, allPremiumJobs){
         if (err){
             console.log(err);
         }
         else{
             premiumjobs=allPremiumJobs;
-            res.render("jobs/index",{corperjobs:corperjobs, internjobs:internjobs, premiumjobs:premiumjobs});
+            res.render("jobs/index",{internjobs:internjobs, corperjobs:corperjobs,  premiumjobs:premiumjobs});
         }
     })
 });
