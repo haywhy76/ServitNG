@@ -27,7 +27,7 @@
                     <% internjobs.forEach(function(internjob){ %>
 
                       <div id="forumposts" class="ui segment">
-                        <h3><a class="header" href="/internjobs/<%=internjob._id%>"><%=internjob.company%> </a></h3>
+                        <h3><a class="header" href="/internjobs/<%=internjob._id%>"><i class="fa fa-university" aria-hidden="true"></i><%=internjob.company%> </a></h3>
                          <p><span>Location: <%=internjob.location%>  </span></p>
                           <p> <span>Position :Internship</span></p>
                           <span>Created on : <%= internjob.created.toDateString() %></span>
