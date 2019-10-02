@@ -27,10 +27,10 @@
                     <% internjobs.forEach(function(internjob){ %>
 
                       <div id="forumposts" class="ui segment">
-                        <h3><a class="header" href="/internjobs/<%=internjob._id%>"><i class="fa fa-university" aria-hidden="true"></i> <%=internjob.company%> </a></h3>
+                        <h3><a class="header" href="/internjobs/<%=internjob._id%>"><i class="fa fa-university" aria-hidden="true"></i> Organisation<%=internjob.company%> </a></h3>
                          <h3 class="location"><span><i class="fa fa-map-marker" aria-hidden="true"></i> Location: <%=internjob.location%>  </span></h3>
                           <h3 class="location"> <span><i class="fa fa-users" aria-hidden="true"></i> Position :Internship</span></h3>
-                          <p class="location"><span><i class="fa fa-calendar"></i> Created on : <%= internjob.created.toDateString() %></span></p>
+                          <p class="locationred"><span><i class="fa fa-calendar"></i> Created on : <%= internjob.created.toDateString() %></span></p>
                             <p><a href="/internjobs/<%=internjob._id%>"> <button type="button" class="btn btn-success btn-xs jobbutton">More Details</button></a></p>
                       </div>  
                      <% }); %>    
