@@ -38,7 +38,7 @@ router.get("/jobs", middleware.isLoggedIn, function(req, res){
         }
         else{
             premiumjobs=allPremiumJobs;
-            res.render("jobs/index",{internjobs:internjobs, corperjobs:corperjobs,  premiumjobs:premiumjobs});
+            res.render("jobs/index",{internjobs:internjobs,corperjobs:corperjobs,premiumjobs:premiumjobs});
         }
     })
 });
