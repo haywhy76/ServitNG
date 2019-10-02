@@ -884,6 +884,9 @@ text-align: center;
 .jobpagesubheading2{
     display:none;
 }
+.back{
+   display: none;
+}
 }
 
 @media screen and (min-width: 10px) and (max-width: 480px){
@@ -963,6 +966,9 @@ text-align: center;
     }
     .jobpagesubheading2{
         display:show;
+        text-align:center;
+    }
+    .back{
         text-align:center;
     }
 } 
