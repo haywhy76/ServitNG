@@ -1,35 +1,31 @@
 <% include ../partials/header %>
           <div class="container">
+              <p class="jobpageheading">FREE LISTINGS</p>
+             
             <div class="row">
-                  <div class="col-md-3 d1 ui segment">
-                    <h5 class="design">Navigation</h5>
-
-                   
-
-                    <p><a href="/corperjobs">Sort By PPA Listings</a></p>
-                    <p><a href="/internjobs">Sort by Siwes Listings</a></p>
-                  
+                  <div id="navigation" class="col-md-3 d1 ui segment">
+                    <h3 class="design">Navigation</h3>
+                    <h4><a href="/corperjobs">Sort By PPA Listings</a></h4>
+                    <h4><a href="/internjobs">Sort by Siwes Listings</a></h4>
+                    <hr class="hrline">
+                    <h3 class="design">Twitter Feed</h3>
+                    <a class="twitter-timeline" height="700px" href="https://twitter.com/TwitterDev/timelines/539487832448843776?ref_src=twsrc%5Etfw">National Park Tweets - Curated tweets by TwitterDev</a>
+                     <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                     
                   </div>
         
                  <div class="col-md-6  ">
-
-                    
-                     
-           
-                
-                   <p class="jobpageheading">FREE LISTINGS</p>
-
                   <p class="jobpagesubheading">
                    <p class="jobpagesubheading1"><a href="/corperjobs">Sort By PPA Listings</a></p>
                    <p class="jobpagesubheading2"><a href="/internjobs">Sort by Siwes Listings</a></p>
                    </p>
-
+                   <p class="explore">Explore Our Listings</p>
                     <% internjobs.forEach(function(internjob){ %>
 
-                      <div id="forumposts" class="ui segment">
-                        <h3><a class="header" href="/internjobs/<%=internjob._id%>"><i class="fa fa-university" aria-hidden="true"></i><%=internjob.company%> </a></h3>
-                         <h3 class="location"><span><i class="fa fa-map-marker" aria-hidden="true"></i> Location: <%=internjob.location%>  </span></h3>
-                          <h3 class="location"> <span><i class="fa fa-users" aria-hidden="true"></i> Position: Internship</span></h3>
+                      <div id="forumposts" class="ui piled very padded segment">
+                        <h5><a class="header" href="/internjobs/<%=internjob._id%>"><i class="fa fa-university" aria-hidden="true"></i> Institution: <%=internjob.company%> </a></h5>
+                         <h5 class="location"><span><i class="fa fa-map-marker" aria-hidden="true"></i> Location: <%=internjob.location%>  </span></h5>
+                          <h5 class="location"> <span><i class="fa fa-users" aria-hidden="true"></i> Position: Intern</span></h5>
                           <p class="locationred"><span><i class="fa fa-calendar"></i> Created on : <%= internjob.created.toDateString() %></span></p>
                             <p><a href="/internjobs/<%=internjob._id%>"> <button type="button" class="btn btn-success btn-xs jobbutton">More Details</button></a></p>
                       </div>  
@@ -37,34 +33,54 @@
                   
                     <% corperjobs.forEach(function(corperjob){ %>
 
-                      <div id="forumposts" class="ui segment">
-                        <h3><a class="header" href="/corperjobs/<%=corperjob._id%>"><i class="fa fa-university" aria-hidden="true"></i> <%=corperjob.company%> </a></h3>
-                         <h3 class="location"><span><i class="fa fa-map-marker" aria-hidden="true"></i> Location: <%=corperjob.location%>  </span></h3>
-                          <h3 class="location"> <span><i class="fa fa-users" aria-hidden="true"></i> Position :PPA</span></h3>
+                      <div id="forumposts"class="ui piled segment">
+                        <p class="corperposts">
+                        <h5><a class="header" href="/corperjobs/<%=corperjob._id%>"><i class="fa fa-university" aria-hidden="true"></i> Institution: <%=corperjob.company%> </a></h5>
+                         <h5 class="location"><span><i class="fa fa-map-marker" aria-hidden="true"></i> Location: <%=corperjob.location%>  </span></h5>
+                          <h5 class="location"> <span><i class="fa fa-users" aria-hidden="true"></i> Position: Corp Member</span></h5>
                           <p class="locationred"><span>Created on : <%= corperjob.created.toDateString() %></span></p>
+                          
                             <p><a href="/corperjobs/<%=corperjob._id%>"> <button type="button" class="btn btn-success btn-xs jobbutton">More Details</button></a></p>
-                      </div>  
+                          </p>
+                          </div>  
                      <% }); %>  
                   </div>
 
-            <div class="col-md-3 ui segment" >
+            <div id="premium" class="col-md-3 ui segment" >
+              
               <div >
                 <h3 class="us"><a href="/premiumjobs">Premium Listings</a></h3>
-                <p class="premiumdescription locationred">With premium, there is 100% guarantee you get an IT Placement or NYSC PPA.</p>
+                <p class="premiumdescription">With premium, there is 100% guarantee you get an IT Placement or NYSC PPA.</p>
               </div>  
-              <p class="createlisting"><a href="/premiumjobs">- View All -</a></p>
+             
 
               <% premiumjobs.forEach(function(premiumjob){ %>
-                <div id="forumposts" class="showpremiumjobonhomepage">
-                  <h3><a class="header" href="/premiumjobs/<%=premiumjob._id%>"><i class="fa fa-university" aria-hidden="true"></i>- Premium Listing at <%=premiumjob.company%> </a></h3>
+                <div id="" class="showpremiumjobonhomepage">
+                  <h5 ><a class="header" href="/premiumjobs/<%=premiumjob._id%>"><i class="fa fa-asterisk" aria-hidden="true"></i> Premium Listing at <%=premiumjob.company%> </a></h5>
                           
-                       <p><a href="/premiumjobs/<%=premiumjob._id%>"> <button type="button" class="btn btn-success btn-xs jobbutton">More Details</button></a></p>
+                       
                 </div>  
                <% }); %>  
+               <p class="createlisting"><a href="/premiumjobs">- View All -</a></p>
+               <hr class="hrline">
+               <h3 class="design">Newsletter</h3>
+                <p class="subsciptiontext">Would you like to get an email notification for new listings?</p>
 
-              
+                <form id="subscriptionform" class="ui form form" action="/subscribe" method="POST"> 
+                <div class="field">
+                    <p class="subscriptionforminput"><input type="text" name="subscribe" placeholder="Enter Your Email Address" required></p>
+                    <p class="subscribebutton"><button type="button" class="btn btn-success btn-xs ">Subscribe</button></a></p>
+                  </div>
+                </form>
+                <hr class="hrline">
+                <h3 class="design">Connect with us </h3>
+                <p class="social">
+                <img src="/images/facebook.jpg" height="32" width="32">
+                <img src="/images/instagram.jpg" height="32" width="32">
+                <img src="/images/twitter.jpg" height="32" width="32">
+                </p>
+            </div>        
 
-            </div>                 
             </div>
         
           </div>

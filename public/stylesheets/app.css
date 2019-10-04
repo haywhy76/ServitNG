@@ -2,24 +2,39 @@
 html {
     scroll-behavior: smooth;
   }
+body{
+    background-color: rgb(245, 245, 245);
+    
+}
 
+a{
+    color: #4A724E;
+}
   /* HOMEPAGE */
 
+  .ac>.ac-q{
+    color: #4A724E;
+  }
+  .mobiledescription{
+    font-size:50px; 
+    color:#4A724E;
+}
+
 .location{
-color:#4183C4;
+    color: #4A724E;
 }
 
 .locationred{
-    color: #FF5733;
+    color: #000000;
 }
 
 .homepageweconnect{
-    padding-top:100px;
+    padding-top:50px;
    
 }
 
 .homepagebuttons{
-    padding-top: 100px;
+   
     font-weight:bold;
 }
 #typedtext{
@@ -71,6 +86,9 @@ a{
     color: #404040;
 }
 
+.footer:before{
+    
+}
 .footer {
     color: #404040;
     font-size:16px;
@@ -86,23 +104,28 @@ a{
     font-family: 'Cantarell', sans-serif;
     font-weight:bold;
 }
-
+.navbar-default .navbar-nav>li>a{
+    color: #4A724E;
+}
 .navbar-brand{
     color: #404040;
     font-size:18px;
     font-family: 'Cantarell', sans-serif;
     font-weight:bold;
 }
-
+.navbar-default .navbar-brand{
+    color: #4A724E;
+}
 
 .aboutus{
-    margin-top:200px;
+    margin-top:100px;
     font-family: 'Cantarell', sans-serif;
 }
 
 .aboutusheading{
     font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
     text-align:center;
+    color:#4A724E;
 }
 
 .aboutusheading:after {
@@ -111,7 +134,7 @@ a{
     margin: 0 auto; /* This will center the border. */
     width: 20%; /* Change this to whatever width you want. */
     padding-top: 20px; /* This creates some space between the element and the border. */
-    border-bottom: 1px solid #4183C4 ; /* This creates the border. Replace black with whatever color you want. */
+    border-bottom: 1px solid #4A724E ; /* This creates the border. Replace black with whatever color you want. */
 }
 
 .faq{
@@ -123,7 +146,7 @@ a{
     text-align:center;
     font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
     margin-bottom:50px;
-    
+    color:#4A724E;
     
 }
 
@@ -133,7 +156,7 @@ a{
     margin: 0 auto; /* This will center the border. */
     width: 20%; /* Change this to whatever width you want. */
     padding-top: 20px; /* This creates some space between the element and the border. */
-    border-bottom: 1px solid #4183C4 ; /* This creates the border. Replace black with whatever color you want. */
+    border-bottom: 1px solid #4A724E ; /* This creates the border. Replace black with whatever color you want. */
 }
 
 .contactus{
@@ -143,6 +166,7 @@ a{
 .contactusheading{
     font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
     text-align:center;
+    color:#4A724E;
 }
 
 .contactusheading:after {
@@ -151,7 +175,7 @@ a{
     margin: 0 auto; /* This will center the border. */
     width: 6%; /* Change this to whatever width you want. */
     padding-top: 20px; /* This creates some space between the element and the border. */
-    border-bottom: 1px solid #4183C4 ; /* This creates the border. Replace black with whatever color you want. */
+    border-bottom: 1px solid #4A724E ; /* This creates the border. Replace black with whatever color you want. */
 }
 
 .design:after{
@@ -160,13 +184,14 @@ a{
     margin: 0 auto; /* This will center the border. */
     width: 6%; /* Change this to whatever width you want. */
     padding-top: 10px; /* This creates some space between the element and the border. */
-    border-bottom: 1px solid #4183C4 ; /* This creates the border. Replace black with whatever color you want. */
+    border-bottom: 1px solid #4A724E ; /* This creates the border. Replace black with whatever color you want. */
 }
 
 .us{
     text-align:center;
     font-weight: bold;
     padding: 0px 0px 10px 0;
+    color: #4A724E;
 }
 
 .us:after{
@@ -175,12 +200,12 @@ a{
     margin: 0 auto; /* This will center the border. */
     width: 6%; /* Change this to whatever width you want. */
     padding-top: 10px; /* This creates some space between the element and the border. */
-    border-bottom: 1px solid #4183C4 ; /* This creates the border. Replace black with whatever color you want. */
+    border-bottom: 1px solid #4A724E; ; /* This creates the border. Replace black with whatever color you want. */
 }
 .premiumdescription{
     text-align:center;
     font-family: 'Cantarell', sans-serif;
-    color: #4183C4
+    color: #000000;
 }
 
 .getplacement{
@@ -206,6 +231,7 @@ a{
     font-family: 'Cantarell', sans-serif;
     font-size:18px;
     font-weight:bold;
+    color: #4A724E;
 }
 
 .registerboxheading:after {
@@ -214,7 +240,7 @@ a{
     margin: 0 auto; /* This will center the border. */
     width: 20%; /* Change this to whatever width you want. */
     padding-top: 20px; /* This creates some space between the element and the border. */
-    border-bottom: 1px solid #4183C4 ; /* This creates the border. Replace black with whatever color you want. */
+    border-bottom: 1px solid #4A724E; ; /* This creates the border. Replace black with whatever color you want. */
 }
 
 .registersubmitbutton {
@@ -272,15 +298,17 @@ a{
       font-family: 'Cantarell', sans-serif;
       font-size:18px;
       font-weight:bold;
+      color: #4A724E;
   }
   
 .loginboxheading:after {
+    
       content: ""; /* This is necessary for the pseudo element to work. */ 
       display: block; /* This will put the pseudo element on its own line. */
       margin: 0 auto; /* This will center the border. */
       width: 20%; /* Change this to whatever width you want. */
       padding-top: 20px; /* This creates some space between the element and the border. */
-      border-bottom: 1px solid #4183C4 ; /* This creates the border. Replace black with whatever color you want. */
+      border-bottom: 1px solid #4A724E; ; /* This creates the border. Replace black with whatever color you want. */
   }
   
 .loginsubmitbutton {
@@ -381,17 +409,99 @@ a{
     background: #404040;
     color: #ffffff !important;
 }
+
+.subscriptiontext{
+    font-family: 'Cantarell', sans-serif;
+}
+
+.subscriptionforminput{
+    width:170px !important;
+    
+}
+#subscriptionform{
+margin-left:-60px;
+}
+
 /* END OF JOB OPENING */
 
 /* JOBS PAGE */
+/* .corperposts{
+    border-top-width: 3px;
+    border-top-style:solid;
+    border-top-color:#4A724E;
+} */
 
+#premium{
+    border-top-width: 3px;
+    border-top-style:solid;
+    border-top-color:#4A724E;
+    border-left-width: 1px;
+    border-left-style:solid;
+    border-left-color:#4A724E;
+    border-bottom-width: 1px;
+    border-bottom-style:solid;
+    border-bottom-color:#4A724E;
+    border-right-width: 1px;
+    border-right-style:solid;
+    border-right-color:#4A724E;
+}
+.showpremiumjobonhomepage:after {
+    content: ""; /* This is necessary for the pseudo element to work. */ 
+    display: block; /* This will put the pseudo element on its own line. */
+    margin: 0 auto; /* This will center the border. */
+    width: 20%; /* Change this to whatever width you want. */
+    padding-top: 20px; /* This creates some space between the element and the border. */
+    border-bottom: 1px solid #4A724E ; /* This creates the border. Replace black with whatever color you want. */
+}
+#navigation{
+    border-top-width: 3px;
+    border-top-style:solid;
+    border-top-color:#4A724E;
+    border-right-width: 1px;
+    border-right-style:solid;
+    border-right-color:#4A724E;
+    border-left-width: 1px;
+    border-left-style:solid;
+    border-left-color:#4A724E;
+    border-bottom-width: 1px;
+    border-bottom-style:solid;
+    border-bottom-color:#4A724E;
+    text-align:center;
+}
 .jobpageheading{
+    color:#fff;
     text-align:center;
     font-weight:bold;
     font-size:18px;
     font-family: 'Cantarell', sans-serif;
+    background: url("/images/headerback3.jpg") no-repeat fixed center;
+    padding-top:50px;
+    padding-bottom:50px;
+   
+}
+.jobpageheading:after{
+    content: ""; /* This is necessary for the pseudo element to work. */ 
+    display: block; /* This will put the pseudo element on its own line. */
+    margin: 0 auto; /* This will center the border. */
+    width: 6%; /* Change this to whatever width you want. */
+    padding-top: 10px; /* This creates some space between the element and the border. */
+    border-bottom: 1px solid  #fff; ; /* This creates the border. Replace black with whatever color you want. */
 }
 
+.explore{
+    text-align:center;
+    font-weight:bold;
+    font-size:18px;
+    font-family: 'Cantarell', sans-serif;
+    margin-bottom:-30px;
+    letter-spacing: 3px;
+}
+
+.hrline{
+    border: 1px solid #4A724E;
+  border-radius: 5px;
+  width:100%;
+}
 .jobtitle{
     font-size:25px;
     
@@ -510,17 +620,28 @@ text-align: center;
     font-size:12px;
 }
 
+.social{
+    text-align:center;
+}
+.subscribebutton{
+    margin-top:15px;
+    margin-bottom:15px;
+    font-size:12px;
+    padding-left:50px;
+}
 .showpremiumjobonhomepage{
     padding-top:20px;
+    text-align:center;
 }
 
 .logincontainer{
-    margin-bottom:220px;
+    margin-bottom:140px;
 }
 .d1{
     padding-right:10px;
-    height: 500px;
+    height: 1000px;
     font-size:22px;
+    
 }
 .d3{
     
@@ -553,13 +674,15 @@ text-align: center;
     text-align:center;
     font-weight: bold;
     padding: 0px 0px 10px 0;
-    color:#4183c4;
+    color:#000000;
+    
 }
 
 .createlisting{
     font-weight: bold;
     text-align:center;
     padding: 10px 0px 10px 0;
+    color:#000000
 }
 .navigation{
     font-weight: bold;
@@ -847,6 +970,10 @@ text-align: center;
     }
 
     .logincontainer{
+        margin-bottom:40px;
+    }
+
+    .registercontainer{
         margin-bottom:50px;
     }
 
@@ -882,9 +1009,7 @@ text-align: center;
 
 @media screen and (min-width: 520px) {
 
-    .mobiledescription{
-        display:none;
-    }
+   
     .jobpagesubheading1{
     display:none;
 }

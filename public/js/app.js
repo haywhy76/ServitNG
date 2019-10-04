@@ -6,70 +6,70 @@ $(document).ready(function() {
 
 
 // Homepage Typewriter
-var aText = new Array(
-    "",
-    "",
-    "We Connect", 
-    "",
-    "",
-    "",
-    "Institutions With",
-    "",
-    "",
-    "",
-    "IT Students &",
-    "",
-    "",
-    "",
-    "Corp Members."
-    );
-    var iSpeed = 10; // time delay of print out
-    var iIndex = 0; // start printing array at this posision
-    var iArrLength = aText[0].length; // the length of the text array
-    var iScrollAt = 20; // start scrolling up at this many lines
+// var aText = new Array(
+//     "",
+//     "",
+//     "We Connect", 
+//     "",
+//     "",
+//     "",
+//     "Institutions With",
+//     "",
+//     "",
+//     "",
+//     "IT Students &",
+//     "",
+//     "",
+//     "",
+//     "Corp Members."
+//     );
+//     var iSpeed = 100; // time delay of print out
+//     var iIndex = 0; // start printing array at this posision
+//     var iArrLength = aText[0].length; // the length of the text array
+//     var iScrollAt = 20; // start scrolling up at this many lines
      
-    var iTextPos = 0; // initialise text position
-    var sContents = ''; // initialise contents variable
-    var iRow; // initialise current row
+//     var iTextPos = 0; // initialise text position
+//     var sContents = ''; // initialise contents variable
+//     var iRow; // initialise current row
      
-    function typewriter()
-    {
-     sContents =  ' ';
-     iRow = Math.max(0, iIndex-iScrollAt);
-     var destination = document.getElementById("typedtext");
+//     function typewriter()
+//     {
+//      sContents =  ' ';
+//      iRow = Math.max(0, iIndex-iScrollAt);
+//      var destination = document.getElementById("typedtext");
      
-     while ( iRow < iIndex ) {
-      sContents += aText[iRow++] + '<br />';
-     }
-     destination.innerHTML = sContents + aText[iIndex].substring(0, iTextPos) + "_";
-     if ( iTextPos++ == iArrLength ) {
-      iTextPos = 0;
-      iIndex++;
-      if ( iIndex != aText.length ) {
-       iArrLength = aText[iIndex].length;
-       setTimeout("typewriter()", 500);
-      }
-     } else {
-      setTimeout("typewriter()", iSpeed);
-     }
-    }
+//      while ( iRow < iIndex ) {
+//       sContents += aText[iRow++] + '<br />';
+//      }
+//      destination.innerHTML = sContents + aText[iIndex].substring(0, iTextPos) + "_";
+//      if ( iTextPos++ == iArrLength ) {
+//       iTextPos = 0;
+//       iIndex++;
+//       if ( iIndex != aText.length ) {
+//        iArrLength = aText[iIndex].length;
+//        setTimeout("typewriter()", 500);
+//       }
+//      } else {
+//       setTimeout("typewriter()", iSpeed);
+//      }
+//     }
     
     
-    typewriter();
+//     typewriter();
 
 // End of Homepage Typewriter
 
 //Fadein Homepage Buttons
 
-$(document).ready(function(){
+// $(document).ready(function(){
 
-    /*! Fades in page on load */
-    $('.homepagebuttons').css('display', 'none');
-    $('.homepagebuttons').fadeIn(10000);
+//     /*! Fades in page on load */
+//     $('.homepagebuttons').css('display', 'none');
+//     $('.homepagebuttons').fadeIn(10);
     
     
 
-    });
+//     });
 
 //Fadein Homepage Image
 
@@ -88,7 +88,7 @@ $(document).ready(function(){
 
         /*! Fades in page on load */
         $('.aboutus').css('display', 'none');
-        $('.aboutus').fadeIn(10000);
+        $('.aboutus').fadeIn(5000);
         
         });
 
@@ -97,7 +97,7 @@ $(document).ready(function(){
 
     /*! Fades in page on load */
     $('.faq').css('display', 'none');
-    $('.faq').fadeIn(13000);
+    $('.faq').fadeIn(5000);
     
     });
 
@@ -107,6 +107,6 @@ $(document).ready(function(){
 
     /*! Fades in page on load */
     $('.contactus').css('display', 'none');
-    $('.contactus').fadeIn(13000);
+    $('.contactus').fadeIn(5000);
     
     });
