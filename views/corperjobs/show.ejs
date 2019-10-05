@@ -2,13 +2,13 @@
 
 <div class="container">
     <div class="row">
-        <div class="ui main text  segment col-md-8 show2">  
+        <div class="ui main text piled very padded segment col-md-8 show2">  
             <p class="showpagetitle">- An Opening At <%=corperjob.company%> -</p>
-                <p class="jobcompany"><i class="fa fa-university" aria-hidden="true"></i><b>Company Name:</b> <%=corperjob.company%></p>
-                <p class="joblocation"><i class="fa fa-map-marker" aria-hidden="true"></i><b>        Location:</b> <%=corperjob.location%></p>
-                <p class="jobtitle"><i class="fa fa-users" aria-hidden="true"></i><b>  Looking For:</b> A Corp Member</p>
+                <h3 class="location"><i class="fa fa-university" aria-hidden="true"></i><b>Company Name:</b> <%=corperjob.company%></h3>
+                <h3 class="locationlocation"><i class="fa fa-map-marker" aria-hidden="true"></i><b>        Location:</b> <%=corperjob.location%></h3>
+                <h3 class="location"><i class="fa fa-users" aria-hidden="true"></i><b>  Looking For:</b> A Corp Member</h3>
                 <p class="jobcreated"><b>Created On:</b> <%= corperjob.created.toDateString() %></p>
-               <a href="/home"> <button type="button" class="btn btn-success">Apply Now</button></a>
+                <p class="backbutton"><button class="ui green basic button"><a href="/corperjobs"><< Back</a></button></p>
                 <div class="item">     
                 <br>
                 <br>
@@ -19,9 +19,9 @@
                 </div>
                 <br>
                 
-                    <a class="btn btn-warning" href="/corperjobs/<%=corperjob._id%>/edit">EDIT</a>
+                    <a class="ui grey button" href="/corperjobs/<%=corperjob._id%>/edit">EDIT</a>
                     <form id="delete" action="/corperjobs/<%=corperjob._id%>?_method=DELETE" method="POST"> 
-                        <button class="btn btn-danger">DELETE</button>
+                        <button class="ui red button">DELETE</button>
                     </form>
                </p>
                 </div>
@@ -30,9 +30,46 @@
 
                 
         </div>
-                <div class="col-md-4 ">
-                     
-                </div>
+        <div id="" class="col-md-1" >
+            </div>
+    
+            <div id="premium" class="col-md-3 ui segment" >
+                  
+                <div >
+                  <h3 class="us">Premium Listings</h3>
+                  <p class="premiumdescription">With premium, there is 100% guarantee you get an IT Placement or NYSC PPA.</p>
+                </div>  
+               
+    
+                <% premiumjobs.forEach(function(premiumjob){ %>
+                  <div id="" class="showpremiumjobonhomepage">
+                    <h5 ><a class="header" href="/premiumjobs/<%=premiumjob._id%>"><i class="fa fa-external-link" aria-hidden="true"></i> Premium Listing at <%=premiumjob.company%> </a></h5>
+                            
+                         
+                  </div>  
+                 <% }); %>  
+                 <p class="createlisting"><a href="/premiumjobs">- View All -</a></p>
+                 <hr class="hrline">
+                 <h3 class="design">Newsletter</h3>
+                  <p class="subsciptiontext">Would you like to get an email notification for new listings?</p>
+    
+                  <form id="subscriptionform" class="ui form form" action="/subscribe" method="POST"> 
+                  <div class="field">
+                      <p class="subscriptionforminput"><input type="text" name="subscribe" placeholder="Enter Your Email Address" required></p>
+            
+                      <p class="subscribebutton"><button class="ui green button">Subscribe</button></p>
+                    </div>
+                  </form>
+                  <hr class="hrline">
+                  <h3 class="design">Connect with us </h3>
+                  <p class="social">
+                  <img src="/images/facebook.jpg" height="32" width="32">
+                  <img src="/images/instagram.jpg" height="32" width="32">
+                  <img src="/images/twitter.jpg" height="32" width="32">
+                  </p>
+               
+                   
+              </div> 
     </div>
 </div>
 
