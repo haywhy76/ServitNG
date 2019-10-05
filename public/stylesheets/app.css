@@ -41,7 +41,16 @@ a{
 
 #testimonial1{
     margin-left:50px;
-    width:30%
+    width:30%;
+    
+}
+
+.testimonialdescription1{
+    text-align:center;
+    font-family: 'Cantarell', sans-serif;
+    color:#4A724E;
+    margin-top:-40px;
+    font-size:20px;
 }
 
 #testimonial2{
