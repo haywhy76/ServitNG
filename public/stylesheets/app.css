@@ -1232,9 +1232,7 @@ text-align: center;
     #testimonial1, #testimonial2, #testimonial3{
         width:100%
     }
-    .testimonialdescription{
-        display:none;
-    }
+    
     .corperformfield{
         width:200px !important;
         margin-left: -75px;
