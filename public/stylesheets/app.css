@@ -178,7 +178,7 @@ a{
 }
 
 .faq{
-    margin-top:150px;
+    margin-top:100px;
 }
 
 
@@ -1212,7 +1212,10 @@ text-align: center;
 
 @media screen and (min-width: 520px) {
 
-   
+    #testimonial1, #testimonial2, #testimonial3{
+        width:100%
+    }
+
     .jobpagesubheading1{
     display:none;
 }
@@ -1225,6 +1228,13 @@ text-align: center;
 }
 
 @media screen and (min-width: 10px) and (max-width: 480px){
+
+    #testimonial1, #testimonial2, #testimonial3{
+        width:100%
+    }
+    .testimonialdescription{
+        display:none;
+    }
     .corperformfield{
         width:200px !important;
         margin-left: -75px;
