@@ -1136,6 +1136,10 @@ text-align: center;
 
 @media screen and (max-width: 833px) {
 
+    #testimonial1, #testimonial2, #testimonial3{
+        width:100%;
+        margin-left:0px;
+    }
     /* LANDING PAGE */
 
     .homepageweconnect{
@@ -1212,9 +1216,7 @@ text-align: center;
 
 @media screen and (min-width: 520px) {
 
-    #testimonial1, #testimonial2, #testimonial3{
-        width:100%
-    }
+   
 
     .jobpagesubheading1{
     display:none;
@@ -1229,13 +1231,10 @@ text-align: center;
 
 @media screen and (min-width: 10px) and (max-width: 480px){
 
-    #testimonial1, #testimonial2, #testimonial3{
-        width:100%
-    }
     
     .corperformfield{
         width:200px !important;
-        margin-left: -75px;
+        margin-left: -15px;
     }
     .internformfield{
         width:200px !important;
