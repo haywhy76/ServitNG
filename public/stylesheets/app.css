@@ -1221,7 +1221,10 @@ text-align: center;
 @media screen and (min-width: 520px) {
 
    
-
+    .navbar-brand{
+        margin-top:-15px;
+    }
+    
     .jobpagesubheading1{
     display:none;
 }
@@ -1235,7 +1238,10 @@ text-align: center;
 
 @media screen and (min-width: 10px) and (max-width: 480px){
 
-    
+    .navbar-brand{
+        margin-top:-15px;
+    }
+
     .corperformfield{
         width:200px !important;
         margin-left: -15px;
