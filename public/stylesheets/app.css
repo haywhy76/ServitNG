@@ -7,6 +7,10 @@ body{
     
 }
 
+.navbar-brand{
+    margin-top:-15px;
+}
+
 a{
     color: #4A724E;
 }
