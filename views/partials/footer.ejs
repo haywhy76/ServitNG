@@ -3,16 +3,25 @@
     
     <hr class="hrfooterline">
                     <p class="africanerds">	&copy; 2019 African Nerds.</p>
-               <img src="/images/facebook.jpg" height="32" width="32">
-               <img src="/images/instagram.jpg" height="32" width="32">
-               <img src="/images/twitter.jpg" height="32" width="32">
-     
+              <a href="https://www.fb.com/servitng" target="_blank"> <img src="/images/facebook.jpg" height="32" width="32"></a>
+              <a href="https://instagram.com/africannerds_" target="_blank"> <img src="/images/instagram.jpg" height="32" width="32"></a>
+              <a href="https://twitter.com/africanerds" target="_blank"><img src="/images/twitter.jpg" height="32" width="32"></a>
+              <a href="mailto:hello@servit.ng" target="_blank"><img src="/images/mail.png" height="32" width="32"></a>
     </div> 
     
 <script src="http://code.jquery.com/jquery-3.4.1.js"integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <script src="/js/app.js"></script>
 <script src="/js/accordion.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $("nav").find("li").on("click", "a", function () {
+            $('.navbar-collapse.in').collapse('hide');
+        });
+    });
+    </script>
+    
 
 <script>
   $(document).ready(function() {
