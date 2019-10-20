@@ -21,16 +21,13 @@
       <div class="container">
         <nav class="navbar navbar-default ">
           <div class="container-fluid">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
+            
+             
               <a class="navbar-brand" href="/jobs"><img src="/images/logo.png"></a>
 
+              <div class="mynavs">
+                   <span style=" margin-top:-15px; color: #4A724E;font-size:30px;cursor:pointer" onclick="openNav()">&#9776; </span>
+                </div>
 
               <div id="myNav" class="overlay">
                   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -43,46 +40,16 @@
                         <a href="/login" >Login <i class="fa fa-user"></i></a>
                     <% }else{ %> 
                     <a href="/jobs/new"> Submit A Listing <i class="fa fa-pencil"></i></a>
+                    <p>Signed In As <%= currentUser.username %></p>
                     <a href="/settings/view">Settings</a>
                     <a href="/keylinks">Keylinks </a>
                     <a href="/logout" >Signout </a>
                     <% } %>
                   </div>
                 </div>
-                
-                
-
-
-            </div>
-        
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                   
-              
-              <ul class="nav navbar-nav navbar-right header">
-               <% if(!currentUser){ %>
-                <span style=" margin-top:-15px; color: #4A724E;font-size:30px;cursor:pointer" onclick="openNav()">&#9776; </span>
-               
-               <% }else{ %> 
-                <span style="margin-top:-15px; color: #4A724E;font-size:30px;cursor:pointer" onclick="openNav()">&#9776; </span>
-               <% } %>
-              </ul>
-             
-            </div><!-- /.navbar-collapse -->
-          </div><!-- /.container-fluid -->
+          </div>
         </nav>
-
-
-
-
-
-
-
-
-      
-
-
-
 
         <div class="container">
           <% if (error && error.length > 0){%>

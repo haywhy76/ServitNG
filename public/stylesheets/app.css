@@ -1135,6 +1135,9 @@ text-align: center;
     left: 50%;
     transform: translate(-50%, -50%);
   }
+  .mynavs{
+    float:right; 
+}
 
   /* MediaQueries */
 
@@ -1218,8 +1221,9 @@ text-align: center;
    
   }
 
-@media screen and (min-width: 520px) {
 
+@media screen and (min-width: 520px) {
+ 
    
     .navbar-brand{
         margin-top:-15px;
@@ -1237,7 +1241,7 @@ text-align: center;
 }
 
 @media screen and (min-width: 10px) and (max-width: 480px){
-
+  
     .navbar-brand{
         margin-top:-15px;
     }
