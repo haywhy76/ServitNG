@@ -1341,7 +1341,7 @@ text-align: center;
    
 } 
 
-.spinner-wrapper {
+/* .spinner-wrapper {
     position: fixed;
     top: 0;
     left: 0;
@@ -1380,7 +1380,7 @@ left: 48%;
       transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
       -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
     }
-  }
+  } */
   
 
 
