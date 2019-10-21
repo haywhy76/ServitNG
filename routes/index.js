@@ -3,6 +3,8 @@ var express = require("express");
 var router = express.Router();
 var passport = require("passport");
 var User = require("../models/user");
+var subscriber = require("../models/subscribe");
+var contact = require("../models/contact");
 var async = require('async');
 var nodemailer = require('nodemailer');
 var Settings = require("../models/settings");
@@ -56,6 +58,38 @@ router.post("/login", passport.authenticate("local", {
     failureRedirect:"/login"
 }), function(req, res){
         
+});
+
+
+//Handle subscription form
+
+router.post("/subscribe", function(req, res){
+  var email =  req.body.subscriberemail;
+  var newSubscriber = {email: email};
+  //create a new subscription and save to DB
+  subscriber.create(newSubscriber, function(err, newlyCreatedSubscriber){
+      if (err){
+          console.log(err);
+      }else{
+        res.redirect("/jobs")
+      }
+  })
+});
+
+//Handle contact form
+router.post("/contactus", function(req, res){
+  var name =  req.body.contactname;
+  var email =  req.body.contactemail;
+  var message =  req.body.contactmessage;
+  var newContact = {name:name, email: email, message:message};
+  //create a new subscription and save to DB
+  contact.create(newContact, function(err, newlyCreatedContact){
+      if (err){
+          console.log(err);
+      }else{
+        res.redirect("/")
+      }
+  })
 });
 
 //Logout route
