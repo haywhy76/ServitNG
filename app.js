@@ -24,8 +24,8 @@ var express    = require("express"),
 
 //requiring routes
 //seedDB();
-var commentRoutes = require("./routes/comments"),
-    tagsRoutes = require("./routes/tags"),
+
+  var  tagsRoutes = require("./routes/tags"),
     keylinksRoutes = require("./routes/keylinks"),
     
     premiumJobRoutes = require("./routes/premiumjobs"),

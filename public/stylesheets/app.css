@@ -1281,6 +1281,16 @@ text-align: center;
         
     }
 
+    .corperformfield{
+        width:150px !important;
+        margin-left: -75px; 
+    }
+
+    .internformfield{
+        width:150px !important;
+        margin-left: -75px; 
+    }
+
     .aboutus{
         margin-top:50px;
         width:350px !important;

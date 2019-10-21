@@ -125,7 +125,7 @@ router.get("/internjobs/:id",middleware.isLoggedIn, function(req, res){
     
 
 //EDIT AN INTERN JOB LISTING
-router.get("/internjobs/:id/edit",function(req, res){ 
+router.get("/internjobs/:id/edit",middleware.checkInternJobOwnership,function(req, res){ 
        
     internjob.findById(req.params.id, function(err, foundinternjob){
                 res.render("internjobs/edit", {internjob: foundinternjob});
@@ -235,15 +235,15 @@ router.get("/corperjobs/:id",middleware.isLoggedIn, function(req, res){
 });
     
 
-//EDIT AN INTERN JOB LISTING
-router.get("/corperjobs/:id/edit",function(req, res){ 
+//EDIT A CORPER JOB LISTING
+router.get("/corperjobs/:id/edit",middleware.checkCorperJobOwnership, function(req, res){ 
        
     corperjob.findById(req.params.id, function(err, foundcorperjob){
                 res.render("corperjobs/edit", {corperjob: foundcorperjob});
     });
 }); 
 
-//UPDATE INTERN JOB LISTING
+//UPDATE CORPER JOB LISTING
 
 router.put("/corperjobs/:id",middleware.checkCorperJobOwnership, function(req, res){
     corperjob.findByIdAndUpdate(req.params.id, req.body.corperjob, function(err, updatedCorperJob){
