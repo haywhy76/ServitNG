@@ -1142,6 +1142,14 @@ text-align: center;
   /* MediaQueries */
 
 @media screen and (max-width: 833px) {
+    .corperformfield{
+        width:200px !important;
+        margin-left: -15px;
+    }
+    .internformfield{
+        width:200px !important;
+        margin-left: -75px;
+    }
 
     #testimonial1, #testimonial2, #testimonial3{
         width:80%;
@@ -1223,7 +1231,7 @@ text-align: center;
 
 
 @media screen and (min-width: 520px) {
- 
+   
    
     .navbar-brand{
         margin-top:-15px;
@@ -1254,6 +1262,7 @@ text-align: center;
         width:200px !important;
         margin-left: -75px;
     }
+    
     .registerusername{
         width:150px !important;
         margin-left: -75px; 
