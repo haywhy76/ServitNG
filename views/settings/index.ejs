@@ -1,5 +1,5 @@
 <% include ../partials/header %>
-<span class="border border-danger">
+
 <div class="container">
 <div class="jumbotron">
   
@@ -30,7 +30,7 @@
                   <h5><a class="header" href="/corperjobs/<%=corperjob._id%>"><i class="fa fa-university" aria-hidden="true"></i> Institution: <%=corperjob.company%> </a></h5>
                    <h5 class="location"><span><i class="fa fa-map-marker" aria-hidden="true"></i> Location: <%=corperjob.location%>  </span></h5>
                     <h5 class="location"> <span><i class="fa fa-users" aria-hidden="true"></i> Position: Corp Member</span></h5>
-                    <p class="locationred"><span>Created on : <%= corperjob.created.toDateString() %></span></p>
+                    <h5 class="locationred"><span><i class="fa fa-calendar"></i>Created on : <%= corperjob.created.toDateString() %></span></h5>
                     
                    
                       <p><a href="/corperjobs/<%=corperjob._id%>"><button class="ui  labeled icon green button"><i class="right arrow icon"></i>More Details</button></a></p>
@@ -54,7 +54,7 @@
               <h4>Phone Number:<br/><%=settings.phonenumber%> </h4>
               <h4>Joined:<br><%= settings.created.toDateString() %></h4>
               <a href="/settings/<%=settings._id%>/edit"><button class="ui  labeled icon green button"><i class="right arrow icon"></i>EDIT PROFILE</button></a>
-
+              <a href="/settings/<%=settings._id%>"><button class="ui  labeled icon green button"><i class="right arrow icon"></i>VIEW PROFILE</button></a>
           </div>
         
 
@@ -62,6 +62,6 @@
 
   </div>
   </div>
-  </span>
 
-        
+
+  <% include ../partials/footer %>

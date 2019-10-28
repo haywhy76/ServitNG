@@ -25,8 +25,11 @@ router.post("/settings",  function(req, res){
     var email  =  req.body.email;
     var location = req.body.location;
     var phonenumber = req.body.phonenumber;
-    var newSettings = {fullname: fullname, email:email, location:location, phonenumber:phonenumber,
-        };
+    var author = {
+        id: req.user._id,
+        username: req.user.username
+    }
+    var newSettings = {fullname: fullname, email:email, location:location, phonenumber:phonenumber, author:author};
     //create settings and save to DB
     Settings.create(newSettings, function(err, newlyCreated){
         if (err){
