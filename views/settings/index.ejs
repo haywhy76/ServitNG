@@ -6,17 +6,57 @@
     <div class="row">
       
           <div class="col-md-9 col-sm-6">
-            <h1 class="currentuser"><%= currentUser.username %></h1>  
-            <a href="/settings/<%=settings._id%>/edit"><button type="button" class="btn btn-info btn-lg settingsbutton"><b>EDIT PROFILE</b></button>
+           <h2 class="settingsheading"> My Listings </h2>
+
+             
+              <% internjobs.forEach(function(internjob){ %>
+                <% if(currentUser && internjob.author.id.equals(currentUser._id)){ %> 
+                <div id="" class="ui piled very padded segment">
+                  <h5><a class="header" href="/internjobs/<%=internjob._id%>"><i class="fa fa-university" aria-hidden="true"></i> Institution: <%=internjob.company%> </a></h5>
+                   <h5 class="location"><span>  <i class="fa fa-map-marker" aria-hidden="true"></i> Location: <%=internjob.location%>  </span></h5>
+                    <h5 class="location"> <span><i class="fa fa-users" aria-hidden="true"></i> Position: Intern</span></h5>
+                    <h5 class="locationred"><span><i class="fa fa-calendar"></i> Created on : <%= internjob.created.toDateString() %></span></h5>
+                    <p><a href="/internjobs/<%=internjob._id%>"><button class="ui  labeled icon green button"><i class="right arrow icon"></i>More Details</button></a></p>
+                </div>  
+                <% } %>
+               <% }); %>    
+              
+
+              
+              <% corperjobs.forEach(function(corperjob){ %>
+                <% if(currentUser && corperjob.author.id.equals(currentUser._id)){ %> 
+                <div id=""class="ui piled very padded segment">
+                  <p class="corperposts">
+                  <h5><a class="header" href="/corperjobs/<%=corperjob._id%>"><i class="fa fa-university" aria-hidden="true"></i> Institution: <%=corperjob.company%> </a></h5>
+                   <h5 class="location"><span><i class="fa fa-map-marker" aria-hidden="true"></i> Location: <%=corperjob.location%>  </span></h5>
+                    <h5 class="location"> <span><i class="fa fa-users" aria-hidden="true"></i> Position: Corp Member</span></h5>
+                    <p class="locationred"><span>Created on : <%= corperjob.created.toDateString() %></span></p>
+                    
+                   
+                      <p><a href="/corperjobs/<%=corperjob._id%>"><button class="ui  labeled icon green button"><i class="right arrow icon"></i>More Details</button></a></p>
+                    </p>
+                    </div>  
+                    <% } %>
+               <% }); %>  
+              
+
+
+
+
+
 
           </div>
 
           <div class="col-md-3 col-sm-6 otherdetails">
-              <h4>Name<br/><%=settings.fullname%> </h4>
-              <h4>Email<br/><%=currentUser.email%> </h4>
-              <h4>Phone Number<br/><%=settings.phonenumber%> </h4>
-              <h4>Joined<br><%= settings.created.toDateString() %></h4>
+              <h4>Username:<br/><%= currentUser.username %> </h4>
+              <h4>Name:<br/><%=settings.fullname%> </h4>
+              <h4>Email:<br/><%=currentUser.email%> </h4>
+              <h4>Phone Number:<br/><%=settings.phonenumber%> </h4>
+              <h4>Joined:<br><%= settings.created.toDateString() %></h4>
+              <a href="/settings/<%=settings._id%>/edit"><button class="ui  labeled icon green button"><i class="right arrow icon"></i>EDIT PROFILE</button></a>
+
           </div>
+        
 
     </div>
 

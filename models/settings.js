@@ -3,6 +3,7 @@ var mongoose  = require("mongoose")
 var settingsSchema = new mongoose.Schema({
     fullname: String,
     location: String,
+    email: String,
     phonenumber: String,
     username: String,
     facebook: String,

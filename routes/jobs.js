@@ -86,12 +86,13 @@ router.post("/internjobs",middleware.isLoggedIn, function(req, res){
     var title =  req.body.title;
     var company  =  req.body.company;
     var location = req.body.location;
+    var allowance = req.body.allowance;
     var author = {
         id: req.user._id,
         username: req.user.username
     }
     var description = req.body.description;
-    var newJob = {title: title, company:company, location:location, description:description, author:author};
+    var newJob = {title: title, company:company, location:location, allowance:allowance, description:description, author:author};
     //create a new job and save to DB
     internjob.create(newJob, function(err, newlyCreated){
         if (err){
@@ -190,19 +191,20 @@ router.get("/corperjobs", middleware.isLoggedIn, function(req, res){
 });
 
 
-// ADD a new intern job
+// ADD a new corper job
 
 router.post("/corperjobs",middleware.isLoggedIn, function(req, res){
    
     var title =  req.body.title;
     var company  =  req.body.company;
     var location = req.body.location;
+    var allowance = req.body.allowance;
     var author = {
         id: req.user._id,
         username: req.user.username
     }
     var description = req.body.description;
-    var newJob = {title: title, company:company, location:location, description:description, author:author};
+    var newJob = {title: title, company:company, location:location, allowance:allowance, description:description, author:author};
     //create a new job and save to DB
     corperjob.create(newJob, function(err, newlyCreated){
         if (err){
@@ -213,13 +215,13 @@ router.post("/corperjobs",middleware.isLoggedIn, function(req, res){
     })
 });
 
-//CREATE a new intern job listing
+//CREATE a new corper job listing
 
 router.get("/corperjobs/new", middleware.isLoggedIn,function(req, res){
     res.render("corperjobs/new")
 });
 
-//SHOW INFO ABOUT AN INTERN JOB LISTING
+//SHOW INFO ABOUT AN CORPER JOB LISTING
 
 router.get("/corperjobs/:id",middleware.isLoggedIn, function(req, res){
     //find the post with provided ID

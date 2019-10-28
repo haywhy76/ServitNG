@@ -5,7 +5,7 @@ var corperjobsSchema = new mongoose.Schema({
     company: String,
     location: String,
     description: String,
-    salary: Number,
+    allowance: Number,
     
     author: {
         id: {

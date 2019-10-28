@@ -1,6 +1,8 @@
 var express = require("express");
 var router = express.Router({mergeParams: true});
 var passport = require("passport");
+var internjob = require("../models/internjobs");
+var corperjob = require("../models/corperjobs");
 var middleware = require("../middleware");
 var Settings = require("../models/settings");
 
@@ -20,10 +22,10 @@ router.get("/settings/view",middleware.isLoggedIn, function(req, res){
 
 router.post("/settings",  function(req, res){
     var fullname =  req.body.fullname;
-    // var email  =  req.body.email;
+    var email  =  req.body.email;
     var location = req.body.location;
     var phonenumber = req.body.phonenumber;
-    var newSettings = {fullname: fullname, location:location, phonenumber:phonenumber,
+    var newSettings = {fullname: fullname, email:email, location:location, phonenumber:phonenumber,
         };
     //create settings and save to DB
     Settings.create(newSettings, function(err, newlyCreated){
@@ -64,11 +66,31 @@ router.get("/settings/:id",middleware.isLoggedIn, function(req, res){
         if(err){
             console.log(err);
         }else{
-            //render show template with that campground
-             res.render("settings/index", {settings: foundSettings});
+            settings= foundSettings; 
         }
     });
-    
+    internjob.find({},  function(err, allInternJobs){
+
+        if (err){
+            console.log(err);
+        }
+        else{
+            internjobs=allInternJobs;
+        }
+    }).sort({'_id':-1});
+
+    corperjob.find({},  function(err, allCorperJobs){
+
+        if (err){
+            console.log(err);
+        }
+        else{
+            corperjobs=allCorperJobs;
+            res.render("settings/index",{settings:settings,internjobs:internjobs,corperjobs:corperjobs,});
+        }
+    }).sort({'_id':-1});
+
+   
 });
 
 

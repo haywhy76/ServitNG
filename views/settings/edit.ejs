@@ -5,25 +5,23 @@
         <form class="ui form form col-xs-12" action="/settings/<%=settings._id %>?_method=PUT" method="POST"> 
                
         <div class="field">
-                <input type="text" name="editsettings[fullname]" placeholder="Firstname Surname" value="<%= settings.fullname %>">
+                <p class="settingsformfield"> <input type="text" name="editsettings[fullname]" placeholder="Firstname Surname" value="<%= settings.fullname %>"></p>
         </div>
-        <div class="field">
-                <input type="email" name="editsettings[email]" placeholder="email address"  value="<%= settings.email %>">
-        </div>
+        
 
         <div class="field">
-                <input type="text" name="editsettings[location]" placeholder="location (State)" value="<%= settings.location %>">
+                <p class="settingsformfield"><input type="text" name="editsettings[location]" placeholder="location (State)" value="<%= settings.location %>"></p>
         </div>
         <div class="field">
-                <input type="text" name="editsettings[phonenumber]" placeholder="phone number" value="<%= settings.phonenumber %>">
-        </div>
-        
-        <div class="field">
-                <input type="text" name="editsettings[username]" value="<%= currentUser.username %>" readonly>
+                <p class="settingsformfield"><input type="text" name="editsettings[phonenumber]" placeholder="phone number" value="<%= settings.phonenumber %>"></p>
         </div>
         
         <div class="field">
-                <input type="password" name="editsettings[password]" placeholder="password">
+                <p class="settingsformfield"> <input type="text" name="editsettings[username]" value="<%= currentUser.username %>" readonly></p>
+        </div>
+        
+        <div class="field">
+                <p class="settingsformfield"> <input type="password" name="editsettings[password]" placeholder="password"></p>
         </div>
         
         

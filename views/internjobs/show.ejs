@@ -7,6 +7,7 @@
                 <h3 class="location"><i class="fa fa-university" aria-hidden="true"></i><b> Institution:</b> <%=internjob.company%></h3>
                 <h3 class="locationlocation"><i class="fa fa-map-marker" aria-hidden="true"></i><b>   Location:</b> <%=internjob.location%></h3>
                 <h3 class="location"><i class="fa fa-users" aria-hidden="true"></i><b> Looking For:</b> An Intern</h3>
+                <h3 class="location"><i class="fa fa-money" aria-hidden="true"></i><b>   Allowance:</b> &#8358; <%=internjob.allowance%></h3>
                 <p class="jobcreated"><i class="fa fa-calendar"></i> Created On: <%= internjob.created.toDateString() %></p>
                 <p class="backbutton"><button class="ui green basic button"><a href="/internjobs"><< Back</a></button></p>
                 <div class="item">     
@@ -18,11 +19,13 @@
                     <p class="jobdescription"><%=internjob.description%></p>
                 </div>
                 <br>
-                
+                <% if(currentUser && internjob.author.id.equals(currentUser._id)){ %> 
+
                     <a class="ui grey button" href="/internjobs/<%=internjob._id%>/edit">EDIT</a>
                     <form id="delete" action="/internjobs/<%=internjob._id%>?_method=DELETE" method="POST"> 
                         <button class="ui red button">DELETE</button>
                     </form>
+                    <% } %>
                </p>
                 </div>
                 <br>
