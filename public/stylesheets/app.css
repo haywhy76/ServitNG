@@ -1156,6 +1156,17 @@ text-align: center;
     border-bottom: 1px solid #4A724E ; /* This creates the border. Replace black with whatever color you want. */
 }
 
+.sidenote{
+    text-align: justify;
+    color:#ffffff;
+    font-size: 1.09571429rem;
+}
+
+.showsidenote{
+    text-align: justify;
+    
+    font-size: 1.09571429rem;
+}
   /* MediaQueries */
 
 @media screen and (max-width: 833px) {
