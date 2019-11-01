@@ -1,0 +1,79 @@
+<% include partials/header %>
+
+<div class="container">
+    <div class="row">
+        <div class=" segment col-md-8 ">
+            <h2 class="settingsheading"> My Listings </h2>
+
+             
+            <% internjobs.forEach(function(internjob){ %>
+              <% if(currentUser && internjob.author.id.equals(currentUser._id)){ %> 
+              <div id="" class="ui piled very padded segment">
+                <h5><a class="header" href="/internjobs/<%=internjob._id%>"><i class="fa fa-university" aria-hidden="true"></i> Institution: <%=internjob.company%> </a></h5>
+                 <h5 class="location"><span>  <i class="fa fa-map-marker" aria-hidden="true"></i> Location: <%=internjob.location%>  </span></h5>
+                  <h5 class="location"> <span><i class="fa fa-users" aria-hidden="true"></i> Position: Intern</span></h5>
+                  <h5 class="locationred"><span><i class="fa fa-calendar"></i> Created on : <%= internjob.created.toDateString() %></span></h5>
+                  <p><a href="/internjobs/<%=internjob._id%>"><button class="ui  labeled icon green button"><i class="right arrow icon"></i>More Details</button></a></p>
+              </div>  
+              <% } %>
+             <% }); %>    
+            
+
+            
+            <% corperjobs.forEach(function(corperjob){ %>
+              <% if(currentUser && corperjob.author.id.equals(currentUser._id)){ %> 
+              <div id=""class="ui piled very padded segment">
+                <p class="corperposts">
+                <h5><a class="header" href="/corperjobs/<%=corperjob._id%>"><i class="fa fa-university" aria-hidden="true"></i> Institution: <%=corperjob.company%> </a></h5>
+                 <h5 class="location"><span><i class="fa fa-map-marker" aria-hidden="true"></i> Location: <%=corperjob.location%>  </span></h5>
+                  <h5 class="location"> <span><i class="fa fa-users" aria-hidden="true"></i> Position: Corp Member</span></h5>
+                  <h5 class="locationred"><span><i class="fa fa-calendar"></i>Created on : <%= corperjob.created.toDateString() %></span></h5>
+                  
+                 
+                    <p><a href="/corperjobs/<%=corperjob._id%>"><button class="ui  labeled icon green button"><i class="right arrow icon"></i>More Details</button></a></p>
+                  </p>
+                  </div>  
+                  <% } %>
+             <% }); %>  
+            
+            </p>
+        </div>
+
+        <div class="col-md-1 ">
+        </div>
+
+
+    <div id="premium" class="col-md-3 ui segment">
+            <p class="profile">Profile</p>
+            <h4>Username: <%= currentUser.username %> </h4>
+
+              <h4>Email: <%=currentUser.email%> </h4>
+
+              <% settings.forEach(function(setting){ %>
+                <% if(currentUser._id.equals(setting.author.id)){ %> 
+              <h4>Name: <%=setting.fullname%> </h4>
+              <h4>Phone Number: <%=setting.phonenumber%> </h4>
+              <h4>Joined: <%= setting.created.toDateString() %></h4>
+              <a href="/settings/<%=setting._id%>/edit"><button class="ui  labeled icon green button"><i class="right arrow icon"></i>EDIT PROFILE</button></a>
+             
+              <% } %>
+              <% }); %>   
+            </div>
+</div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<% include partials/footer %>

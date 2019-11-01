@@ -37,13 +37,13 @@
                         <a href="/#faq"> F.A.Q </a>
                         <a href="/#contactus"> Contact </a>
                         <a href="/register"> Sign Up <i class="fa fa-user-plus"></i></a>
-                        <a href="/login" >Login <i class="fa fa-user"></i></a>
+                        <a href="/login" >Login <i class="fa fa-sign-in"></i></a>
                     <% }else{ %> 
-                    <a href="/jobs/new"> Submit A Listing <i class="fa fa-pencil"></i></a>
-                    <p>Signed In As <%= currentUser.username %></p>
-                 
-                    <a href="/keylinks">Keylinks </a>
-                    <a href="/logout" >Signout </a>
+                      <p>Signed In As <%= currentUser.username %></p>
+                    <a href="/jobs/new"> <i class="fa fa-pencil"></i> Submit A Listing </a>
+                    <a href="/mylistings"><i class="fa fa-bookmark"></i> My Listings </a>
+                    <a href="/keylinks"><i class="fa fa-key"></i> Keylinks </a>
+                    <a href="/logout"><i class="fa fa-sign-out"></i> Signout </a>
                     <% } %>
                   </div>
                 </div>

@@ -36,6 +36,7 @@ var express    = require("express"),
     settingsRoutes = require("./routes/settings")
     companyRoutes = require("./routes/company")
     positionRoutes = require("./routes/position")
+    mylistingRoutes = require("./routes/mylistings")
     locationRoutes = require("./routes/location")
    
     imageUploadRoutes = require("./routes/imageupload")
@@ -92,6 +93,7 @@ app.use(locationRoutes);
 app.use(resetRoutes);
 app.use(forgotRoutes);
 app.use(imageUploadRoutes);
+app.use(mylistingRoutes);
 
 
 app.use(faqRoutes);

@@ -5,12 +5,11 @@ var router = express.Router({mergeParams: true});
 
 
 router.get("/keylinks", function(req, res){
-    Settings.find({},function(err, foundSettings){
+    Settings.find({},function(err, foundSetting){
         if(err){
             console.log(err);
         }else{
-            settings= foundSettings; 
-            res.render("keylinks", {settings:settings});
+            res.render("keylinks", {settings:foundSetting});
         }
     });
    

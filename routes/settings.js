@@ -114,7 +114,7 @@ router.put("/settings/:id", middleware.isLoggedIn, function(req, res){
              res.redirect("/jobs");
          }
          else{
-             res.redirect("/settings/" + req.params.id);
+             res.redirect("/mylistings");
          }
          });
          });
