@@ -1280,7 +1280,10 @@ text-align: center;
 
 
 @media screen and (min-width: 520px) {
-   
+    .settingsformfield{
+        width:200px !important;
+        margin-left: -15px;
+    }
    
     .navbar-brand{
         margin-top:-15px;
