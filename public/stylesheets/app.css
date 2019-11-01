@@ -1189,7 +1189,7 @@ text-align: center;
 @media screen and (max-width: 833px) {
     .corperformfield{
         width:200px !important;
-        margin-left: -15px;
+        margin-left: -75px;
     }
     .internformfield{
         width:200px !important;
@@ -1197,7 +1197,7 @@ text-align: center;
     }
     .settingsformfield{
         width:200px !important;
-        margin-left: -15px;
+        margin-left: -75px;
     }
 
     #testimonial1, #testimonial2, #testimonial3{
@@ -1282,7 +1282,7 @@ text-align: center;
 @media screen and (min-width: 520px) {
     .settingsformfield{
         width:200px !important;
-        margin-left: -15px;
+        margin-left: -75px;
     }
    
     .navbar-brand{
@@ -1308,7 +1308,7 @@ text-align: center;
 
     .corperformfield{
         width:200px !important;
-        margin-left: -15px;
+        margin-left: -75px;
     }
     .internformfield{
         width:200px !important;
@@ -1316,7 +1316,7 @@ text-align: center;
     }
     .settingsformfield{
         width:200px !important;
-        margin-left: -15px;
+        margin-left: -75px;
     }
     
     .registerusername{
