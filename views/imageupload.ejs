@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Upload Images to Server</title>
+    <meta charset="utf-8">
+    
+</head>
+<body>
+
+<h1>Upload Image</h1>
+ 
+<form action="/imageupload" method="post" enctype="multipart/form-data">
+        <input type="file" accept="image/*" name="photo" >
+        <input type="submit" value="upload">
+</form>
+            
+
+<img id="img" style="display:block"></img>
+
+</body>
+</html>

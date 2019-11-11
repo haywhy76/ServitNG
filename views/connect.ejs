@@ -1,0 +1,153 @@
+<% include partials/header %>
+
+<!--CSS Spinner-->
+<div class="spinner-wrapper">
+        <div class="spinner"></div>
+        </div>
+
+<div class="container homepageweconnect">
+    <div class="row">
+    <div class="col-md-5 col-sm-12 col-xs-12">
+        <div id="typedtext"></div>
+           <p class="mobiledescription">We <br>
+                Connect<br>
+               Institutions With<br>
+                IT Students &<br>
+               Corp Members.
+                </p>
+        
+            <p class="homepagebuttons">
+              
+                    <a href="/internjobs"><button type="button" class="btn btn-default btn-lg itbutton">Looking For An IT Placement? </button></a>
+                    <a href="/corperjobs"><button type="button" class="btn btn-default btn-lg nyscbutton">Looking For An NYSC PPA?</button></a>
+            </p>
+    </div>
+    
+    
+
+    <div class="col-md-7  homepageimage" id="homepageimage">
+        <img alt="Image" style="height: 420px; width: 600px;" src="/images/loginpageimage.jpg">
+    </div>
+    
+</div>
+
+<div id="aboutus">
+<div class="container aboutus">
+        <div class="jumbotron">
+        <h2 class="aboutusheading"><i class="fa fa-users" aria-hidden="true"></i> We Serve As An Intermediary.</h2>
+        <br>
+        <p>We know how stressful looking for an IT placement or an NYSC PPA after redeploying can be, So we are here to ease you of that stress. Employers and Institutions has already listed openings in their companies, all you have to do is apply.</p>
+        <p class="movegetstartedbutton"> <a href="/register"><button type="button" class="btn btn-default btn-lg getstartedbutton">Get Started</button></a></p> 
+        </div>
+</div>
+</div>
+
+<div id="faq">
+        <div class="container faq">
+        <div class="">
+        <h2 class="faqheading"><i class="fa fa-question-circle fa-lg" aria-hidden="true"></i> Frequently Asked Questions</h2>
+        <div class="accordion-container">
+        <div class="ac">
+        <h2 class="ac-q" tabindex="0">Are our services Free?</h2>
+        <div class="ac-a">
+        <p>Yes, Our services are free but there is a paid plan called premium.</p>
+        </div>
+        </div>
+                              
+        <div class="ac">
+        <h2 class="ac-q" tabindex="0">Whats the premium plan?</h2>
+        <div class="ac-a">
+        <p>With the paid or premium plan, You can be 100% sure you will get an IT placement or NYSC PPA from the premium listings we have <a href="/premiumjobs">here.</a></p>
+        </div>
+        </div>
+                              
+        <div class="ac">
+        <h2 class="ac-q" tabindex="0">Do i get a refund if i pay and  dont get an IT Placement or Nysc ppa?</h2>
+        <div class="ac-a">
+        <p>Yes. You will.</p>
+        </div>
+        </div>
+        </div> 
+        </div>
+        </div>
+</div>
+
+<div id="testimonials">
+        <div class="container faq">
+        <h2 class="faqheadingt"><i class="fa fa-bookmark" aria-hidden="true"></i> Testimonials</h2>
+        <p class="testimonialdescription1">- What people have to say -</p>
+        <div class="row">
+                <p class="testimonials">
+                <div id="testimonial1" class="col-md-3  ui segment">
+                <!-- <p class="ptestimonial2image"> <img class="testimonial2image" src="/images/testimonial1image.jpg" width="150px" height="180px"></p> -->
+                <p class="testimonialdescription">I want to let you know that the premium plan on SERVIT actually works.<br>With a little token i was able to get a PPA at top company in Nigeria. 
+                You made the process so easy and enjoyable<br> Thank you. <br><br> <span class="testimonialauthor"><i class="fa fa-bookmark" aria-hidden="true"></i> Adeniran Ayomide (Graduate), FUTA.</span></p>
+                </div>
+                <div id="testimonial2" class="col-md-3  ui segment">
+                <!-- <p class="ptestimonial2image"> <img class="testimonial2image" src="/images/testimonial2image.jpg" width="200px" height="180px"></p> -->
+                <p class="testimonialdescription">I am writing to let you know that I got an Internship offer. 
+                I received multiple interviews with top companies from your platform and today I was offered an Internship position. I am so excited.
+                 <br>Thank you!!! <br><br> <span class="testimonialauthor"><i class="fa fa-bookmark" aria-hidden="true"></i> Dokot Rejoice, CONVENANT UNIVERSITY.</span></p>
+                </div>
+                <div id="testimonial3" class="col-md-3  ui segment">
+                <!-- <p class="ptestimonial2image"> <img class="testimonial2image" src="/images/testimonial3image.jpg" width="150px" height="180px"></p> -->
+                <p class="testimonialdescription">I had been looking for a PPA for over 2 months since i redeployed to Abuja, until i discovered ServitNG.
+                It was rewarding getting to know about your platform, <br>Thank you for your help. 
+                <br><br>
+                <br><span class="testimonialauthor"><i class="fa fa-bookmark" aria-hidden="true"></i> Chioma Emeka, ESUT.</span></p>
+                </div>
+                </p>
+        </div>
+        </div>
+</div>
+
+<div id="contactus">
+        <div class="container contactus">
+                <div class="jumbotron">
+                <h2 class="contactusheading"> <i class="fa fa-map-marker fa-lg" aria-hidden="true"></i>  Get In Touch</h2>
+                <br>                  
+                <div class="row">
+                <div class="col-md-7 col-sm-12 col-xs-12">
+                <div id="contactform">
+                <div class="row">
+                <form class="col s12" action="/contactus" method="POST">
+                <div class="row">
+                <div class="input-field col s6">
+                <i class="material-icons prefix">account_circle</i>
+                <input id="icon_prefix" type="text" class="validate" name="contactname">
+                <label for="icon_prefix"> Name</label>
+                </div>
+                <div class="row">
+                <div class="input-field col s5">
+                <i class="material-icons prefix">mail</i>
+                <input id="email" type="email" class="validate" name="contactemail">
+                <label for="email">Email</label>
+                </div>
+                </div>
+                <div class="input-field col s6">
+                <i class="material-icons prefix">mode_edit</i>
+                <input id="message" type="text" class="validate" name="contactmessage">
+                <label for="message">Message</label>
+                </div>
+                </div>     
+                <button type="submit" class="btn btn-default btn-lg loginsubmitbutton">SUBMIT </button>                 
+                </form>
+                </div>
+                </div>
+                </div>
+                <div class="col-md-5 col-sm-12 col-xs-12">
+                <p><i class="fa fa-map-marker fa-lg" aria-hidden="true"></i> Wuse, Zone 6, Abuja.</p>
+                <p><i class="fa fa-phone-square" aria-hidden="true"></i> +2348037879130</p>
+                <p><i class="fa fa-envelope" aria-hidden="true"></i> hello@servitng.com</p>
+                </div>
+                </div>
+                           
+                </div>
+        </div>
+        </div>
+
+
+</div>
+
+
+<% include partials/footer %>

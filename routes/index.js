@@ -3,6 +3,15 @@ var express = require("express");
 var router = express.Router();
 var passport = require("passport");
 var User = require("../models/user");
+var nyscnew = require("../models/nyscnews");
+var nyscnewsthree = require("../models/nyscnews");
+var nyscnewsfour = require("../models/nyscnews");
+var nyscnewsfive = require("../models/nyscnews");
+var campexperience = require("../models/campexperiences");
+var campexperiencesthree = require("../models/campexperiences");
+var campexperiencesfour = require("../models/campexperiences");
+var campexperiencesfive = require("../models/campexperiences");
+let gfs
 var subscriber = require("../models/subscribe");
 var contact = require("../models/contact");
 var async = require('async');
@@ -12,9 +21,127 @@ var internjob = require("../models/internjobs");
 
 // Landing Page
 router.get("/", function(req, res){
-    res.render("landing")
+    nyscnew.find({},  function(err, allNyscNews){
+        if (err){
+            console.log(err);
+        }
+        else{
+            nyscnews=allNyscNews;
+        }
+    }).limit(1).sort({'_id':-1});
+
+    nyscnew.find({},  function(err, allNyscNewsThree){
+        if (err){
+            console.log(err);
+        }
+        else{
+            nyscnewsthree=allNyscNewsThree;
+        }
+    }).limit(3).sort({'_id':-1});
+
+    nyscnew.find({},  function(err, allNyscNewsFour){
+        if (err){
+            console.log(err);
+        }
+        else{
+            nyscnewsfour=allNyscNewsFour;
+        }
+    }).skip(3).limit(3).sort({'_id':-1}); 
+
+    nyscnew.find({},  function(err, allNyscNewsFive){
+        if (err){
+            console.log(err);
+        }
+        else{
+            nyscnewsfive=allNyscNewsFive;
+        }
+    }).skip(6).limit(3).sort({'_id':-1}); 
+
+    campexperience.find({},  function(err, allCampExperiencesThree){
+        if (err){
+            console.log(err);
+        }
+        else{
+            campexperiencesthree=allCampExperiencesThree;
+        }
+    }).limit(3).sort({'_id':-1});
+
+    campexperience.find({},  function(err, allCampExperiencesFour){
+        if (err){
+            console.log(err);
+        }
+        else{
+            campexperiencesfour=allCampExperiencesFour;
+        }
+    }).skip(3).limit(2).sort({'_id':-1});
+
+    campexperience.find({},  function(err, allCampExperiencesFive){
+        if (err){
+            console.log(err);
+        }
+        else{
+            campexperiencesfive=allCampExperiencesFive;
+        }
+    }).skip(6).limit(2).sort({'_id':-1});
+
+    campexperience.find({},  function(err, allCampExperiences){
+
+        if (err){
+            console.log(err);
+        }
+        else{
+            campexperiences=allCampExperiences;
+            res.render("landing",{nyscnews:nyscnews,nyscnewsthree: nyscnewsthree, nyscnewsfour:nyscnewsfour, nyscnewsfive:nyscnewsfive, campexperiencesthree:campexperiencesthree, campexperiencesfour:campexperiencesfour, campexperiencesfive:campexperiencesfive, campexperiences:campexperiences});
+        }
+    }).limit(1).sort({'_id':-1});
+    
+})
+
+router.get("/connect", function(req, res){
+    res.render("connect")
 
 })
+
+//IMAGE UPLOAD
+
+// router.get("/imageupload", function(req,res){
+// 	res.render("imageupload")
+// })
+
+// router.post('/imageupload', upload.single('photo'), (req, res) => {
+//     if(req.file) {
+//         res.json(req.file);
+//         res.redirect("imageupload");
+//     }
+//     else throw 'error';
+//     document
+//   .getElementById('img')
+//   .setAttribute('src', `mongodb+srv://itandppa:itandppa@clusteritandppa-ffmfj.mongodb.net/test?retryWrites=true&w=majority/${file[0].name}`)
+// });
+
+//VIEW
+// router.get('/imageupload', (req, res) => {
+//     gfs.files.findOne({ filename: req.params.filename }, (err, file) => {
+//       // Check if file
+//       if (!file || file.length === 0) {
+//         return res.status(404).json({
+//           err: 'No file exists',
+//         })
+//       }
+  
+//       // Check if image
+//       if (file.contentType === 'image/jpeg' || file.contentType === 'image/png') {
+//         // Read output to browser
+//         const readstream = gfs.createReadStream(file.filename)
+//         readstream.pipe(res)
+//       } else {
+//         res.status(404).json({
+//           err: 'Not an image',
+//         })
+//       }
+//     })
+//   })
+
 
 //===========
 //AUTH ROUTES
@@ -44,7 +171,7 @@ router.post("/register", function(req, res){
     });
 });
 
- 
+
 //Show login form
 
 router.get("/login", function(req, res){
@@ -103,69 +230,6 @@ router.get("/logout", function(req, res){
 
 
 
-// RESET TOKEN
 
-router.get("/reset/:token", function(req, res) {
-  User.findOne({ resetPasswordToken: req.params.token, resetPasswordExpires: { $gt: Date.now() } }, function(err, user) {
-    if (!User) {
-      req.flash('error', 'Password reset token is invalid or has expired.');
-      return res.redirect('/forgot');
-    }
-    res.render('reset', {
-      currentUser: req.user
-    });
-  });
-});
-
-
-router.post("/reset/:token", function(req, res) {
-  async.waterfall([
-    function(done) {
-      User.findOne({ resetPasswordToken: req.params.token, resetPasswordExpires: { $gt: Date.now() } }, function(err, user) {
-        if (!User) {
-          req.flash('error', 'Password reset token is invalid or has expired.');
-          return res.redirect('back');
-        }
-
-        User.password = req.body.password;
-        User.resetPasswordToken = undefined;
-        User.resetPasswordExpires = undefined;
-        
-        User.save(function(err) {
-          req.logIn(user, function(err) {
-            done(err, user);
-          });
-        });
-
-      
-
-      });
-    },
-    function(user, done) {
-     var smtpTransport = nodemailer.createTransport({
-        service: 'SendGrid',
-        host:'smtp.sendgrid.net',
-        port: 465,
-        auth: {
-          user: 'apikey',
-          pass: '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'
-        }
-      });
-      var mailOptions = {
-        to: user.email,
-        from: 'passwordreset@demo.com',
-        subject: 'Your password has been changed',
-        text: 'Hello,\n\n' +
-          'This is a confirmation that the password for your account ' + user.email + ' has just been changed.\n'
-      };
-      smtpTransport.sendMail(mailOptions, function(err) {
-        req.flash('success', 'Success! Your password has been changed.');
-        done(err);
-      });
-    }
-  ], function(err) {
-    res.redirect('/jobs');
-  });
-});
 
 module.exports = router;

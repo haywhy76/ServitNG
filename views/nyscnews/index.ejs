@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Servit | NYSC News</title>
+        <meta name='viewport' content='width=device-width' />
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Cantarell&display=swap" rel="stylesheet">
+       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+        <link rel="stylesheet"  href="/stylesheets/app.css">
+        <link rel="stylesheet"  href="/stylesheets/blog.css">
+        <link rel="stylesheet"  href="/stylesheets/app.scss">
+        <link rel="stylesheet"  href="/stylesheets/accordion.min.css">
+        <link rel="shortcut icon" href="/images/ico.png">
+    </head>
+    <body>
+        
+      <div class="container">
+        <nav class="navbar navbar-default ">
+          <div class="container-fluid">
+            
+             
+              <a class="navbar-brand" href="/"><img src="/images/logo.png"></a>
+
+              <div class="mynavs">
+                   <span style=" margin-top:-15px; color: #4A724E;font-size:30px;cursor:pointer" onclick="openNav()">&#9776; </span>
+                </div>
+
+              <div id="myNav" class="overlay">
+                  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                  <div class="overlay-content">
+                      <% if(!currentUser){ %>
+                        <a href="nyscnews"> NYSC News </a>
+                        <a href="/campexperiences"> Camp Experiences </a>
+                        <a href="/#contactus"> Flatmates/Apartments </a>
+                        <a href="/register">Find your way to camp</a>
+                    <% }else{ %> 
+                      <p>Signed In As <%= currentUser.username %></p>
+                    <a href="/jobs/new"> <i class="fa fa-pencil"></i> Submit A Listing </a>
+                    <a href="/mylistings"><i class="fa fa-bookmark"></i> My Listings </a>
+                    <a href="/keylinks"><i class="fa fa-key"></i> Keylinks </a>
+                    <a href="/logout"><i class="fa fa-sign-out"></i> Signout </a>
+                    <% } %>
+                  </div>
+                </div>
+                  
+          </div>
+        </nav>
+
+        <div class="container">
+          <% if (error && error.length > 0){%>
+            <div class="alert alert-danger" role="alert">
+             <%= error %>
+          </div>
+          <%}%>
+
+          <% if (success && success.length > 0){%>
+            <div class="alert alert-success" role="alert">
+               <%= success %>
+            </div>
+            <%}%>
+        </div>
+ 
+
+        
+ </div>
+
+ <div class="container">
+    <p class="jobpageheading">GET A PLACEMENT AND PPA FOR JUST N1000</p>
+    <hr class="nyscnewsindexhrline">
+    <div class="row">
+
+      <div id="" class="col-md-8 ">
+        <% nyscnews.forEach(function(nyscnew){ %>
+          <div>
+              <hr class="nyscnewsindexhrline">
+              <h5 class="nyscnewsindextitle"><a class="" href="/nyscnews/<%=nyscnew._id%>"> <%=nyscnew.newstitle%> </a></h5>
+            <h5 class="nyscnewsindexlocation"><span> By <%= nyscnew.author.username %> | <%= nyscnew.created.toDateString() %></span></h5>
+            <p><a href="/nyscnews/<%=nyscnew._id%>"><button class="ui  labeled icon green button"><i class="right arrow icon"></i>Read More</button></a></p>
+            </div>
+         <% }); %> 
+        </div>
+
+        <div id="" class="col-md-1" ></div>
+        <div id="premium" class="col-md-3 ui segment" >
+    
+            <div >
+              <h3 class="us">Notice</h3>
+              <p class="premiumdescription">&#8358;5,000 will be deducted from your first salary if you secure an IT placement/PPA via this medium.</p>
+            </div>  
+           
+
+ 
+             <hr class="hrline">
+             <h3 class="design">Newsletter</h3>
+              <p class="subsciptiontext">Get contents delivered to your email</p>
+
+              <form id="subscriptionform" class="ui form form" action="/subscribe" method="POST"> 
+              <div class="field">
+                  <p class="subscriptionforminput"><input type="text" name="subscribe" placeholder="Enter Your Email Address" required></p>
+        
+                  <p class="subscribebutton"><button class="ui green button">Subscribe</button></p>
+                </div>
+              </form>
+              <hr class="hrline">
+              <h3 class="design">Connect with us </h3>
+              <p class="social">
+                <a href="https://www.fb.com/servitng" target="_blank"> <img src="/images/facebook.jpg" height="32" width="32"></a>
+    <a href="https://instagram.com/servit.ng" target="_blank"> <img src="/images/instagram.jpg" height="32" width="32"></a>
+    <a href="https://twitter.com/servitng" target="_blank"><img src="/images/twitter.jpg" height="32" width="32"></a>
+    <a href="mailto:hello@servit.ng" target="_blank"><img src="/images/mail.png" height="32" width="32"></a>
+              </p>
+           
+               
+          </div>        
+  </div>
+  </div>
+</div>
+ </body>
+
+
+
+<% include ../partials/footer %>

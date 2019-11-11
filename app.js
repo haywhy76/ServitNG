@@ -6,12 +6,20 @@ var express    = require("express"),
     flash     =  require("connect-flash"),
     methodOverride = require("method-override");
     mongoose   = require("mongoose"),
+    multer = require('multer'),
+    GridFsStorage = require('multer-gridfs-storage'),
+    url = 'mongodb+srv://itandppa:itandppa@clusteritandppa-ffmfj.mongodb.net/test?retryWrites=true&w=majority',
+    storage = new GridFsStorage({ url }),
+    upload = multer({ storage }),
     bodyParser = require("body-parser");
     Forumpost = require("./models/qsforum")
-    Comment = require("./models/comment"),
+    Comment = require("./models/nyscnewscomments"),
     internjob = require("./models/internjobs")
+    Comment   = require("./models/nyscnewscomments"),
     internjob = require("./models/corperjobs")
     Setting = require("./models/settings")
+    nyscnews = require("./models/nyscnews")
+    campexperiences = require("./models/campexperiences")
     passport = require("passport"),
     LocalStrategy = require("passport-local"),
     User = require("./models/user");
@@ -20,7 +28,7 @@ var express    = require("express"),
     multer = require("multer");
     GridFsStorage = require("multer-gridfs-storage");
     Grid = require("gridfs-stream");
-   
+    conn = mongoose.createConnection(url)
 
 //requiring routes
 //seedDB();
@@ -38,8 +46,10 @@ var express    = require("express"),
     positionRoutes = require("./routes/position")
     mylistingRoutes = require("./routes/mylistings")
     locationRoutes = require("./routes/location")
-   
+    nyscNewsRoutes = require("./routes/nyscnews")
+    nysccommentRoutes    = require("./routes/nyscnewscomments")
     imageUploadRoutes = require("./routes/imageupload")
+    campExperienceRoutes = require("./routes/campexperiences")
    
     faqRoutes = require("./routes/faq")
     contactRoutes = require("./routes/contact")
@@ -63,6 +73,8 @@ app.use(require("express-session")({
  app.use(passport.initialize());
  app.use(passport.session());
 passport.use(new LocalStrategy(User.authenticate()));
+
+
 
 
 
@@ -94,18 +106,24 @@ app.use(resetRoutes);
 app.use(forgotRoutes);
 app.use(imageUploadRoutes);
 app.use(mylistingRoutes);
-
-
 app.use(faqRoutes);
 app.use(contactRoutes);
-
+app.use(nyscNewsRoutes);
+app.use(nysccommentRoutes);
+app.use(campExperienceRoutes);
 
 
 
 mongoose.connect('mongodb+srv://itandppa:itandppa@clusteritandppa-ffmfj.mongodb.net/test?retryWrites=true&w=majority')
 
 
+// let gfs
 
+// conn.once('open', () => {
+//   gfs = Grid(conn.db, mongoose.mongo)
+//   gfs.collection('uploads')
+//   console.log('Connection Successful')
+// })
 
 
 

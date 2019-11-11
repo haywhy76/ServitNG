@@ -1,0 +1,168 @@
+.nyscnewsindextitle{
+    font-size:18px;
+   color: #000000!important;
+   text-transform: capitalize;
+}
+
+.nyscnewslandingtitle{
+    font-size:18px;
+    float:right;
+    color: #000000;
+
+}
+.nyscnewsindexlocation{
+    padding-left:3px;
+    color: #000000;
+    font-size: 15px;
+    
+}
+
+.nyscnewslandinglocation{
+    padding-left:3px;
+    color: #000000;
+    font-size: 15px;
+}
+
+
+.nyscnewsindexbutton{
+    float:right;
+}
+.nyscnewsindexhrline{
+    border: 2px solid #EFEFF0;
+    border-radius: 3px;
+    width:100%;
+}
+
+.nyscnewsshowtitle{
+    
+    font-family: 'Cantarell', sans-serif;
+    font-weight:bold;
+    padding-top:20px;
+    letter-spacing: 3px;
+    
+}
+
+.nyscnewsshowbody{
+    padding-left:3px;
+    font-size: 17px;
+    text-align:justify;
+}
+
+.nyscnewsshowdescription{
+    font-size: 18px;
+}
+
+.nyscnewsshowshare{
+    font-size: 16px;
+}
+
+.nyscnewsshowshare:after {
+    content: ""; /* This is necessary for the pseudo element to work. */ 
+    display: block; /* This will put the pseudo element on its own line. */
+    margin: 0 auto; /* This will center the border. */
+    width: 100%; /* Change this to whatever width you want. */
+    padding-top: 20px; /* This creates some space between the element and the border. */
+    border-bottom: 3px solid #000000 ; /* This creates the border. Replace black with whatever color you want. */
+}
+
+
+.nyscnewsshowbody{
+    padding-top:10px;
+    font-family: "Tiempos Text",Georgia,"Times New Roman",serif;
+    line-height: 30px;
+}
+
+.nyscnewsshowothernews{
+    font-family: "Tiempos Text",Georgia,"Times New Roman",serif;
+    font-style: italic;
+    font-size: 22px;
+    line-height: 32px;
+    font-weight: 400;
+    padding-top:35px;
+}
+
+.nyscnewsshowbodybuttons{
+    text-align:center;
+}
+
+/* .landingrightimage{
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    width: 200px;
+} */
+
+.landingthirdimage{
+    margin-top:40px;
+  
+}
+
+.landingfourthimage{
+    margin-top:40px;
+}
+
+.landingsecondsegment{
+    background-color: red;
+}
+
+.landingmoveone{
+    text-align:center;
+    padding-top:30px;
+    padding-bottom:30px;
+}
+
+.latestnews{
+    border-left: 5px solid #000000;
+    padding-left:18px;
+    font-size:24px;
+    font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
+    font-weight:bold;
+  
+    
+}
+
+.landingthirdsegment{
+    padding-top:60px;
+    padding-bottom:60px;
+}
+
+.landingthirdsegment2{
+    padding-bottom:40px;
+}
+
+.landingthirdsegment3{
+    padding-bottom:40px;
+}
+
+.landingbodyexcerpt{
+    font-weight: 400;
+    line-height: 20px;
+    color: #8c9597;
+    margin-top: 10px;
+}
+
+.hh{
+    border-radius:0px !important;
+}
+
+#sub{
+    padding-top:50px;
+}
+
+.subtitle{
+    font-weight: 700;
+    font-size: 22px;
+}
+
+.subsubtitle{
+    font-size:13px;
+}
+
+.drawone:after {
+    content: ""; /* This is necessary for the pseudo element to work. */ 
+    display: block; /* This will put the pseudo element on its own line. */
+    margin: 0 auto; /* This will center the border. */
+    width: 100%; /* Change this to whatever width you want. */
+    padding-top: 40px; /* This creates some space between the element and the border. */
+    border-bottom: 1px dotted #4A724E ; /* This creates the border. Replace black with whatever color you want. */
+}
