@@ -74,30 +74,49 @@
     <hr class="nyscnewsindexhrline">
     <div class="row">
 
-      <div id="" class="col-md-8 ">
-        <% nyscnews.forEach(function(nyscnew){ %>
-          <div>
-              <hr class="nyscnewsindexhrline">
-              <h5 class="nyscnewsindextitle"><a class="" href="/nyscnews/<%=nyscnew._id%>"> <%=nyscnew.newstitle%> </a></h5>
-            <h5 class="nyscnewsindexlocation"><span> By <%= nyscnew.author.username %> | <%= nyscnew.created.toDateString() %></span></h5>
-            <p><a href="/nyscnews/<%=nyscnew._id%>"><button class="ui  labeled icon green button"><i class="right arrow icon"></i>Read More</button></a></p>
+
+        <div class="row landingthirdsegment1">
+            <% nyscnewsthree.forEach(function(nyscnew){ %>
+              <div class="col-md-4 col-sm-12">
+              <div class="">
+                  <img class="hh" height="250" width="350"  src="<%=nyscnew.newspicture%>" >
+                  <h5 class="nyscnewsindextitle" > <%=nyscnew.newstitle.substring(0, 40)%>... </h5>
+                  <h5 class="landingbodyexcerpt" > <%=nyscnew.newsbody.substring(0, 55)%>...</h5>
+                  <h5 class="nyscnewsindexlocation"><span> By <%= nyscnew.author.username %> |<span class="landingbodyexcerpt"> <%= nyscnew.created.toDateString() %></span></span></h5>
+                  <p><a href="/nyscnews/<%=nyscnew._id%>"><button class="ui  labeled icon green button"><i class="right arrow icon"></i>Read More</button></a></p>
+                </div>   
+              </div>
+                <% }); %>   
+        </div>
+
+
+      <div id="" class="col-md-8 editthis ">
+          <p class="pbanner"> <img class="hhtwo"  src="/images/adbanner.png"></p>
+          <% nyscnewstwo.forEach(function(nyscnew){ %>
+            <div class="col-md-6 col-sm-12">
+            <div class="">
+                <img class="hh gg" height="250" width="350"  src="<%=nyscnew.newspicture%>" >
+                <h5 class="nyscnewsindextitle" > <%=nyscnew.newstitle.substring(0, 40)%>... </h5>
+                <h5 class="landingbodyexcerpt" > <%=nyscnew.newsbody.substring(0, 55)%>...</h5>
+                <h5 class="nyscnewsindexlocation"><span> By <%= nyscnew.author.username %> |<span class="landingbodyexcerpt"> <%= nyscnew.created.toDateString() %></span></span></h5>
+                <p><a href="/nyscnews/<%=nyscnew._id%>"><button class="ui  labeled icon green button"><i class="right arrow icon"></i>Read More</button></a></p>
+              </div>   
             </div>
-         <% }); %> 
+              <% }); %>   
         </div>
 
         <div id="" class="col-md-1" ></div>
-        <div id="premium" class="col-md-3 ui segment" >
+        <div id="premiumtwo" class="col-md-3 ui segment" >
     
-            <div >
-              <h3 class="us">Notice</h3>
-              <p class="premiumdescription">&#8358;5,000 will be deducted from your first salary if you secure an IT placement/PPA via this medium.</p>
-            </div>  
+            <h3 class="design">Twitter Feed</h3>
+            <a class="twitter-timeline" height="700px" href="https://twitter.com/officialnyscng?ref_src=twsrc%5Etfw">Tweets by officialnyscng</a>
+             <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
            
 
  
              <hr class="hrline">
              <h3 class="design">Newsletter</h3>
-              <p class="subsciptiontext">Get contents delivered to your email</p>
+              <p class="subscriptiontext">Get contents delivered to your email</p>
 
               <form id="subscriptionform" class="ui form form" action="/subscribe" method="POST"> 
               <div class="field">
@@ -119,9 +138,91 @@
           </div>        
   </div>
   </div>
-</div>
- </body>
 
-
-
-<% include ../partials/footer %>
+  <hr class="hrfooterlinetwo">
+  <div class="container lastsegment">
+    <div class="row">
+        <div class="col-md-3 col-sm-12">
+          <h2>About Us</h2>
+          <p>Maecenas finibus pretium congue. Quisque sed sem itum turpis. Mauris ut quam vitae urna dignissim.</p><br>
+          <p>Curabitur pharetra mauris id urna vestibulum, ne pharetra elit commodo. Nunc rutrum mi lectus am utan es nimbus avientin am estas potivan.</p>
+        </div>
+        <div class="col-md-3 col-sm-12">
+            <h2>Recent Posts</h2>
+          </div>
+          <div class="col-md-3 col-sm-12">
+              <h2>Categories</h2>
+             <p> <a href="/nyscnews"></a>NYSC News</p>
+             <hr class="hrlinetwo">
+             <p> <a href="/campexperiences"></a>Camp Experiences</p>
+             <hr class="hrlinetwo">
+            </div>
+            <div class="col-md-3 col-sm-12">
+                <h2>Contact</h2>
+                <p><span class="phone">Phone:</span> +2347014899225</p>
+                <p><span class="phone">Email:</span> hello@servitng.com</p>
+                <p><span class="phone">Address:</span> FCT, Abuja</p>
+                <a href="https://www.fb.com/servitng" target="_blank"> <img src="/images/facebook.jpg" height="32" width="32"></a>
+                <a href="https://www.instagram.com/servit.ng/" target="_blank"> <img src="/images/instagram.jpg" height="32" width="32"></a>
+                <a href="https://twitter.com/servitng" target="_blank"><img src="/images/twitter.jpg" height="32" width="32"></a>
+                <a href="mailto:hello@servit.ng" target="_blank"><img src="/images/mail.png" height="32" width="32"></a>
+              </div>
+      </div>
+    </div>
+  
+    <p class="goupbutton"><button onclick="topFunction()" id="myBtn" class="waves-effect waves-light btn-large">GO UP   <i class="large material-icons">arrow_upward</i></button></p>
+  
+  
+  
+  
+    <script src="http://code.jquery.com/jquery-3.4.1.js"integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="/js/app.js"></script>
+  <script src="/js/accordion.min.js"></script>
+  
+  
+  <script>
+      function openNav() {
+        document.getElementById("myNav").style.height = "100%";
+      }
+      
+      function closeNav() {
+        document.getElementById("myNav").style.height = "0%";
+      }
+      </script>
+  
+  
+  
+  <script>
+      $(document).ready(function () {
+          $("nav").find("li").on("click", "a", function () {
+              $('.navbar-collapse.in').collapse('hide');
+          });
+      });
+      </script>
+      
+  
+  <!-- <script>
+    $(document).ready(function() {
+    //Preloader
+    $(window).on("load", function() {
+    preloaderFadeOutTime = 500;
+    function hidePreloader() {
+    var preloader = $('.spinner-wrapper');
+    preloader.fadeOut(preloaderFadeOutTime);
+    }
+    hidePreloader();
+    });
+    });
+    </script> -->
+  
+  <script>
+      new Accordion('.accordion-container'); 
+    </script>
+  
+  </body>
+  </html>
+   
+  
+  
+  

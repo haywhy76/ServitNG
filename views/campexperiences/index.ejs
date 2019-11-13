@@ -74,30 +74,49 @@
     <hr class="nyscnewsindexhrline">
     <div class="row">
 
-      <div id="" class="col-md-8 ">
-        <% campexperiences.forEach(function(campexperience){ %>
-          <div>
-              <hr class="nyscnewsindexhrline">
-              <h5 class="nyscnewsindextitle"><a class="" href="/campexperience/<%=campexperience._id%>"> <%=campexperience.campexperiencetitle%> </a></h5>
-            <h5 class="nyscnewsindexlocation"><span> By <%= campexperience.author.username %> | <%= campexperience.created.toDateString() %></span></h5>
-            <p><a href="/campexperience/<%=campexperience._id%>"><button class="ui  labeled icon green button"><i class="right arrow icon"></i>Read More</button></a></p>
+      <div class="row landingthirdsegment1">
+        <% campexperiencesthree.forEach(function(campexperience){ %>
+          <div class="col-md-4 col-sm-12">
+            <div class="">
+                <img class="hh" height="250" width="350" src="<%=campexperience.campexperiencepicture%>" >
+                <h5 class="nyscnewsindextitle" ><%=campexperience.campexperiencetitle%> </h5>
+                <h5 class="landingbodyexcerpt" > <%=campexperience.campexperiencebody.substring(0, 55)%>...</h5>
+                <h5 class="nyscnewsindexlocation"><span> By  <%= campexperience.author.username %> |<span class="landingbodyexcerpt"> <%= campexperience.created.toDateString() %></span></span></h5>
+                <p><a href="/campexperience/<%=campexperience._id%>"><button class="ui  labeled icon green button"><i class="right arrow icon"></i>Read More</button></a></p>
+              </div> 
             </div>
          <% }); %> 
         </div>
 
+
+        <div id="" class="col-md-8 editthis ">
+          <p class="pbanner"> <img class="hhtwo"  src="/images/adbanner.png"></p>
+          <% campexperiencestwo.forEach(function(campexperience){ %>
+            <div class="col-md-6 col-sm-12">
+            <div class="">
+              <img class="hh" height="250" width="350" src="<%=campexperience.campexperiencepicture%>" >
+              <h5 class="nyscnewsindextitle" ><%=campexperience.campexperiencetitle%> </h5>
+              <h5 class="landingbodyexcerpt" > <%=campexperience.campexperiencebody.substring(0, 55)%>...</h5>
+              <h5 class="nyscnewsindexlocation"><span> By  <%= campexperience.author.username %> |<span class="landingbodyexcerpt"> <%= campexperience.created.toDateString() %></span></span></h5>
+              <p><a href="/campexperience/<%=campexperience._id%>"><button class="ui  labeled icon green button"><i class="right arrow icon"></i>Read More</button></a></p>
+              </div>   
+            </div>
+              <% }); %>   
+        </div>
+
+
         <div id="" class="col-md-1" ></div>
-        <div id="premium" class="col-md-3 ui segment" >
+        <div id="premiumtwo" class="col-md-3 ui segment" >
     
-            <div >
-              <h3 class="us">Notice</h3>
-              <p class="premiumdescription">&#8358;5,000 will be deducted from your first salary if you secure an IT placement/PPA via this medium.</p>
-            </div>  
+            <h3 class="design">Twitter Feed</h3>
+            <a class="twitter-timeline" height="700px" href="https://twitter.com/officialnyscng?ref_src=twsrc%5Etfw">Tweets by officialnyscng</a>
+             <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
            
 
  
              <hr class="hrline">
              <h3 class="design">Newsletter</h3>
-              <p class="subsciptiontext">Get contents delivered to your email</p>
+              <p class="subscriptiontext">Get contents delivered to your email</p>
 
               <form id="subscriptionform" class="ui form form" action="/subscribe" method="POST"> 
               <div class="field">
@@ -116,7 +135,7 @@
               </p>
            
                
-          </div>        
+          </div>              
   </div>
   </div>
 </div>

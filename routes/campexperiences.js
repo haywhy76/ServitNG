@@ -1,17 +1,38 @@
 var express = require("express");
 var router = express.Router();
 var campexperience = require("../models/campexperiences");
+var campexperiencestwo = require("../models/campexperiences");
+var campexperiencesthree = require("../models/campexperiences");
 var middleware = require("../middleware");
 
 
 //VIEW ALL CAMPGROUND EXPERIENCES
 router.get("/campexperiences", function(req, res){
+
+    campexperience.find({},  function(err, allCampExperiencesThree){
+        if (err){
+            console.log(err);
+        }
+        else{
+            campexperiencesthree=allCampExperiencesThree;
+        }
+    }).limit(3).sort({'_id':-1});
+
+    campexperience.find({},  function(err, allCampExperiencesTwo){
+        if (err){
+            console.log(err);
+        }
+        else{
+            campexperiencestwo=allCampExperiencesTwo;
+        }
+    }).limit(3).sort({'_id':-1});
+
     campexperience.find({},  function(err, allCampExperiences){
         if (err){
             console.log(err);
         }
         else{
-            res.render("campexperiences/index",{campexperiences:allCampExperiences});
+            res.render("campexperiences/index",{campexperiencesthree:campexperiencesthree, campexperiencestwo:campexperiencestwo, campexperiences:allCampExperiences});
         }
     }).sort({'_id':-1});
 

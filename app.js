@@ -19,6 +19,7 @@ var express    = require("express"),
     internjob = require("./models/corperjobs")
     Setting = require("./models/settings")
     nyscnews = require("./models/nyscnews")
+    roomates = require("./models/roomates")
     campexperiences = require("./models/campexperiences")
     passport = require("passport"),
     LocalStrategy = require("passport-local"),
@@ -47,7 +48,8 @@ var express    = require("express"),
     mylistingRoutes = require("./routes/mylistings")
     locationRoutes = require("./routes/location")
     nyscNewsRoutes = require("./routes/nyscnews")
-    nysccommentRoutes    = require("./routes/nyscnewscomments")
+    roomatesRoutes = require("./routes/roomates")
+    getstartedRoutes = require("./routes/getstarted")
     imageUploadRoutes = require("./routes/imageupload")
     campExperienceRoutes = require("./routes/campexperiences")
    
@@ -109,7 +111,9 @@ app.use(mylistingRoutes);
 app.use(faqRoutes);
 app.use(contactRoutes);
 app.use(nyscNewsRoutes);
-app.use(nysccommentRoutes);
+app.use(roomatesRoutes);
+app.use(getstartedRoutes);
+
 app.use(campExperienceRoutes);
 
 

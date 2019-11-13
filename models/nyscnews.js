@@ -11,8 +11,11 @@ var nyscnewsSchema = new mongoose.Schema({
         },
         username: String
     },
-    
     created: {type: Date, default:Date.now},
+    nyscnewscomments:[{
+        type: mongoose.Schema.Types.ObjectId,
+        ref:"nyscnewscomments"
+    }]
 });
 
 module.exports = mongoose.model("nyscNews", nyscnewsSchema);

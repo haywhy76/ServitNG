@@ -7,8 +7,8 @@ var nyscnewscommentsSchema = new mongoose.Schema({
             ref:"User"
         },
         username: String
-    },
+    }
 });
 
 
-module.exports = mongoose.model("nyscNewsComment", nyscnewscommentsSchema);
+module.exports = mongoose.model("nyscnewscomments", nyscnewscommentsSchema);

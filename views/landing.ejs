@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Servit</title>
+        <title>Servit | Home</title>
         <meta name='viewport' content='width=device-width' />
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
@@ -35,8 +35,8 @@
                       <% if(!currentUser){ %>
                         <a href="nyscnews"> NYSC News </a>
                         <a href="/campexperiences"> Camp Experiences </a>
-                        <a href="/#contactus"> Flatmates/Apartments </a>
-                        <a href="/register">Find your way to camp</a>
+                        <a href="/roomates"> Flatmates/Apartments </a>
+                        <a href="/findyourway">Find your way to camp</a>
                     <% }else{ %> 
                       <p>Signed In As <%= currentUser.username %></p>
                     <a href="/jobs/new"> <i class="fa fa-pencil"></i> Submit A Listing </a>
@@ -68,11 +68,12 @@
         
  </div>
 
- <div class="container">
-    <p class="jobpageheading">GET A PLACEMENT AND PPA FOR JUST N1000</p>
+ <div class="container initialsegment">
+   
+  
    
   <div class="row">
-      <div class="col-md-6  ">
+      <div class="col-md-6  col-sm-12">
           <% nyscnews.forEach(function(nyscnew){ %>
           <div id="forumposts" class="">
               <img class="ui centred rounded image" src="<%=nyscnew.newspicture%>" >
@@ -110,14 +111,14 @@
 
 
       </div>       
-
+      <p class="pbanner"> <img class="hhtwo" src="/images/adbanner.png"></p>
   </div>
 
 <div class="landingthirdsegment">
   <p class="latestnews">LATEST NEWS</p>
   </div>
 
-  <div class="row landingthirdsegment2">
+  <div class="row landingthirdsegment1">
       <% nyscnewsthree.forEach(function(nyscnew){ %>
         <div class="col-md-4 col-sm-12">
         <div class="">
@@ -150,11 +151,11 @@
    <% nyscnewsfive.forEach(function(nyscnew){ %>
     <div class="col-md-4 col-sm-12">
   <div id="sub">
-      <div class="col-md-5">
+      <div class="col-md-5 col-sm-12">
           <img class="hh" height="70" width="130"  src="<%=nyscnew.newspicture%>">
       </div>
 
-      <div class="col-md-6">
+      <div class="col-md-6 col-sm-12">
           <span><a class="" href="/nyscnews/<%=nyscnew._id%>"> <%=nyscnew.newstitle.substring(0, 92)%>... </a></span>
         </div>
   </div>
@@ -195,11 +196,11 @@
               <% campexperiencesfour.forEach(function(campexperience){ %>
                 <div class="col-md-6 col-sm-12">
               <div id="sub">
-                  <div class="col-md-4 drawone">
+                  <div class="col-md-4 col-sm-12 drawone">
                       <img class="hh" height="100" width="170"  src="<%=campexperience.campexperiencepicture%>">
                   </div>
       
-                  <div class="col-md-6">
+                  <div class="col-md-6 col-sm-12">
                       <span class="subtitle"><%=campexperience.campexperiencetitle%><br><span class="subsubtitle"> By  <%= campexperience.author.username %> |<span class="landingbodyexcerpt"> <%= campexperience.created.toDateString() %></span> </span>
                     </div>
                     
@@ -213,11 +214,11 @@
               <% campexperiencesfive.forEach(function(campexperience){ %>
                 <div class="col-md-6 col-sm-12">
               <div id="sub">
-                  <div class="col-md-4">
+                  <div class="col-md-4 col-sm-12">
                       <img class="hh" height="100" width="170"  src="<%=campexperience.campexperiencepicture%>">
                   </div>
       
-                  <div class="col-md-6">
+                  <div class="col-md-6 col-sm-12">
                       <span class="subtitle"><%=campexperience.campexperiencetitle%><br><span class="subsubtitle"> By  <%= campexperience.author.username %> |<span class="landingbodyexcerpt"> <%= campexperience.created.toDateString() %></span> </span>
                     </div>
                     
@@ -227,17 +228,113 @@
                 <% }); %> 
           </div> 
 
-      
+          <p class="pbanner"> <img class="hhtwo"  src="/images/adbanner.png"></p>
 
 
+          <div class="landingthirdsegment">
+              <p class="latestnews">ROOMATES</p>
+              </div>
+          <div class="row landingthirdsegment1">
+              <% roomatess.forEach(function(roomate){ %>
+                <div class="col-md-3 col-sm-12">
+                <div class="">
+                    <img class="hh" height="100" width="170"  src="<%=roomate.roomatepicture%>" >
+                    <h5 class="nyscnewsindextitle" > <%=roomate.roomatetitle.substring(0, 40)%>... </h5>
+                    <h5 class="landingbodyexcerpt" > <%=roomate.roomatebody.substring(0, 55)%>...</h5>
+                    <h5 class="nyscnewsindexlocation"><span> By <%= roomate.author.username %> |<span class="landingbodyexcerpt"> <%= roomate.created.toDateString() %></span></span></h5>
+                    <p><a href="/roomates/<%=roomate._id%>"><button class="ui  labeled icon green button"><i class="right arrow icon"></i>Read More</button></a></p>
+                  </div>   
+                </div>
+                  <% }); %>   
+          </div>
      
 </div>
 
+<hr class="hrfooterlinetwo">
+<div class="container lastsegment">
+  <div class="row">
+      <div class="col-md-3 col-sm-12">
+        <h2>About Us</h2>
+        <p>Maecenas finibus pretium congue. Quisque sed sem itum turpis. Mauris ut quam vitae urna dignissim.</p><br>
+        <p>Curabitur pharetra mauris id urna vestibulum, ne pharetra elit commodo. Nunc rutrum mi lectus am utan es nimbus avientin am estas potivan.</p>
+      </div>
+      <div class="col-md-3 col-sm-12">
+          <h2>Recent Posts</h2>
+        </div>
+        <div class="col-md-3 col-sm-12">
+            <h2>Categories</h2>
+           <p> <a href="/nyscnews"></a>NYSC News</p>
+           <hr class="hrlinetwo">
+           <p> <a href="/campexperiences"></a>Camp Experiences</p>
+           <hr class="hrlinetwo">
+          </div>
+          <div class="col-md-3 col-sm-12">
+              <h2>Contact</h2>
+              <p><span class="phone">Phone:</span> +2347014899225</p>
+              <p><span class="phone">Email:</span> hello@servitng.com</p>
+              <p><span class="phone">Address:</span> FCT, Abuja</p>
+              <a href="https://www.fb.com/servitng" target="_blank"> <img src="/images/facebook.jpg" height="32" width="32"></a>
+              <a href="https://www.instagram.com/servit.ng/" target="_blank"> <img src="/images/instagram.jpg" height="32" width="32"></a>
+              <a href="https://twitter.com/servitng" target="_blank"><img src="/images/twitter.jpg" height="32" width="32"></a>
+              <a href="mailto:hello@servit.ng" target="_blank"><img src="/images/mail.png" height="32" width="32"></a>
+            </div>
+    </div>
+  </div>
+
+  <p class="goupbutton"><button onclick="topFunction()" id="myBtn" class="waves-effect waves-light btn-large">GO UP   <i class="large material-icons">arrow_upward</i></button></p>
 
 
 
+
+  <script src="http://code.jquery.com/jquery-3.4.1.js"integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="/js/app.js"></script>
+<script src="/js/accordion.min.js"></script>
+
+
+<script>
+    function openNav() {
+      document.getElementById("myNav").style.height = "100%";
+    }
+    
+    function closeNav() {
+      document.getElementById("myNav").style.height = "0%";
+    }
+    </script>
+
+
+
+<script>
+    $(document).ready(function () {
+        $("nav").find("li").on("click", "a", function () {
+            $('.navbar-collapse.in').collapse('hide');
+        });
+    });
+    </script>
+    
+
+<!-- <script>
+  $(document).ready(function() {
+  //Preloader
+  $(window).on("load", function() {
+  preloaderFadeOutTime = 500;
+  function hidePreloader() {
+  var preloader = $('.spinner-wrapper');
+  preloader.fadeOut(preloaderFadeOutTime);
+  }
+  hidePreloader();
+  });
+  });
+  </script> -->
+
+<script>
+    new Accordion('.accordion-container'); 
+  </script>
+
+</body>
+</html>
  
 
 
 
-<% include partials/footer %>
+<!-- <% include partials/footer %> -->

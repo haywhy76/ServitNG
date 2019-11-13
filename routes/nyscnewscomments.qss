@@ -14,40 +14,40 @@ router.get("/nyscnews/:id/comment/new",  function(req, res){
             console.log(err);
         }
         else{
-            res.send("comments/new",{nyscnews:allNyscNews});
+            res.render("nysccomments/new",{nyscnew:allNyscNews});
         }
     })
 });
 
-// router.post("/",  middleware.isLoggedIn, function(req, res){
-//     //lookup Campground using ID
-//     nyscnewscomment.findById(req.params.id, function(err, nyscnewscomment){
-//         if(err){
-//             console.log(err);
-//             res.redirect("/");
-//         }
-//         else{
-//           Comment.create(req.body.comment, function(err, comment){
-//             if (err){
-//                 req.flash("error", "Something went wrong");
-//                 console.log(err);
-//             }
-//             else{
-//                 //add username and id to comment
-//                 comment.author.id = req.user._id;
-//                 comment.author.username = req.user.username;
-//                 //save comment
-//                 comment.save();
-//                 campground.comments.push(comment);
-//                 campground.save();
-//                 console.log(comment);
-//                 req.flash("success", "Successfully added comment");
-//                 res.redirect("/campgrounds/" + campground._id);
-//             }
-//           });
-//         }
-//     });
-//  });
+router.post("/nyscnews/:id/nysccomment",  middleware.isLoggedIn, function(req, res){
+    //lookup Campground using ID
+    nyscnew.findById(req.params.id, function(err, nyscnew){
+        if(err){
+            console.log(err);
+            res.redirect("/");
+        }
+        else{
+          nyscnewscomment.create(req.body.nyscnewscomment, function(err, nyscnewscomment){
+            if (err){
+                req.flash("error", "Something went wrong");
+                console.log(err);
+            }
+            else{
+                //add username and id to comment
+                nyscnewscomment.author.id = req.user._id;
+                nyscnewscomment.author.username = req.user.username;
+                //save comment
+                nyscnewscomment.save();
+                nyscnew.nyscnewscomments.push(nyscnewscomment);
+                nyscnew.save();
+                console.log(comment);
+                req.flash("success", "Successfully added comment");
+                res.redirect("/nyscnews/" + nyscnew._id);
+            }
+          });
+        }
+    });
+ });
  
 
 

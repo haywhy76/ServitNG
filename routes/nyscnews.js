@@ -1,20 +1,45 @@
 var express = require("express");
 var router = express.Router();
 var nyscnew = require("../models/nyscnews");
+var nyscnewscomment = require("../models/nyscnewscomments");
+var nyscnewstwo = require("../models/nyscnews");
 var middleware = require("../middleware");
+var nyscnewsthree = require("../models/nyscnews");
+
 
 
 
 //VIEW ALL NYSC NEWS
-router.get("/nyscnews", function(req, res){
-    nyscnew.find({},  function(err, allNyscNews){
+
+    router.get("/nyscnews", function(req, res){
+
+        nyscnew.find({},  function(err, allNyscNews){
+            if (err){
+                console.log(err);
+            }
+            else{
+                nyscnews=allNyscNews;
+            }
+        }).sort({'_id':-1});
+
+        nyscnew.find({},  function(err, allNyscNewsTwo){
+            if (err){
+                console.log(err);
+            }
+            else{
+                nyscnewstwo=allNyscNewsTwo;
+            }
+        }).skip(3).sort({'_id':-1});
+
+    nyscnew.find({},  function(err, allNyscNewsThree){
         if (err){
             console.log(err);
         }
         else{
-            res.render("nyscnews/index",{nyscnews:allNyscNews});
+            nyscnewsthree=allNyscNewsThree;
+            res.render("nyscnews/index",{nyscnews:nyscnews,nyscnewstwo:nyscnewstwo, nyscnewsthree:nyscnewsthree});
         }
-    }).sort({'_id':-1});
+    }).limit(3).sort({'_id':-1});
 
 })
 
@@ -40,6 +65,20 @@ router.post("/nyscnews",middleware.isLoggedIn,function(req, res){
         if (err){
             console.log(err);
         }else{
+            nyscnewscomment.create({
+                text: "This place is shitty!",
+                author:"Maverick"
+            }, function(err, nyscnewscomment){
+                if(err){
+                    console.log(err);
+                }else{
+                    newlyCreatedNyscNew.nyscnewscomments.push(nyscnewscomment);
+                    newlyCreatedNyscNew.save();
+                }
+                console.log("created new comment");
+                console.log(nyscnewscomment);
+                console.log(newlyCreatedNyscNew);
+            })
             res.redirect("/nyscnews")
         }
        
@@ -59,12 +98,12 @@ router.get("/nyscnews/:id",middleware.isLoggedIn, function(req, res){
         }
     }).limit(3).sort({'_id':-1})
     
-    nyscnew.findById(req.params.id, function(err, foundnyscnew){
+    nyscnew.findById(req.params.id).populate("nyscnewscomments").exec( function(err, foundnyscnew){
         if(err){
             console.log(err);
         }else{
-           
              res.render("nyscnews/show", {nyscnew: foundnyscnew, nyscnews:nyscnews});
+
         }
     })
 });

@@ -3,6 +3,7 @@ var express = require("express");
 var router = express.Router();
 var passport = require("passport");
 var User = require("../models/user");
+var roomate = require("../models/roomates");
 var nyscnew = require("../models/nyscnews");
 var nyscnewsthree = require("../models/nyscnews");
 var nyscnewsfour = require("../models/nyscnews");
@@ -11,6 +12,7 @@ var campexperience = require("../models/campexperiences");
 var campexperiencesthree = require("../models/campexperiences");
 var campexperiencesfour = require("../models/campexperiences");
 var campexperiencesfive = require("../models/campexperiences");
+var payment = require("../models/payment");
 let gfs
 var subscriber = require("../models/subscribe");
 var contact = require("../models/contact");
@@ -57,6 +59,15 @@ router.get("/", function(req, res){
         }
     }).skip(6).limit(3).sort({'_id':-1}); 
 
+    roomate.find({},  function(err, allRoomates){
+        if (err){
+            console.log(err);
+        }
+        else{
+            roomatess=allRoomates;
+        }
+    }).limit(4).sort({'_id':-1});
+
     campexperience.find({},  function(err, allCampExperiencesThree){
         if (err){
             console.log(err);
@@ -91,7 +102,7 @@ router.get("/", function(req, res){
         }
         else{
             campexperiences=allCampExperiences;
-            res.render("landing",{nyscnews:nyscnews,nyscnewsthree: nyscnewsthree, nyscnewsfour:nyscnewsfour, nyscnewsfive:nyscnewsfive, campexperiencesthree:campexperiencesthree, campexperiencesfour:campexperiencesfour, campexperiencesfive:campexperiencesfive, campexperiences:campexperiences});
+            res.render("landing",{nyscnews:nyscnews,nyscnewsthree: nyscnewsthree, nyscnewsfour:nyscnewsfour, nyscnewsfive:nyscnewsfive, roomatess:roomatess, campexperiencesthree:campexperiencesthree, campexperiencesfour:campexperiencesfour, campexperiencesfive:campexperiencesfive, campexperiences:campexperiences});
         }
     }).limit(1).sort({'_id':-1});
     
@@ -202,6 +213,26 @@ router.post("/subscribe", function(req, res){
       }
   })
 });
+
+//Handle payment form
+
+router.post("/payment", function(req, res){
+    var firstname = req.body.paymentfirstname;
+    var lastname = req.body.paymentlastname;
+    var email =  req.body.paymentemail;
+    var institution =  req.body.paymentinstitution;
+    var matric =  req.body.paymentmatric;
+    var location =  req.body.paymentlocation;
+    var newPayment = {paymentfirstname:firstname,paymentlastname:lastname,paymentemail: email,paymentinstitution:institution,paymentmatric:matric,paymentlocation:location  };
+    //create a new subscription and save to DB
+    payment.create(newPayment, function(err, newlyCreatedPayment){
+        if (err){
+            console.log(err);
+        }else{
+          res.redirect("/getstarted")
+        }
+    })
+  });
 
 //Handle contact form
 router.post("/contactus", function(req, res){

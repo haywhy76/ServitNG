@@ -102,6 +102,13 @@
                         <% } %>
                    </p>
                     </div>
+
+                    <div>
+                    <% nyscnew.nyscnewscomments.forEach(function(nyscnewcomment){ %>
+                    <p>h <%=nyscnewcomment.text%> | </p>
+                     <% }); %> 
+                    </div>
+
                     
                     <h1 class="nyscnewsshowothernews">Other News</h1>
                     <div>
