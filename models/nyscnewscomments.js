@@ -7,7 +7,8 @@ var nyscnewscommentsSchema = new mongoose.Schema({
             ref:"User"
         },
         username: String
-    }
+    },
+    
 });
 
 

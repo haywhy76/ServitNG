@@ -33,6 +33,7 @@
                   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
                   <div class="overlay-content">
                       <% if(!currentUser){ %>
+                        <a href="getstarted"> Get an IT Placement/PPA </a>
                         <a href="nyscnews"> NYSC News </a>
                         <a href="/campexperiences"> Camp Experiences </a>
                         <a href="/roomates"> Flatmates/Apartments </a>
@@ -89,12 +90,12 @@
     
 
            <div class="col-md-6 col-sm-12 landingthirdimage">
-              <% nyscnews.forEach(function(nyscnew){ %>
+            <% roomatesss.forEach(function(roomate){ %>
                 <div>
-                    <img class="hh" height="150" width="250" src="<%=nyscnew.newspicture%>" >
-                    <h5 class="nyscnewsindextitle" ><%=nyscnew.newstitle.substring(0, 28)%>... </h5>
-                    <h5 class="nyscnewsindexlocation"><a href="/nyscnews/"><button class="ui icon blasck button">Nysc News</button></a> | <span class="landingbodyexcerpt"><%= nyscnew.created.toDateString() %></span></span></h5>
-                    <p><a href="/nyscnews/<%=nyscnew._id%>"><button class="ui  labeled icon green button"><i class="right arrow icon"></i>Read More</button></a></p>
+                    <img class="hh" height="150" width="250" src="<%=roomate.roomatepicture%>" >
+                    <h5 class="nyscnewsindextitle" ><%=roomate.roomatetitle.substring(0, 28)%>... </h5>
+                    <h5 class="nyscnewsindexlocation"><a href="/roomates/"><button class="ui icon blasck button">Find a roomate</button></a> | <span class="landingbodyexcerpt"><%= roomate.created.toDateString() %></span></span></h5>
+                    <p><a href="/roomates/<%=roomate._id%>"><button class="ui  labeled icon green button"><i class="right arrow icon"></i>Read More</button></a></p>
                   </div> 
                   <% }); %> 
            </div>
@@ -111,9 +112,9 @@
 
 
       </div>       
-      <p class="pbanner"> <img class="hhtwo" src="/images/adbanner.png"></p>
+     
   </div>
-
+  
 <div class="landingthirdsegment">
   <p class="latestnews">LATEST NEWS</p>
   </div>
@@ -148,98 +149,48 @@
     </div>
    <% }); %> 
 
-   <% nyscnewsfive.forEach(function(nyscnew){ %>
-    <div class="col-md-4 col-sm-12">
-  <div id="sub">
-      <div class="col-md-5 col-sm-12">
-          <img class="hh" height="70" width="130"  src="<%=nyscnew.newspicture%>">
-      </div>
-
-      <div class="col-md-6 col-sm-12">
-          <span><a class="" href="/nyscnews/<%=nyscnew._id%>"> <%=nyscnew.newstitle.substring(0, 92)%>... </a></span>
-        </div>
-  </div>
-    </div>
-   <% }); %> 
-  
-     
-
-  
-
 
 
   </div>
+  <p class="viewallnyscnews"><a href="/nyscnews"><button class="ui labeled icon green button"><i class="right arrow icon"></i>View All</button></a></p>
 
 
-
-  <p class="jobpageheading">GET A PLACEMENT AND PPA FOR JUST N1000</p>
+  <p class="jobpageheading"><a href="/getstarted">GET A PLACEMENT AND PPA FOR JUST N1000</a></p>
 
   <div class="landingthirdsegment">
       <p class="latestnews">CAMP EXPERIENCES</p>
       </div>
     
-      <div class="row landingthirdsegment1">
+      <div class="row ">
           <% campexperiencesthree.forEach(function(campexperience){ %>
-            <div class="col-md-4 col-sm-12">
             <div class="">
-                <img class="hh" height="250" width="350" src="<%=campexperience.campexperiencepicture%>" >
+            <div class="col-md-4 col-sm-12">
+            <div class="landingthirdsegment1">
+                <img class="campeexperiencespicture" height="250" width="350" src="<%=campexperience.campexperiencepicture%>" >
                 <h5 class="nyscnewsindextitle" ><%=campexperience.campexperiencetitle%> </h5>
                 <h5 class="landingbodyexcerpt" > <%=campexperience.campexperiencebody.substring(0, 55)%>...</h5>
                 <h5 class="nyscnewsindexlocation"><span> By  <%= campexperience.author.username %> |<span class="landingbodyexcerpt"> <%= campexperience.created.toDateString() %></span></span></h5>
                 <p><a href="/campexperience/<%=campexperience._id%>"><button class="ui  labeled icon green button"><i class="right arrow icon"></i>Read More</button></a></p>
               </div> 
             </div>
+            </div>
+            
             <% }); %> 
+
           </div>
-
-          <div class="row ">
-              <% campexperiencesfour.forEach(function(campexperience){ %>
-                <div class="col-md-6 col-sm-12">
-              <div id="sub">
-                  <div class="col-md-4 col-sm-12 drawone">
-                      <img class="hh" height="100" width="170"  src="<%=campexperience.campexperiencepicture%>">
-                  </div>
-      
-                  <div class="col-md-6 col-sm-12">
-                      <span class="subtitle"><%=campexperience.campexperiencetitle%><br><span class="subsubtitle"> By  <%= campexperience.author.username %> |<span class="landingbodyexcerpt"> <%= campexperience.created.toDateString() %></span> </span>
-                    </div>
-                    
-                  </div>
-               
-                </div>
-                <% }); %> 
-          </div> 
-           
-          <div class="row landingthirdsegment3">
-              <% campexperiencesfive.forEach(function(campexperience){ %>
-                <div class="col-md-6 col-sm-12">
-              <div id="sub">
-                  <div class="col-md-4 col-sm-12">
-                      <img class="hh" height="100" width="170"  src="<%=campexperience.campexperiencepicture%>">
-                  </div>
-      
-                  <div class="col-md-6 col-sm-12">
-                      <span class="subtitle"><%=campexperience.campexperiencetitle%><br><span class="subsubtitle"> By  <%= campexperience.author.username %> |<span class="landingbodyexcerpt"> <%= campexperience.created.toDateString() %></span> </span>
-                    </div>
-                    
-                  </div>
-               
-                </div>
-                <% }); %> 
-          </div> 
-
-          <p class="pbanner"> <img class="hhtwo"  src="/images/adbanner.png"></p>
+          <p class="viewallcampexperiences"><a href="/campexperiences"><button class="ui labeled icon green button"><i class="right arrow icon"></i>View All</button></a></p>
+          <p class="jobpageheadingthree"><a href="/getstarted">GET A PLACEMENT AND PPA FOR JUST N1000</a></p>
 
 
           <div class="landingthirdsegment">
-              <p class="latestnews">ROOMATES</p>
+              <p class="latestnews">FIND A ROOMATE</p>
               </div>
           <div class="row landingthirdsegment1">
               <% roomatess.forEach(function(roomate){ %>
                 <div class="col-md-3 col-sm-12">
                 <div class="">
                     <img class="hh" height="100" width="170"  src="<%=roomate.roomatepicture%>" >
-                    <h5 class="nyscnewsindextitle" > <%=roomate.roomatetitle.substring(0, 40)%>... </h5>
+                    <h5 class="nyscnewsindextitle" > <%=roomate.roomatetitle%></h5>
                     <h5 class="landingbodyexcerpt" > <%=roomate.roomatebody.substring(0, 55)%>...</h5>
                     <h5 class="nyscnewsindexlocation"><span> By <%= roomate.author.username %> |<span class="landingbodyexcerpt"> <%= roomate.created.toDateString() %></span></span></h5>
                     <p><a href="/roomates/<%=roomate._id%>"><button class="ui  labeled icon green button"><i class="right arrow icon"></i>Read More</button></a></p>
@@ -247,7 +198,7 @@
                 </div>
                   <% }); %>   
           </div>
-     
+          <p class="viewallcampexperiences"><a href="/roomates"><button class="ui labeled icon green button"><i class="right arrow icon"></i>View All</button></a></p>
 </div>
 
 <hr class="hrfooterlinetwo">

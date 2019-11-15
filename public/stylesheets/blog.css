@@ -74,11 +74,24 @@
 
 .nyscnewsshowothernews{
     font-family: "Tiempos Text",Georgia,"Times New Roman",serif;
-    font-style: italic;
+    
     font-size: 22px;
     line-height: 32px;
     font-weight: 400;
     padding-top:35px;
+}
+
+.nyscnewsshowothernewsheading{
+    font-family: "Tiempos Text",Georgia,"Times New Roman",serif;
+    font-style: italic;
+    font-size: 18px;
+    line-height: 32px;
+    font-weight: 400;
+}
+
+.nyscnewsshowothernewsdescription{
+    font-size: 15px;
+    text-transform: capitalize;
 }
 
 .nyscnewsshowbodybuttons{
@@ -148,10 +161,12 @@
 
 .hh{
     border-radius:0px !important;
+   
 }
 
 .hhtwo{
     border-radius:0px !important;
+    
     
 }
 
@@ -214,8 +229,12 @@
 .editthis{
     display: flex;
     flex-wrap:wrap;
-    padding-top: 20px;
+    
+}
 
+.landingthirdsegment1{
+    display: flex;
+    flex-wrap:wrap;
 }
 
 .gg{
@@ -228,4 +247,81 @@
 
 .twitter-timeline{
     background-color:#F5F5F5;
+}
+
+.commentssection{
+    margin-top:30px;
+}
+
+.othernews{
+    font-size:13px;
+}
+
+.well{
+  
+}
+
+.commentauthor{
+    font-size:18px;
+    text-transform: capitalize;
+}
+
+.commentcomment{
+    font-size:14px;
+    margin-top: 5px;
+
+}
+
+.commentbutton{
+    padding-bottom:15px;
+}
+
+.jobpageheading{
+    color:#fff;
+    text-align:center;
+    font-weight:bold;
+    font-size:18px;
+    font-family: 'Cantarell', sans-serif;
+    background: url("/images/headerback.jpg") ;
+    padding-top:50px;
+    padding-bottom:50px;
+   
+}
+
+.jobpageheadingthree{
+    color:#fff;
+    text-align:center;
+    font-weight:bold;
+    font-size:18px;
+    font-family: 'Cantarell', sans-serif;
+    background: url("/images/headerback.jpg") ;
+    padding-top:50px;
+    padding-bottom:50px;
+    margin-top:80px;
+   
+}
+
+.campeexperiencespicture{
+    border-radius:0px !important;
+    padding-top: 20px;
+
+}
+
+.viewallcampexperiences{
+    text-align:center;
+    padding-top:30px;
+}
+
+.viewallnyscnews{
+    text-align:center;
+    padding-bottom:20px;
+}
+
+
+.getstartedfirstsegment{
+    padding-bottom:150px;
+}
+
+.stepone{
+    margin-top:40px;
 }

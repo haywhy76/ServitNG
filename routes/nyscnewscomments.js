@@ -9,7 +9,7 @@ var middleware = require("../middleware");
 //================
 router.get("/nyscnews/:id/comment/new",  function(req, res){
     //find campground by id
-    nyscnew.find({},  function(err, allNyscNews){
+    nyscnew.findById(req.params.id,  function(err, allNyscNews){
         if (err){
             console.log(err);
         }
@@ -19,32 +19,28 @@ router.get("/nyscnews/:id/comment/new",  function(req, res){
     })
 });
 
-router.post("/nyscnews/:id/nysccomment",  middleware.isLoggedIn, function(req, res){
+router.post("/nyscnews/:id/comment",  middleware.isLoggedIn, function(req, res){
     //lookup Campground using ID
     nyscnew.findById(req.params.id, function(err, nyscnew){
         if(err){
             console.log(err);
-            res.redirect("/");
+            res.redirect("/nyscnews");
         }
         else{
-          nyscnewscomment.create(req.body.nyscnewscomment, function(err, nyscnewscomment){
-            if (err){
-                req.flash("error", "Something went wrong");
-                console.log(err);
-            }
-            else{
-                //add username and id to comment
-                nyscnewscomment.author.id = req.user._id;
-                nyscnewscomment.author.username = req.user.username;
-                //save comment
-                nyscnewscomment.save();
-                nyscnew.nyscnewscomments.push(nyscnewscomment);
-                nyscnew.save();
-                console.log(comment);
-                req.flash("success", "Successfully added comment");
-                res.redirect("/nyscnews/" + nyscnew._id);
-            }
-          });
+            nyscnewscomment.create(req.body.nyscnewscomment, function(err, nyscnewscomment){
+                if (err){
+                    console.log(err);
+                }
+                else{
+                    nyscnewscomment.author.id = req.user._id;
+                    nyscnewscomment.author.username = req.user.username;
+                    nyscnewscomment.save();
+                    nyscnew.nyscnewscomments.push(nyscnewscomment);
+                    nyscnew.save();
+                    res.redirect("/nyscnews/" + nyscnew._id);
+                    
+                }
+              });
         }
     });
  });
@@ -52,17 +48,10 @@ router.post("/nyscnews/:id/nysccomment",  middleware.isLoggedIn, function(req, r
 
 
 
-// //COMMENTS EDIT ROUTE
-// router.get("/:comment_id/edit", middleware.checkCommentOwnership, function(req, res){
-//     nyscnewscomment.findById(req.params.comment_id, function(err, foundComment){
-//         if (err){
-//             res.redirect("back");
-//         }
-//         else{
-//             res.render("comments/edit", {campground_id: req.params.id, comment: foundComment});
-//         }
-//     })
-// });
+//COMMENTS EDIT ROUTE
+router.get("/nyscnews/:id/nyscnewscomments/comment_id/edit", function(req, res){
+  res.send("hello")
+});
 
 
 // //COMMENT UPDATE

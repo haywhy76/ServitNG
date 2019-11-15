@@ -65,20 +65,7 @@ router.post("/nyscnews",middleware.isLoggedIn,function(req, res){
         if (err){
             console.log(err);
         }else{
-            nyscnewscomment.create({
-                text: "This place is shitty!",
-                author:"Maverick"
-            }, function(err, nyscnewscomment){
-                if(err){
-                    console.log(err);
-                }else{
-                    newlyCreatedNyscNew.nyscnewscomments.push(nyscnewscomment);
-                    newlyCreatedNyscNew.save();
-                }
-                console.log("created new comment");
-                console.log(nyscnewscomment);
-                console.log(newlyCreatedNyscNew);
-            })
+           
             res.redirect("/nyscnews")
         }
        
@@ -86,7 +73,7 @@ router.post("/nyscnews",middleware.isLoggedIn,function(req, res){
 });
 
 //SHOW PAGE FOR NEWS
-router.get("/nyscnews/:id",middleware.isLoggedIn, function(req, res){
+router.get("/nyscnews/:id", function(req, res){
     //find the post with provided ID
     nyscnew.find({},  function(err, allNyscNews){
 

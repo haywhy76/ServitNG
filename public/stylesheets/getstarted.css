@@ -7,6 +7,7 @@
 .heading{
     text-align:center;
     margin-top:30px;
+    
 }
 
 .heading:after {
@@ -28,11 +29,17 @@
 .we{
     text-align:center;
     font-size:18px;
+    text-align: justify;
+    margin-bottom:50px;
 }
 
 .getstartedloginbutton{
     text-align:center;
     padding-bottom: 100px;
+}
+
+.getstartedfirstsegment{
+    margin-top: 50px;
 }
 
 .getstartedloginbuttontwo{
@@ -53,6 +60,10 @@
 .accdetails{
     text-align:center;
     font-size:18px;
+}
+
+.headingone{
+    padding-top:30px;
 }
 
 .headingtwo{

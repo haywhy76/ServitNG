@@ -88,8 +88,7 @@
                     <p class="backbutton"><button class="ui green basic button"><a href="/nyscnews"><< Back</a></button></p>
                     
                     <div class="item">     
-                    <br>
-                    <br>
+                    
                     <hr>
                     <br>
                     <% if(currentUser && nyscnew.author.id.equals(currentUser._id)){ %> 
@@ -101,24 +100,30 @@
                         
                         <% } %>
                    </p>
+                  <p class="commentbutton"> <a class="ui grey button" href="/nyscnews/<%=nyscnew._id%>/comment/new">Click To Comment</a></p>
                     </div>
 
-                    <div>
-                    <% nyscnew.nyscnewscomments.forEach(function(nyscnewcomment){ %>
-                    <p>h <%=nyscnewcomment.text%> | </p>
-                     <% }); %> 
-                    </div>
+                   
+                        
+                            <% nyscnew.nyscnewscomments.forEach(function(nyscnewcomment){ %>
+                              <div class="well">
+                            <p class="commentauthor"> <%= nyscnewcomment.author.username %>. <br> <span class="commentcomment"> <%=nyscnewcomment.text%></span> </p>
+                          </div> 
+                            <% }); %> 
+                            
+                   
+                  
 
                     
                     <h1 class="nyscnewsshowothernews">Other News</h1>
-                    <div>
+                    <div class="">
                     <% nyscnews.forEach(function(nyscnew){ %>
                       <div class="">
                       <!-- <div class="ui segment"> -->
                         <p class="">
                           <hr class="nyscnewsindexhrline">
-                          <h1 class="nyscnewsshowtitle"><a class="" href="/nyscnews/<%=nyscnew._id%>"> <%=nyscnew.newstitle%> </a></h1>
-                        <p class="nyscnewsshowdescription"><span> By <%= nyscnew.author.username %> | <%= nyscnew.created.toDateString() %></span></p>
+                          <h1 class="nyscnewsshowtitle nyscnewsshowothernewsheading"><a class="" href="/nyscnews/<%=nyscnew._id%>"> <%=nyscnew.newstitle%> </a></h1>
+                        <p class="nyscnewsshowdescription nyscnewsshowothernewsdescription"><span> By <%= nyscnew.author.username %> | <%= nyscnew.created.toDateString() %></span></p>
                         <span></span>
                         <p><a href="/nyscnews/<%=nyscnew._id%>"><button class="ui  labeled icon green button"><i class="right arrow icon"></i>Read More</button></a></p>
                       </p>

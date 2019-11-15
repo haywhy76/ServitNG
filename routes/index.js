@@ -48,7 +48,7 @@ router.get("/", function(req, res){
         else{
             nyscnewsfour=allNyscNewsFour;
         }
-    }).skip(3).limit(3).sort({'_id':-1}); 
+    }).skip(3).limit(6).sort({'_id':-1}); 
 
     nyscnew.find({},  function(err, allNyscNewsFive){
         if (err){
@@ -68,6 +68,15 @@ router.get("/", function(req, res){
         }
     }).limit(4).sort({'_id':-1});
 
+    roomate.find({},  function(err, allRoomates){
+        if (err){
+            console.log(err);
+        }
+        else{
+            roomatesss=allRoomates;
+        }
+    }).limit(1).sort({'_id':-1});
+
     campexperience.find({},  function(err, allCampExperiencesThree){
         if (err){
             console.log(err);
@@ -75,7 +84,7 @@ router.get("/", function(req, res){
         else{
             campexperiencesthree=allCampExperiencesThree;
         }
-    }).limit(3).sort({'_id':-1});
+    }).limit(6).sort({'_id':-1});
 
     campexperience.find({},  function(err, allCampExperiencesFour){
         if (err){
@@ -102,7 +111,7 @@ router.get("/", function(req, res){
         }
         else{
             campexperiences=allCampExperiences;
-            res.render("landing",{nyscnews:nyscnews,nyscnewsthree: nyscnewsthree, nyscnewsfour:nyscnewsfour, nyscnewsfive:nyscnewsfive, roomatess:roomatess, campexperiencesthree:campexperiencesthree, campexperiencesfour:campexperiencesfour, campexperiencesfive:campexperiencesfive, campexperiences:campexperiences});
+            res.render("landing",{nyscnews:nyscnews,nyscnewsthree: nyscnewsthree, nyscnewsfour:nyscnewsfour, nyscnewsfive:nyscnewsfive, roomatess:roomatess, roomatesss:roomatesss,campexperiencesthree:campexperiencesthree, campexperiencesfour:campexperiencesfour, campexperiencesfive:campexperiencesfive, campexperiences:campexperiences});
         }
     }).limit(1).sort({'_id':-1});
     

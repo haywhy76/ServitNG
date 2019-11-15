@@ -49,6 +49,7 @@ var express    = require("express"),
     locationRoutes = require("./routes/location")
     nyscNewsRoutes = require("./routes/nyscnews")
     roomatesRoutes = require("./routes/roomates")
+    nyscnewscommentsRoutes = require("./routes/nyscnewscomments")
     getstartedRoutes = require("./routes/getstarted")
     imageUploadRoutes = require("./routes/imageupload")
     campExperienceRoutes = require("./routes/campexperiences")
@@ -113,7 +114,7 @@ app.use(contactRoutes);
 app.use(nyscNewsRoutes);
 app.use(roomatesRoutes);
 app.use(getstartedRoutes);
-
+app.use( nyscnewscommentsRoutes);
 app.use(campExperienceRoutes);
 
 
