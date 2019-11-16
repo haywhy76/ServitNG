@@ -371,6 +371,14 @@
     padding-top:10px;
 }
 
+.overlay-content {
+    position: relative;
+    top: 10%;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+  }
+
 .overlay a {
     padding: 8px;
     text-decoration: none;
