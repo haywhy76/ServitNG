@@ -414,6 +414,10 @@
     padding-bottom:10px;
 }
 
+.hhtwo{
+    display:none;
+}
+
   }
 
   @media screen and (min-width: 520px) {

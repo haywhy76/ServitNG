@@ -36,8 +36,9 @@
                       <% if(!currentUser){ %>
                         <a href="nyscnews"> NYSC News </a>
                         <a href="/campexperiences"> Camp Experiences </a>
-                        <a href="/#contactus"> Flatmates/Apartments </a>
-                        <a href="/register">Find your way to camp</a>
+                        <a href="/roomates"> Flatmates/Apartments </a>
+                        <a href="/findyourwaytocamp">Find your way to camp</a>
+                        <a href="/login" >Login <i class="fa fa-sign-in"></i></a>
                     <% }else{ %> 
                       <p>Signed In As <%= currentUser.username %></p>
                   
@@ -119,9 +120,92 @@
           </div>        
   </div>
   </div>
-</div>
- </body>
+  <hr class="hrfooterlinetwo">
+  <div class="container lastsegment">
+    <div class="row">
+      <div class="col-md-3 col-sm-12">
+        <h2>About Us</h2>
+        <p class="search">The search for IT/SIWES placement and PPA for redeployed corp members can be an arduous task.
+          <br> But Servit makes it simplified.</p>
+      </div>
+  
+        <div class="col-md-3 col-sm-12">
+            <h2 class="categories">Categories</h2>
+           <p> <a href="/nyscnews">NYSC News</a></p>
+           <p> <a href="/campexperiences">Camp Experiences</a></p>
+           <p> <a href="/roomates">Find a Roomie</a></p>
+          </div>
+          <div class="col-md-3 col-sm-12">
+              <h2 class="categories">Contact</h2>
+              <p><span class="phone">Phone:</span> +2347014899225</p>
+              <p><span class="phone">Email:</span> hello@servitng.com</p>
+              <p><span class="phone">Address:</span> FCT, Abuja</p>
+             
+            </div>
 
+            <div class="col-md-3 col-sm-12">
+              <h2 class="categories">Social</h2>
+              <a href="https://www.fb.com/servitng" target="_blank"> <img src="/images/facebook.jpg" height="32" width="32"></a>
+              <a href="https://www.instagram.com/servit.ng/" target="_blank"> <img src="/images/instagram.jpg" height="32" width="32"></a>
+              <a href="https://twitter.com/servitng" target="_blank"><img src="/images/twitter.jpg" height="32" width="32"></a>
+              <a href="mailto:hello@servit.ng" target="_blank"><img src="/images/mail.png" height="32" width="32"></a>
+            </div>
+    </div>
+    </div>
+  
+    <p class="goupbutton"><button onclick="topFunction()" id="myBtn" class="waves-effect waves-light btn-large">GO UP   <i class="large material-icons">arrow_upward</i></button></p>
+  
+  
+  
+  
+    <script src="http://code.jquery.com/jquery-3.4.1.js"integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="/js/app.js"></script>
+  <script src="/js/accordion.min.js"></script>
+  
 
-
-<% include ../partials/footer %>
+  <script>
+      function openNav() {
+        document.getElementById("myNav").style.height = "100%";
+      }
+      
+      function closeNav() {
+        document.getElementById("myNav").style.height = "0%";
+      }
+      </script>
+  
+  
+  
+  <script>
+      $(document).ready(function () {
+          $("nav").find("li").on("click", "a", function () {
+              $('.navbar-collapse.in').collapse('hide');
+          });
+      });
+      </script>
+      
+  
+  <!-- <script>
+    $(document).ready(function() {
+    //Preloader
+    $(window).on("load", function() {
+    preloaderFadeOutTime = 500;
+    function hidePreloader() {
+    var preloader = $('.spinner-wrapper');
+    preloader.fadeOut(preloaderFadeOutTime);
+    }
+    hidePreloader();
+    });
+    });
+    </script> -->
+  
+  <script>
+      new Accordion('.accordion-container'); 
+    </script>
+  
+  </body>
+  </html>
+   
+  
+  
+  

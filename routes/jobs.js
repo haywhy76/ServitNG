@@ -2,7 +2,9 @@ var express = require("express");
 var router = express.Router();
 var middleware = require("../middleware");
 var internjob = require("../models/internjobs");
+var internjobs = require("../models/internjobs");
 var corperjob = require("../models/corperjobs");
+var corperjobs = require("../models/corperjobs");
 var premiumJob = require("../models/premiumjobs");
 var setting = require("../models/settings");
 

@@ -1196,6 +1196,16 @@ text-align: center;
   /* MediaQueries */
 
 @media screen and (max-width: 833px) {
+
+    .subscribebutton{
+       margin-left: 20px;
+        text-align:center;
+    }
+    .subscriptionforminput{
+        width:170px !important;
+        text-align:center;
+        margin-left: 20px;
+    }
     .corperformfield{
         width:200px !important;
         margin-left: -75px;
@@ -1279,6 +1289,21 @@ text-align: center;
     margin-left: -40px; 
     
 }
+.registerusername{
+    width:150px !important;
+    margin-left: -40px; 
+    
+}
+.registeremail{
+    width:150px !important;
+    margin-left: -40px; 
+    
+}
+.registerpassword{
+    width:150px !important;
+    margin-left: -40px; 
+    
+}
     .registerbox{
         margin-top:0px;
     }
@@ -1298,6 +1323,8 @@ text-align: center;
 
 
 @media screen and (min-width: 520px) {
+
+    
     .settingsformfield{
         width:200px !important;
         margin-left: -75px;
@@ -1337,21 +1364,7 @@ text-align: center;
         margin-left: -75px;
     }
     
-    .registerusername{
-        width:150px !important;
-        margin-left: -75px; 
-        
-    }
-    .registeremail{
-        width:150px !important;
-        margin-left: -75px; 
-        
-    }
-    .registerpassword{
-        width:150px !important;
-        margin-left: -75px; 
-        
-    }
+    
     
    
 
@@ -1512,4 +1525,6 @@ left: 48%;
     top: 15px;
     right: 35px;
     }
+
+ 
   }

@@ -37,7 +37,8 @@
                         <a href="nyscnews"> NYSC News </a>
                         <a href="/campexperiences"> Camp Experiences </a>
                         <a href="/roomates"> Flatmates/Apartments </a>
-                        <a href="/findyourway">Find your way to camp</a>
+                        <a href="/findyourwaytocamp">Find your way to camp</a>
+                        <a href="/login" >Login <i class="fa fa-sign-in"></i></a>
                     <% }else{ %> 
                       <p>Signed In As <%= currentUser.username %></p>
                     <a href="/jobs/new"> <i class="fa fa-pencil"></i> Submit A Listing </a>
@@ -183,7 +184,7 @@
 
 
           <div class="landingthirdsegment">
-              <p class="latestnews">FIND A ROOMATE</p>
+              <p class="latestnews">FIND A ROOM MATE</p>
               </div>
           <div class="row landingthirdsegment1">
               <% roomatess.forEach(function(roomate){ %>
