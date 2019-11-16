@@ -164,6 +164,11 @@
    
 }
 
+.hhfirst{
+    border-radius:0px !important;
+   
+}
+
 .hhlast{
     border-radius:0px !important;
    
@@ -339,12 +344,21 @@
         height:150px; 
         width: 250px;
     }
+    .hhfirst{
+       
+        height:150px; 
+        width: 250px;
+    }
     .landingthirdsegment1{
         margin:0 auto;
     }
     .hhlast{
         display:none;
     }
+.campeexperiencespicture{
+    height:150px; 
+        width: 250px;
+}
   }
 
   @media screen and (min-width: 520px) {

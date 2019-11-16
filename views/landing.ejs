@@ -123,7 +123,7 @@
       <% nyscnewsthree.forEach(function(nyscnew){ %>
         <div class="col-md-4 col-sm-12">
         <div class="">
-            <img class="hh" height="250" width="350"  src="<%=nyscnew.newspicture%>" >
+            <img class="hhfirst" height="250" width="350"  src="<%=nyscnew.newspicture%>" >
             <h5 class="nyscnewsindextitle" > <%=nyscnew.newstitle.substring(0, 40)%>... </h5>
             <h5 class="landingbodyexcerpt" > <%=nyscnew.newsbody.substring(0, 55)%>...</h5>
             <h5 class="nyscnewsindexlocation"><span> By <%= nyscnew.author.username %> |<span class="landingbodyexcerpt"> <%= nyscnew.created.toDateString() %></span></span></h5>
