@@ -344,6 +344,10 @@
     font-size:15px;
 }
 
+.wemobile{
+    display:none;
+}
+
   /* MediaQueries */
 
   @media screen and (max-width: 833px) {    
@@ -387,6 +391,29 @@
     display: block;
     transition: 0.3s;
   }
+
+  .getstartedimage{
+      display:none;
+  }
+
+  .we{
+      display:none;
+  }
+  .wemobile{
+    display:block;
+    font-size:18px;
+    text-align: center;
+    text-align: justify;
+}
+
+.stepone{
+    margin-top:0px;
+}
+
+.getstartedfirstsegment{
+    padding-bottom:10px;
+}
+
   }
 
   @media screen and (min-width: 520px) {
