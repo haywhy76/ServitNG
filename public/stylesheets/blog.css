@@ -164,6 +164,11 @@
    
 }
 
+.hhlast{
+    border-radius:0px !important;
+   
+}
+
 .hhtwo{
     border-radius:0px !important;
     
@@ -325,3 +330,29 @@
 .stepone{
     margin-top:40px;
 }
+
+  /* MediaQueries */
+
+  @media screen and (max-width: 833px) {    
+    .hh{
+        margin-top:20px;
+    }
+    .landingthirdsegment1{
+        margin:0 auto;
+    }
+    .hhlast{
+        display:none;
+    }
+  }
+
+  @media screen and (min-width: 520px) {
+
+  }
+
+  @media screen and (min-width: 10px) and (max-width: 480px){
+
+  }
+
+  @media screen and (max-height: 450px) {
+
+  }
