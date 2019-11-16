@@ -336,6 +336,14 @@
     margin-top:40px;
 }
 
+.makewhite{
+    color:white;
+}
+
+.search{
+    font-size:15px;
+}
+
   /* MediaQueries */
 
   @media screen and (max-width: 833px) {    
@@ -345,7 +353,7 @@
         width: 250px;
     }
     .hhfirst{
-       
+        margin-top:20px;
         height:150px; 
         width: 250px;
     }
@@ -358,6 +366,9 @@
 .campeexperiencespicture{
     height:150px; 
         width: 250px;
+}
+.categories{
+    margin-top:10px;
 }
   }
 
