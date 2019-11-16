@@ -1269,7 +1269,16 @@ text-align: center;
   /* LOGIN PAGE */
 
     
-
+  .loginusername{
+    width:150px !important;
+    margin-left: -40px; 
+    
+}
+.loginpassword{
+    width:150px !important;
+    margin-left: -40px; 
+    
+}
     .registerbox{
         margin-top:0px;
     }
@@ -1344,16 +1353,7 @@ text-align: center;
         
     }
     
-    .loginusername{
-        width:150px !important;
-        margin-left: -75px; 
-        
-    }
-    .loginpassword{
-        width:150px !important;
-        margin-left: -75px; 
-        
-    }
+   
 
     /* .corperformfield{
         width:150px !important;
