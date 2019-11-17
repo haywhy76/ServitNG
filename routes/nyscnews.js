@@ -2,7 +2,7 @@ var express = require("express");
 var router = express.Router();
 var nyscnew = require("../models/nyscnews");
 var nyscnewscomment = require("../models/nyscnewscomments");
-var nyscnewstwo = require("../models/nyscnews");
+// var nyscnewstwo = require("../models/nyscnews");
 var middleware = require("../middleware");
 var nyscnewsthree = require("../models/nyscnews");
 

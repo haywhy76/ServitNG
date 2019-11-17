@@ -65,7 +65,7 @@ router.post("/campexperience",middleware.isLoggedIn,  function(req, res){
 });
 
 //SHOW PAGE FOR CAMP EXPERIENCE
-router.get("/campexperience/:id",middleware.isLoggedIn, function(req, res){
+router.get("/campexperience/:id", function(req, res){
     campexperience.find({},  function(err, allCampExperiences){
 
         if (err){

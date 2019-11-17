@@ -47,7 +47,7 @@ router.post("/roomates",middleware.isLoggedIn,function(req, res){
 });
 
 //SHOW PAGE FOR NEWS
-router.get("/roomates/:id",middleware.isLoggedIn, function(req, res){
+router.get("/roomates/:id", function(req, res){
     //find the post with provided ID
     roomate.find({},  function(err, allRoomates){
 

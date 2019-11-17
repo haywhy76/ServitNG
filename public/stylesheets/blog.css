@@ -348,6 +348,13 @@
     display:none;
 }
 
+.category{
+    text-align:center;
+    font-weight: bold;
+    font-size: 18px;
+    font-family: 'Cantarell', sans-serif;
+}
+
   /* MediaQueries */
 
   @media screen and (max-width: 833px) {    
