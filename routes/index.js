@@ -168,14 +168,14 @@ router.get("/connect", function(req, res){
 //===========
 
 //Show register form
-router.get("/register", function(req, res){
+router.get("/registerlol", function(req, res){
     res.render("register")
    
 });
 
 //Handle signup logic
 
-router.post("/register", function(req, res){
+router.post("/registerlol", function(req, res){
     var newUser = new User({username: req.body.username,email: req.body.email});
     User.register(newUser, req.body.password, function(err, user){
                 if (err){

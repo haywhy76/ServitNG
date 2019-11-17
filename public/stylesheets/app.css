@@ -1214,9 +1214,10 @@ text-align: center;
         width:200px !important;
         margin-left: -75px;
     }
+   
     .settingsformfield{
         width:200px !important;
-        margin-left: -75px;
+       
     }
 
     #testimonial1, #testimonial2, #testimonial3{
@@ -1325,10 +1326,7 @@ text-align: center;
 @media screen and (min-width: 520px) {
 
     
-    .settingsformfield{
-        width:200px !important;
-        margin-left: -75px;
-    }
+   
    
     .navbar-brand{
         margin-top:-15px;
