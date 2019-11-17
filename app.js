@@ -44,6 +44,7 @@ var express    = require("express"),
     resetRoutes = require("./routes/forgot"),
     settingsRoutes = require("./routes/settings")
     companyRoutes = require("./routes/company")
+    findyourwaytocampRoutes = require("./routes/findyourwaytocamp")
     positionRoutes = require("./routes/position")
     mylistingRoutes = require("./routes/mylistings")
     locationRoutes = require("./routes/location")
@@ -116,6 +117,8 @@ app.use(roomatesRoutes);
 app.use(getstartedRoutes);
 app.use( nyscnewscommentsRoutes);
 app.use(campExperienceRoutes);
+app.use(findyourwaytocampRoutes);
+
 
 
 

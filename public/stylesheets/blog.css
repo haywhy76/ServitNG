@@ -355,6 +355,19 @@
     font-family: 'Cantarell', sans-serif;
 }
 
+.finddescr{
+    text-align:justify;
+}
+
+.finddescrspan{
+    font-weight:bold;
+    color: #4A724E;
+}
+
+.abia{
+    color: #4A724E;
+}
+
   /* MediaQueries */
 
   @media screen and (max-width: 833px) {    
