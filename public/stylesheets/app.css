@@ -1208,11 +1208,11 @@ text-align: center;
     }
     .corperformfield{
         width:200px !important;
-        margin-left: -75px;
+        margin-left: -45px;
     }
     .internformfield{
         width:200px !important;
-        margin-left: -75px;
+        margin-left: -45px;
     }
    
     .settingsformfield{
@@ -1349,14 +1349,7 @@ text-align: center;
         margin-top:-15px;
     }
 
-    .corperformfield{
-        width:200px !important;
-        margin-left: -75px;
-    }
-    .internformfield{
-        width:200px !important;
-        margin-left: -75px;
-    }
+   
     .settingsformfield{
         width:200px !important;
         margin-left: -75px;

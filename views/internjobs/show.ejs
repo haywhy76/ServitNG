@@ -20,13 +20,7 @@
                     <p class="jobdescription"><%=internjob.description%></p>
                 </div>
                 <br>
-                <% if(currentUser && internjob.author.id.equals(currentUser._id)){ %> 
-
-                    <a class="ui grey button" href="/internjobs/<%=internjob._id%>/edit">EDIT</a>
-                    <form id="delete" action="/internjobs/<%=internjob._id%>?_method=DELETE" method="POST"> 
-                        <button class="ui red button">DELETE</button>
-                    </form>
-                    <% } %>
+           
                </p>
                 </div>
                 <br>

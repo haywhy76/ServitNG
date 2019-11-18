@@ -34,26 +34,22 @@ var express    = require("express"),
 //requiring routes
 //seedDB();
 
-  var  tagsRoutes = require("./routes/tags"),
-    keylinksRoutes = require("./routes/keylinks"),
-    
+  var keylinksRoutes = require("./routes/keylinks"),
     premiumJobRoutes = require("./routes/premiumjobs"),
     indexRoutes = require("./routes/index"),
     jobRoutes = require("./routes/jobs"),
     forgotRoutes = require("./routes/forgot"),
     resetRoutes = require("./routes/forgot"),
     settingsRoutes = require("./routes/settings")
-    companyRoutes = require("./routes/company")
     findyourwaytocampRoutes = require("./routes/findyourwaytocamp")
-    positionRoutes = require("./routes/position")
     mylistingRoutes = require("./routes/mylistings")
-    locationRoutes = require("./routes/location")
     nyscNewsRoutes = require("./routes/nyscnews")
     roomatesRoutes = require("./routes/roomates")
     nyscnewscommentsRoutes = require("./routes/nyscnewscomments")
     getstartedRoutes = require("./routes/getstarted")
     imageUploadRoutes = require("./routes/imageupload")
     campExperienceRoutes = require("./routes/campexperiences")
+
    
     faqRoutes = require("./routes/faq")
     contactRoutes = require("./routes/contact")
@@ -98,14 +94,10 @@ app.use(function(req, res, next){
 })
 
 app.use("/", indexRoutes);
-app.use( tagsRoutes);
 app.use( keylinksRoutes);
 app.use(jobRoutes);
 app.use(settingsRoutes);
-app.use(companyRoutes);
-app.use(positionRoutes);
 app.use(premiumJobRoutes);
-app.use(locationRoutes);
 app.use(resetRoutes);
 app.use(forgotRoutes);
 app.use(imageUploadRoutes);
@@ -118,6 +110,7 @@ app.use(getstartedRoutes);
 app.use( nyscnewscommentsRoutes);
 app.use(campExperienceRoutes);
 app.use(findyourwaytocampRoutes);
+
 
 
 

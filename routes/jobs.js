@@ -47,7 +47,7 @@ router.get("/jobs", middleware.isLoggedIn, function(req, res){
 
 // SELECT THE KIND OF LISTING CORPER OR INTERN
 
-router.get("/jobs/new", middleware.isLoggedIn,function(req, res){
+router.get("/createalisting",function(req, res){
     res.render("jobs/new")
 });
 
@@ -83,31 +83,29 @@ router.get("/internjobs", middleware.isLoggedIn, function(req, res){
 
 // ADD a new intern job
 
-router.post("/internjobs",middleware.isLoggedIn, function(req, res){
+router.post("/internjobs", function(req, res){
    
     var title =  req.body.title;
     var company  =  req.body.company;
     var location = req.body.location;
     var allowance = req.body.allowance;
-    var author = {
-        id: req.user._id,
-        username: req.user.username
-    }
+ 
     var description = req.body.description;
-    var newJob = {title: title, company:company, location:location, allowance:allowance, description:description, author:author};
+    var newJob = {title: title, company:company, location:location, allowance:allowance, description:description};
     //create a new job and save to DB
     internjob.create(newJob, function(err, newlyCreated){
         if (err){
             console.log(err);
         }else{
-            res.redirect("/internjobs")
+            req.flash("success" , "Your listing has been created successfully");
+            res.redirect("/");
         }
     })
 });
 
 //CREATE a new intern job listing
 
-router.get("/internjobs/new", middleware.isLoggedIn,function(req, res){
+router.get("/internjobs/new",function(req, res){
     res.render("internjobs/new")
 });
 
@@ -195,31 +193,29 @@ router.get("/corperjobs", middleware.isLoggedIn, function(req, res){
 
 // ADD a new corper job
 
-router.post("/corperjobs",middleware.isLoggedIn, function(req, res){
+router.post("/corperjobs", function(req, res){
    
     var title =  req.body.title;
     var company  =  req.body.company;
     var location = req.body.location;
     var allowance = req.body.allowance;
-    var author = {
-        id: req.user._id,
-        username: req.user.username
-    }
+ 
     var description = req.body.description;
-    var newJob = {title: title, company:company, location:location, allowance:allowance, description:description, author:author};
+    var newJob = {title: title, company:company, location:location, allowance:allowance, description:description};
     //create a new job and save to DB
     corperjob.create(newJob, function(err, newlyCreated){
         if (err){
             console.log(err);
         }else{
-            res.redirect("/corperjobs")
+            req.flash("success" , "Your listing has been created successfully");
+            res.redirect("/");
         }
     })
 });
 
 //CREATE a new corper job listing
 
-router.get("/corperjobs/new", middleware.isLoggedIn,function(req, res){
+router.get("/corperjobs/new", function(req, res){
     res.render("corperjobs/new")
 });
 

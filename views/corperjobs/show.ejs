@@ -20,13 +20,7 @@
                 </div>
                 <br>
                 
-                <% if(currentUser && corperjob.author.id.equals(currentUser._id)){ %> 
-                    <a class="ui grey button" href="/corperjobs/<%=corperjob._id%>/edit">EDIT</a>
-                    <form id="delete" action="/corperjobs/<%=corperjob._id%>?_method=DELETE" method="POST"> 
-                        <button class="ui red button">DELETE</button>
-
-                    </form>
-                    <% } %>
+         
                </p>
                 </div>
                 <br>
