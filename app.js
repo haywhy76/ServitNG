@@ -89,7 +89,7 @@ passport.use(new GoogleStrategy({
 ));
 
 app.get('/auth/google',
-  passport.authenticate('google', { scope: 'https://www.google.com/m8/feeds' }));
+  passport.authenticate('google', { scope: ['https://www.googleapis.com/auth/plus.login'] }));
 
 
 app.get('/auth/google/callback', 
