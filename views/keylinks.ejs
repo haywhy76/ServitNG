@@ -1,4 +1,73 @@
-<% include partials/header %>
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Servit | Keylinks</title>
+        <meta name='viewport' content='width=device-width' />
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Cantarell&display=swap" rel="stylesheet">
+       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+        <link rel="stylesheet"  href="/stylesheets/app.css">
+        <link rel="stylesheet"  href="/stylesheets/blog.css">
+        <link rel="stylesheet"  href="/stylesheets/app.scss">
+        <link rel="stylesheet"  href="/stylesheets/accordion.min.css">
+        <link rel="shortcut icon" href="/images/ico.png">
+    </head>
+    <body>
+        
+      <div class="container">
+        <nav class="navbar navbar-default ">
+          <div class="container-fluid">
+            
+             
+              <a class="navbar-brand" href="/"><img src="/images/logo.png"></a>
+
+              <div class="mynavs">
+                   <span style=" margin-top:-15px; color: #4A724E;font-size:30px;cursor:pointer" onclick="openNav()">&#9776; </span>
+                </div>
+
+              <div id="myNav" class="overlay">
+                  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                  <div class="overlay-content">
+                      <% if(!currentUser){ %>
+                        <a href="nyscnews"> NYSC News </a>
+                        <a href="/campexperiences"> Camp Experiences </a>
+                        <a href="/roomates"> Flatmates/Apartments </a>
+                        <a href="/findyourwaytocamp">Find your way to camp</a>
+                        <a href="/createalisting">Create A Listing (Employers Only)</a>
+                        <a href="/login" >Login <i class="fa fa-sign-in"></i></a>
+                    <% }else{ %> 
+                      <p>Signed In As <%= currentUser.username %></p>
+                    <a href="/keylinks"><i class="fa fa-key"></i> Keylinks </a>
+                    <a href="/logout"><i class="fa fa-sign-out"></i> Signout </a>
+                    <% } %>
+                  </div>
+                </div>
+                  
+          </div>
+        </nav>
+
+        <div class="container">
+          <% if (error && error.length > 0){%>
+            <div class="alert alert-danger" role="alert">
+             <%= error %>
+          </div>
+          <%}%>
+
+          <% if (success && success.length > 0){%>
+            <div class="alert alert-success" role="alert">
+               <%= success %>
+            </div>
+            <%}%>
+        </div>
+ 
+
+        
+ </div>
 
 <div class="container">
     <div class="jumbotron jumbotronkeylinks">
@@ -14,11 +83,11 @@
                 
                     <% }); %>   -->
                     <br>
-                    <li> <a href="/about">Get Started</a></li>
+                    <li> <a href="/getstarted">Get Started</a></li>
                     <br>
                     <li>  <a href="/faq"> FAQ</a></li>
                     <br>
-                    <a href="/createalisting">Create A Listing (Employers Only)</a>
+                    <li><a href="/createalisting">Create A Listing (Employers Only)</a></li>
                     <br>
                     <li> <a href="/contact">Contact</a></li>
                    
@@ -37,17 +106,97 @@
 </div>
 <br>
 <br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
 
-<% include partials/footer %>
+
+
+
+
+<hr class="hrfooterlinetwo">
+<div class="container lastsegment">
+  <div class="row">
+    <div class="col-md-3 col-sm-12">
+      <h2>About Us</h2>
+      <p class="search">The search for IT/SIWES placement and PPA for redeployed corp members can be an arduous task.
+        <br> But Servit makes it simplified.</p>
+    </div>
+
+      <div class="col-md-3 col-sm-12">
+          <h2 class="categories">Categories</h2>
+         <p> <a href="/nyscnews">NYSC News</a></p>
+         <p> <a href="/campexperiences">Camp Experiences</a></p>
+         <p> <a href="/roomates">Find a Roomie</a></p>
+        </div>
+        <div class="col-md-3 col-sm-12">
+            <h2 class="categories">Contact</h2>
+            <p><span class="phone">Phone:</span> +2347014899225</p>
+            <p><span class="phone">Email:</span> hello@servitng.com</p>
+            <p><span class="phone">Address:</span> FCT, Abuja</p>
+           
+          </div>
+
+          <div class="col-md-3 col-sm-12">
+            <h2 class="categories">Social</h2>
+            <a href="https://www.fb.com/servitng" target="_blank"> <img src="/images/facebook.jpg" height="32" width="32"></a>
+            <a href="https://www.instagram.com/servit.ng/" target="_blank"> <img src="/images/instagram.jpg" height="32" width="32"></a>
+            <a href="https://twitter.com/servitng" target="_blank"><img src="/images/twitter.jpg" height="32" width="32"></a>
+            <a href="mailto:hello@servit.ng" target="_blank"><img src="/images/mail.png" height="32" width="32"></a>
+          </div>
+  </div>
+  </div>
+
+  <p class="goupbutton"><button onclick="topFunction()" id="myBtn" class="waves-effect waves-light btn-large">GO UP   <i class="large material-icons">arrow_upward</i></button></p>
+
+
+
+
+  <script src="http://code.jquery.com/jquery-3.4.1.js"integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="/js/app.js"></script>
+<script src="/js/accordion.min.js"></script>
+
+
+<script>
+    function openNav() {
+      document.getElementById("myNav").style.height = "100%";
+    }
+    
+    function closeNav() {
+      document.getElementById("myNav").style.height = "0%";
+    }
+    </script>
+
+
+
+<script>
+    $(document).ready(function () {
+        $("nav").find("li").on("click", "a", function () {
+            $('.navbar-collapse.in').collapse('hide');
+        });
+    });
+    </script>
+    
+
+<!-- <script>
+  $(document).ready(function() {
+  //Preloader
+  $(window).on("load", function() {
+  preloaderFadeOutTime = 500;
+  function hidePreloader() {
+  var preloader = $('.spinner-wrapper');
+  preloader.fadeOut(preloaderFadeOutTime);
+  }
+  hidePreloader();
+  });
+  });
+  </script> -->
+
+<script>
+    new Accordion('.accordion-container'); 
+  </script>
+
+</body>
+</html>
+ 
+
+
+

@@ -197,10 +197,6 @@ a{
     border-bottom: 1px solid #4A724E ; /* This creates the border. Replace black with whatever color you want. */
 }
 
-.faq{
-    margin-top:100px;
-}
-
 
 .faqheading{
     text-align:center;
@@ -1482,7 +1478,7 @@ left: 48%;
   
   .overlay-content {
     position: relative;
-    top: 25%;
+    top: 15%;
     width: 100%;
     text-align: center;
     margin-top: 30px;

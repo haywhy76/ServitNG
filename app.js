@@ -30,6 +30,7 @@ var express    = require("express"),
     GridFsStorage = require("multer-gridfs-storage");
     Grid = require("gridfs-stream");
     conn = mongoose.createConnection(url)
+    GoogleStrategy = require('passport-google-oauth').OAuthStrategy;
 
 //requiring routes
 //seedDB();
@@ -74,6 +75,28 @@ app.use(require("express-session")({
  app.use(passport.session());
 passport.use(new LocalStrategy(User.authenticate()));
 
+   
+passport.use(new GoogleStrategy({
+    consumerKey: "672195255514-gi76bin77pej54csltbmbfha746t3p90.apps.googleusercontent.com",
+    consumerSecret: "U_Yb-Zttws3wCPd35sXh_Gmx",
+    callbackURL: "https://www.servitng.com/auth/google/callback"
+  },
+  function(token, tokenSecret, profile, done) {
+      User.findOrCreate({ googleId: profile.id }, function (err, user) {
+        return done(err, user);
+      });
+  }
+));
+
+app.get('/auth/google',
+  passport.authenticate('google', { scope: 'https://www.google.com/m8/feeds' }));
+
+
+app.get('/auth/google/callback', 
+  passport.authenticate('google', { failureRedirect: '/login' }),
+  function(req, res) {
+    res.redirect('/');
+  });
 
 
 

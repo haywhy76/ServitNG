@@ -95,13 +95,13 @@ $(document).ready(function() {
         });
 
 //Fadein FAQ section
-$(document).ready(function(){
+// $(document).ready(function(){
 
-    /*! Fades in page on load */
-    $('.faq').css('display', 'none');
-    $('.faq').fadeIn(5000);
+//     /*! Fades in page on load */
+//     $('.faq').css('display', 'none');
+//     $('.faq').fadeIn(5000);
     
-    });
+//     });
 
 
 //Fadein Contact section
