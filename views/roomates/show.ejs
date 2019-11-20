@@ -73,7 +73,7 @@
             <div class="col-md-8 ">  
                 <img id="img" style="display:block"></img>
                 <h1 class="nyscnewsshowtitle"><%=roomate.roomatetitle%></h1>
-                <p class="nyscnewsshowdescription">Written By <%= roomate.author.username %> on <%= roomate.created.toDateString() %></p>
+                <p class="nyscnewsshowdescription">Created on <%= roomate.created.toDateString() %></p>
                 <p class="nyscnewsshowshare">Share this post:
                    
                         <img src="/images/facebook.jpg" height="32" width="32">
@@ -81,7 +81,7 @@
                         <img src="/images/twitter.jpg" height="32" width="32">
                         
                 </p>
-                      <img class="ui centred rounded image" src="<%=roomate.roomatepicture%>" >
+                <img class="hh gg" height="367" width="700"  src="/images/roommate.jpg" >
                     <p class="nyscnewsshowbody"><%=roomate.roomatebody%></p>
                
                     <p class="backbutton"><button class="ui green basic button"><a href="/roomates"><< Back</a></button></p>
@@ -91,18 +91,11 @@
                     <br>
                     <hr>
                     <br>
-                    <% if(currentUser && roomate.author.id.equals(currentUser._id)){ %> 
-                        
-                        <a class="ui grey button" href="/roomates/<%=roomate._id%>/edit">EDIT</a>
-                        <form id="delete" action="/roomates/<%=roomate._id%>?_method=DELETE" method="POST"> 
-                            <button class="ui red button">DELETE</button>
-                        </form>
-                        
-                        <% } %>
+                
                    </p>
                     </div>
                     
-                    <h1 class="nyscnewsshowothernews">Other News</h1>
+                    <h1 class="nyscnewsshowothernews">Other Listings</h1>
                     <div>
                     <% roomates.forEach(function(roomate){ %>
                       <div class="">
@@ -110,7 +103,7 @@
                         <p class="">
                           <hr class="nyscnewsindexhrline">
                           <h1 class="nyscnewsshowtitle"><a class="" href="/roomates/<%=roomate._id%>"> <%=roomate.newstitle%> </a></h1>
-                        <p class="nyscnewsshowdescription"><span> By <%= roomate.author.username %> | <%= roomate.created.toDateString() %></span></p>
+                        <p class="nyscnewsshowdescription"><span> <%= roomate.created.toDateString() %></span></p>
                         <span></span>
                         <p><a href="/roomates/<%=roomate._id%>"><button class="ui  labeled icon green button"><i class="right arrow icon"></i>Read More</button></a></p>
                       </p>

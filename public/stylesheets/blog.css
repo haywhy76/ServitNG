@@ -368,6 +368,10 @@
     color: #4A724E;
 }
 
+.followtheauthor{
+    font-size: 18px;
+}
+
   /* MediaQueries */
 
   @media screen and (max-width: 833px) {    

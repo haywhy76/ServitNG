@@ -1,0 +1,44 @@
+<% include ./partials/header %>
+
+
+<div class="container registercontainer">
+        <div class="row">
+        <div class=" registerbox col-md-5 col-sm-12 col-xs-12">
+                        <div class="registerboxheading">CREATE AN ACCOUNT</div>
+                        <form class="ui form form col-md-12 col-sm-12 col-xs-12 registerform" action="/paidregister" method="POST"> 
+
+                        <div class="field ">
+                              <p class="registerusername">  <input type="text" name="username" placeholder="username" required></p>
+                        </div>
+                        <!-- <div class="field">
+                                <p class="registeremail"><input type="text" name="email" placeholder="email" required></p>
+                        </div> -->
+                        <div class="field">
+                               <p class="registerpassword"> <input type="password" name="password" placeholder="password" required></p>
+                        </div>
+                        
+                
+                        <button type="submit" class="btn btn-default btn-lg registersubmitbutton">SUBMIT </button>
+                        <p class="undersubmitbutton">Have an account? <a href="/login">Login</a></p>
+                        
+                        </form>
+
+                        <a href="/auth/google">Sign In with Google</a>
+        </div>
+
+        <div class="col-md-7 registerpageimage">
+                <img alt="Image" height="420" width="600" src="/images/registerpageimage.jpg">
+        </div>
+
+     </div>         
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+<% include ./partials/footer %>

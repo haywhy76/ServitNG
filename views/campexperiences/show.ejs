@@ -72,7 +72,7 @@
         <div class="row">
             <div class="col-md-8 ">  
                 <h1 class="nyscnewsshowtitle"><%=campexperience.campexperiencetitle%></h1>
-                <p class="nyscnewsshowdescription">Written By <%= campexperience.author.username %> on <%= campexperience.created.toDateString() %></p>
+                <p class="nyscnewsshowdescription">Created on <%= campexperience.created.toDateString() %></p>
                 <p class="nyscnewsshowshare">Share this post:
                    
                         <img src="/images/facebook.jpg" height="32" width="32">
@@ -83,24 +83,21 @@
                 <img class="ui centred rounded image" src="<%=campexperience.campexperiencepicture%>" >
                     <p class="nyscnewsshowbody"><%=campexperience.campexperiencebody%></p>
                     <p class="backbutton"><button class="ui green basic button"><a href="/nyscnews"><< Back</a></button></p>
-                    
+                    <p class="followtheauthor">Follow the author: </p>
+                    <a href="https://www.fb.com/<%=campexperience.campexperiencefb%>" target="_blank"> <img src="/images/facebook.jpg" height="32" width="32"></a>
+                    <a href="https://www.instagram.com/<%=campexperience.campexperienceig%>" target="_blank"> <img src="/images/instagram.jpg" height="32" width="32"></a>
+                    <a href="https://twitter.com/<%=campexperience.campexperiencetwitter%>" target="_blank"><img src="/images/twitter.jpg" height="32" width="32"></a>
+                   
                     <div class="item">     
                     <br>
                     <br>
                     <hr>
                     <br>
-                    <% if(currentUser && campexperience.author.id.equals(currentUser._id)){ %> 
-                        
-                        <a class="ui grey button" href="/campexperience/<%=campexperience._id%>/edit">EDIT</a>
-                        <form id="delete" action="/campexperience/<%=campexperience._id%>?_method=DELETE" method="POST"> 
-                            <button class="ui red button">DELETE</button>
-                        </form>
-                        
-                        <% } %>
+            
                    </p>
                     </div>
                     
-                    <h1 class="nyscnewsshowothernews">Other News</h1>
+                    <h1 class="nyscnewsshowothernews">Other Camp Experiences</h1>
                     <div>
                     <% campexperiences.forEach(function(campexperience){ %>
                       <div class="">
@@ -108,7 +105,7 @@
                         <p class="">
                           <hr class="nyscnewsindexhrline">
                           <h1 class="nyscnewsshowtitle"><a class="" href="/campexperiences/<%=campexperience._id%>"> <%=campexperience.campexperiencetitle%> </a></h1>
-                        <p class="nyscnewsshowdescription"><span> By <%= campexperience.author.username %> | <%= campexperience.created.toDateString() %></span></p>
+                        <p class="nyscnewsshowdescription"><span> <%= campexperience.created.toDateString() %></span></p>
                         <span></span>
                         <p><a href="/campexperiences/<%=campexperience._id%>"><button class="ui  labeled icon green button"><i class="right arrow icon"></i>Read More</button></a></p>
                       </p>

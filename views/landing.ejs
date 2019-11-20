@@ -191,7 +191,7 @@
               <% roomatess.forEach(function(roomate){ %>
                 <div class="col-md-3 col-sm-12">
                 <div class="">
-                    <img class="hh" height="100" width="170"  src="<%=roomate.roomatepicture%>" >
+                  <img class="hh gg" height="180" width="280"  src="/images/roommate.jpg" >
                     <h5 class="nyscnewsindextitle" > <%=roomate.roomatetitle%></h5>
                     <h5 class="landingbodyexcerpt" > <%=roomate.roomatebody.substring(0, 55)%>...</h5>
                     <h5 class="nyscnewsindexlocation"><span> By <%= roomate.author.username %> |<span class="landingbodyexcerpt"> <%= roomate.created.toDateString() %></span></span></h5>

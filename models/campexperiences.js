@@ -4,6 +4,9 @@ var campexperiencesSchema = new mongoose.Schema({
     campexperiencetitle: String,
     campexperiencebody: String,
     campexperiencepicture: String,
+    campexperiencefb: String,
+    campexperienceig: String,
+    campexperiencetwitter: String,
     author: {
         id: {
             type: mongoose.Schema.Types.ObjectId,

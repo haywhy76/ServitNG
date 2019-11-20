@@ -24,13 +24,15 @@ var express    = require("express"),
     passport = require("passport"),
     LocalStrategy = require("passport-local"),
     User = require("./models/user");
+    paidUser = require("./models/paiduser");
     path = require("path");
     crypto = require("crypto");
     multer = require("multer");
     GridFsStorage = require("multer-gridfs-storage");
     Grid = require("gridfs-stream");
     conn = mongoose.createConnection(url)
-    GoogleStrategy = require('passport-google-oauth').OAuthStrategy;
+   
+    
 
 //requiring routes
 //seedDB();
@@ -71,38 +73,23 @@ app.use(require("express-session")({
     saveUnintialized: false
 }))
 
+
+
+
  app.use(passport.initialize());
  app.use(passport.session());
 passport.use(new LocalStrategy(User.authenticate()));
-
-   
-passport.use(new GoogleStrategy({
-    consumerKey: "672195255514-gi76bin77pej54csltbmbfha746t3p90.apps.googleusercontent.com",
-    consumerSecret: "U_Yb-Zttws3wCPd35sXh_Gmx",
-    callbackURL: "https://www.servitng.com/auth/google/callback"
-  },
-  function(token, tokenSecret, profile, done) {
-      User.findOrCreate({ googleId: profile.id }, function (err, user) {
-        return done(err, user);
-      });
-  }
-));
-
-app.get('/auth/google',
-  passport.authenticate('google', { scope: ['https://www.googleapis.com/auth/plus.login'] }));
+passport.use(new LocalStrategy(paidUser.authenticate()));
 
 
-app.get('/auth/google/callback', 
-  passport.authenticate('google', { failureRedirect: '/login' }),
-  function(req, res) {
-    res.redirect('/');
-  });
 
 
 
 
  passport.serializeUser(User.serializeUser());
  passport.deserializeUser(User.deserializeUser());
+ passport.serializeUser(paidUser.serializeUser());
+ passport.deserializeUser(paidUser.deserializeUser());
 
 app.use(function(req, res, next){
     res.locals.currentUser = req.user;
@@ -148,6 +135,7 @@ mongoose.connect('mongodb+srv://itandppa:itandppa@clusteritandppa-ffmfj.mongodb.
 //   gfs.collection('uploads')
 //   console.log('Connection Successful')
 // })
+
 
 
 

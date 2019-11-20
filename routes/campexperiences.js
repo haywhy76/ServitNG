@@ -45,16 +45,16 @@ router.get("/campexperience/new", function(req, res){
    res.render("campexperiences/new")
 })
 
-router.post("/campexperience",middleware.isLoggedIn,  function(req, res){
+router.post("/campexperience",  function(req, res){
    
     var campexperiencetitle =  req.body.campexperiencetitle;
     var campexperiencebody = req.body.campexperiencebody;
     var campexperiencepicture = req.body.campexperiencepicture;
-    var author = {
-        id: req.user._id,
-        username: req.user.username
-    }
-    var newCampExperience = {campexperiencetitle: campexperiencetitle, campexperiencebody:campexperiencebody,campexperiencepicture:campexperiencepicture, author:author};
+    var campexperiencefb = req.body.campexperiencefb;
+    var campexperienceig = req.body.campexperienceig;
+    var campexperiencetwitter = req.body.campexperiencetwitter;
+    var newCampExperience = {campexperiencetitle: campexperiencetitle, campexperiencebody:campexperiencebody,
+        campexperiencepicture:campexperiencepicture,campexperiencefb:campexperiencefb, campexperienceig:campexperienceig, campexperiencetwitter:campexperiencetwitter };
     //create a new news and save to DB
     campexperience.create(newCampExperience, function(err, newlyCreatedCampExperience){
         if (err){
@@ -89,7 +89,7 @@ router.get("/campexperience/:id", function(req, res){
 
 
 //EDIT CAMP EXPERIENCE
-router.get("/campexperience/:id/edit",middleware.checkCampExperienceOwnership,function(req, res){ 
+router.get("/campexperience/:id/edit", function(req, res){ 
        
     campexperience.findById(req.params.id, function(err, foundcampexperience){
                 res.render("campexperiences/edit", {campexperience: foundcampexperience});
@@ -98,7 +98,7 @@ router.get("/campexperience/:id/edit",middleware.checkCampExperienceOwnership,fu
 
 //UPDATE CAMP EXPERIENCE
 
-router.put("/campexperience/:id",middleware.checkCampExperienceOwnership, function(req, res){
+router.put("/campexperience/:id", function(req, res){
     campexperience.findByIdAndUpdate(req.params.id, req.body.campexperience, function(err, updatedCampExperience){
         if (err){
             res.redirect("/campexperiences/index")
@@ -112,7 +112,7 @@ router.put("/campexperience/:id",middleware.checkCampExperienceOwnership, functi
 
 //DELETE CAMP EXPERIENCE
 
-router.delete("/campexperience/:id",middleware.checkNyscNewsOwnership, function(req, res){
+router.delete("/campexperience/:id", function(req, res){
     campexperience.findByIdAndRemove(req.params.id, function(err){
         if(err){
             res.redirect("/campexperiences");

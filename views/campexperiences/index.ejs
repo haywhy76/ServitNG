@@ -84,7 +84,7 @@
                 <img class="hh" height="250" width="350" src="<%=campexperience.campexperiencepicture%>" >
                 <h5 class="nyscnewsindextitle" ><%=campexperience.campexperiencetitle%> </h5>
                 <h5 class="landingbodyexcerpt" > <%=campexperience.campexperiencebody.substring(0, 55)%>...</h5>
-                <h5 class="nyscnewsindexlocation"><span> By  <%= campexperience.author.username %> |<span class="landingbodyexcerpt"> <%= campexperience.created.toDateString() %></span></span></h5>
+                <h5 class="nyscnewsindexlocation"><span class="landingbodyexcerpt"> <%= campexperience.created.toDateString() %></span></h5>
                 <p><a href="/campexperience/<%=campexperience._id%>"><button class="ui  labeled icon green button"><i class="right arrow icon"></i>Read More</button></a></p>
               </div> 
             </div>
@@ -100,7 +100,7 @@
               <img class="hh" height="250" width="350" src="<%=campexperience.campexperiencepicture%>" >
               <h5 class="nyscnewsindextitle" ><%=campexperience.campexperiencetitle%> </h5>
               <h5 class="landingbodyexcerpt" > <%=campexperience.campexperiencebody.substring(0, 55)%>...</h5>
-              <h5 class="nyscnewsindexlocation"><span> By  <%= campexperience.author.username %> |<span class="landingbodyexcerpt"> <%= campexperience.created.toDateString() %></span></span></h5>
+              <h5 class="nyscnewsindexlocation"><span class="landingbodyexcerpt"> <%= campexperience.created.toDateString() %></span></h5>
               <p><a href="/campexperience/<%=campexperience._id%>"><button class="ui  labeled icon green button"><i class="right arrow icon"></i>Read More</button></a></p>
               </div>   
             </div>

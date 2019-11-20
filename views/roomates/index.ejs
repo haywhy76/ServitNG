@@ -81,9 +81,9 @@
         <% roomates.forEach(function(roomate){ %>
           <div class="col-md-6 ">
               <hr class="nyscnewsindexhrline">
-              <img class="hh gg" height="250" width="350"  src="<%=roomate.roomatepicture%>" >
+              <img class="hh gg" height="250" width="350"  src="/images/roommate.jpg" >
               <h5 class="nyscnewsindextitle"><a class="" href="/roomates/<%=roomate._id%>"> <%=roomate.roomatetitle%> </a></h5>
-            <h5 class="nyscnewsindexlocation"><span> By <%= roomate.author.username %> | <%= roomate.created.toDateString() %></span></h5>
+            <h5 class="nyscnewsindexlocation"><span> Created On <%= roomate.created.toDateString() %></span></h5>
             <p><a href="/roomates/<%=roomate._id%>"><button class="ui  labeled icon green button"><i class="right arrow icon"></i>Read More</button></a></p>
             </div>
          <% }); %> 

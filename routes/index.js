@@ -3,6 +3,7 @@ var express = require("express");
 var router = express.Router();
 var passport = require("passport");
 var User = require("../models/user");
+var paidUser = require("../models/paiduser");
 var roomate = require("../models/roomates");
 var nyscnew = require("../models/nyscnews");
 var nyscnewsthree = require("../models/nyscnews");
@@ -20,6 +21,8 @@ var async = require('async');
 var nodemailer = require('nodemailer');
 var Settings = require("../models/settings");
 var internjob = require("../models/internjobs");
+
+
 
 // Landing Page
 router.get("/", function(req, res){
@@ -190,6 +193,32 @@ router.post("/registerlol", function(req, res){
                 }
     });
 });
+
+
+router.get("/paidregister", function(req, res){
+    res.render("paidregister")
+   
+});
+
+//Handle signup logic
+
+router.post("/paidregister", function(req, res){
+    var newpaidUser = new paidUser({username: req.body.username,email: req.body.email});
+    paidUser.register(newpaidUser, req.body.password, function(err, user){
+                if (err){
+                    req.flash("error", err.message);
+                    return res.render("paidregister")
+                }
+                else{
+                    passport.authenticate("local")(req, res, function(){
+                        req.flash("success", "Welcome to Placements NG, " + paiduser.username + ".");
+                        res.redirect("/settings/new");
+                    });
+                }
+    });
+});
+
+
 
 
 //Show login form
