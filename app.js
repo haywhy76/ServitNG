@@ -12,7 +12,7 @@ var express    = require("express"),
     storage = new GridFsStorage({ url }),
     upload = multer({ storage }),
     bodyParser = require("body-parser");
-    Forumpost = require("./models/qsforum")
+    
     Comment = require("./models/nyscnewscomments"),
     internjob = require("./models/internjobs")
     Comment   = require("./models/nyscnewscomments"),
@@ -20,6 +20,7 @@ var express    = require("express"),
     Setting = require("./models/settings")
     nyscnews = require("./models/nyscnews")
     roomates = require("./models/roomates")
+    payment = require("./models/payment")
     campexperiences = require("./models/campexperiences")
     passport = require("passport"),
     LocalStrategy = require("passport-local"),
@@ -79,7 +80,7 @@ app.use(require("express-session")({
  app.use(passport.initialize());
  app.use(passport.session());
 passport.use(new LocalStrategy(User.authenticate()));
-passport.use(new LocalStrategy(paidUser.authenticate()));
+
 
 
 
@@ -88,8 +89,7 @@ passport.use(new LocalStrategy(paidUser.authenticate()));
 
  passport.serializeUser(User.serializeUser());
  passport.deserializeUser(User.deserializeUser());
- passport.serializeUser(paidUser.serializeUser());
- passport.deserializeUser(paidUser.deserializeUser());
+ 
 
 app.use(function(req, res, next){
     res.locals.currentUser = req.user;
@@ -97,6 +97,16 @@ app.use(function(req, res, next){
     res.locals.success = req.flash("success");
     next();
 });
+
+
+    app.use(function(req, res, next)
+    {
+        if (req.headers['x-forwarded-proto'] != 'https')
+            res.redirect(['https://', req.get('Host'), req.url].join(''));
+        else
+            next();
+    });
+
 
 app.use(function(req, res, next){
     res.locals.currentUser = req.user;

@@ -81,7 +81,7 @@
           <div id="forumposts" class="">
               <img class="ui centred rounded image" src="<%=nyscnew.newspicture%>" >
               <h5 class="nyscnewsindextitle"> <%=nyscnew.newstitle%> </h5>
-              <h5 class="nyscnewsindexlocation"><a href="/nyscnews/"><button class="ui icon blasck button">Nysc News</button></a>  |<span class="landingbodyexcerpt"> <%= nyscnew.created.toDateString() %></span></span></h5>
+              <h5 class="nyscnewsindexlocation"><a href="/nyscnews/"><button class="ui icon blasck button">Nysc News</button></a>  <span class="landingbodyexcerpt"> <%= nyscnew.created.toDateString() %></span></span></h5>
               <p><a href="/nyscnews/<%=nyscnew._id%>"><button class="ui  labeled icon green button"><i class="right arrow icon"></i>Read More</button></a></p>
             </div> 
             <% }); %> 
@@ -96,7 +96,7 @@
                 <div>
                     <img class="hh" height="150" width="250" src="<%=roomate.roomatepicture%>" >
                     <h5 class="nyscnewsindextitle" ><%=roomate.roomatetitle.substring(0, 28)%>... </h5>
-                    <h5 class="nyscnewsindexlocation"><a href="/roomates/"><button class="ui icon blasck button">Find a roomate</button></a> | <span class="landingbodyexcerpt"><%= roomate.created.toDateString() %></span></span></h5>
+                    <h5 class="nyscnewsindexlocation"><a href="/roomates/"><button class="ui icon blasck button">Find a roomate</button></a>  <span class="landingbodyexcerpt"><%= roomate.created.toDateString() %></span></span></h5>
                     <p><a href="/roomates/<%=roomate._id%>"><button class="ui  labeled icon green button"><i class="right arrow icon"></i>Read More</button></a></p>
                   </div> 
                   <% }); %> 
@@ -106,7 +106,7 @@
                 <div>
                     <img class="hh" height="150" width="250" src="<%=campexperience.campexperiencepicture%>" >
                     <h5 class="nyscnewsindextitle"> <%=campexperience.campexperiencetitle%> </h5>
-                  <h5 class="nyscnewsindexlocation"><span><a href="/campexperiences/"><button class="ui icon blasck button">Camp Stories</button></a> | <span class="landingbodyexcerpt"><%= campexperience.created.toDateString() %></span></span></h5>
+                  <h5 class="nyscnewsindexlocation"><span><a href="/campexperiences/"><button class="ui icon blasck button">Camp Stories</button></a>  <span class="landingbodyexcerpt"><%= campexperience.created.toDateString() %></span></span></h5>
                   <p><a href="/campexperience/<%=campexperience._id%>"><button class="ui  labeled icon green button"><i class="right arrow icon"></i>Read More</button></a></p>
                   </div>
                <% }); %> 
@@ -128,7 +128,7 @@
             <img class="hhfirst" height="250" width="350"  src="<%=nyscnew.newspicture%>" >
             <h5 class="nyscnewsindextitle" > <%=nyscnew.newstitle.substring(0, 40)%>... </h5>
             <h5 class="landingbodyexcerpt" > <%=nyscnew.newsbody.substring(0, 55)%>...</h5>
-            <h5 class="nyscnewsindexlocation"><span> By <%= nyscnew.author.username %> |<span class="landingbodyexcerpt"> <%= nyscnew.created.toDateString() %></span></span></h5>
+            <h5 class="nyscnewsindexlocation"><span class="landingbodyexcerpt"> <%= nyscnew.created.toDateString() %></span></h5>
             <p><a href="/nyscnews/<%=nyscnew._id%>"><button class="ui  labeled icon green button"><i class="right arrow icon"></i>Read More</button></a></p>
           </div>   
         </div>
@@ -170,8 +170,8 @@
             <div class="landingthirdsegment1">
                 <img class="campeexperiencespicture" height="250" width="350" src="<%=campexperience.campexperiencepicture%>" >
                 <h5 class="nyscnewsindextitle" ><%=campexperience.campexperiencetitle%> </h5>
-                <h5 class="landingbodyexcerpt" > <%=campexperience.campexperiencebody.substring(0, 55)%>...</h5>
-                <h5 class="nyscnewsindexlocation"><span> By  <%= campexperience.author.username %> |<span class="landingbodyexcerpt"> <%= campexperience.created.toDateString() %></span></span></h5>
+
+                <h5 class="nyscnewsindexlocation"><span class="landingbodyexcerpt"> <%= campexperience.created.toDateString() %></span></h5>
                 <p><a href="/campexperience/<%=campexperience._id%>"><button class="ui  labeled icon green button"><i class="right arrow icon"></i>Read More</button></a></p>
               </div> 
             </div>
@@ -193,8 +193,8 @@
                 <div class="">
                   <img class="hh gg" height="180" width="280"  src="/images/roommate.jpg" >
                     <h5 class="nyscnewsindextitle" > <%=roomate.roomatetitle%></h5>
-                    <h5 class="landingbodyexcerpt" > <%=roomate.roomatebody.substring(0, 55)%>...</h5>
-                    <h5 class="nyscnewsindexlocation"><span> By <%= roomate.author.username %> |<span class="landingbodyexcerpt"> <%= roomate.created.toDateString() %></span></span></h5>
+                    <h5 class="landingbodyexcerpt" > <%=roomate.roomatebody.substring(0, 55)%></h5>
+                    <h5 class="nyscnewsindexlocation"><span class="landingbodyexcerpt"> <%= roomate.created.toDateString() %></span></h5>
                     <p><a href="/roomates/<%=roomate._id%>"><button class="ui  labeled icon green button"><i class="right arrow icon"></i>Read More</button></a></p>
                   </div>   
                 </div>

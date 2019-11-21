@@ -195,28 +195,28 @@ router.post("/registerlol", function(req, res){
 });
 
 
-router.get("/paidregister", function(req, res){
-    res.render("paidregister")
+// router.get("/paidregister", function(req, res){
+//     res.render("paidregister")
    
-});
+// });
 
 //Handle signup logic
 
-router.post("/paidregister", function(req, res){
-    var newpaidUser = new paidUser({username: req.body.username,email: req.body.email});
-    paidUser.register(newpaidUser, req.body.password, function(err, user){
-                if (err){
-                    req.flash("error", err.message);
-                    return res.render("paidregister")
-                }
-                else{
-                    passport.authenticate("local")(req, res, function(){
-                        req.flash("success", "Welcome to Placements NG, " + paiduser.username + ".");
-                        res.redirect("/settings/new");
-                    });
-                }
-    });
-});
+// router.post("/paidregister", function(req, res){
+//     var newpaidUser = new paidUser({username: req.body.username,email: req.body.email});
+//     paidUser.register(newpaidUser, req.body.password, function(err, user){
+//                 if (err){
+//                     req.flash("error", err.message);
+//                     return res.render("paidregister")
+//                 }
+//                 else{
+//                     passport.authenticate("local")(req, res, function(){
+//                         req.flash("success", "Welcome to Placements NG, " + paiduser.username + ".");
+//                         res.redirect("/settings/new");
+//                     });
+//                 }
+//     });
+// });
 
 
 
@@ -255,18 +255,25 @@ router.post("/subscribe", function(req, res){
 //Handle payment form
 
 router.post("/payment", function(req, res){
-    var firstname = req.body.paymentfirstname;
-    var lastname = req.body.paymentlastname;
-    var email =  req.body.paymentemail;
-    var institution =  req.body.paymentinstitution;
-    var matric =  req.body.paymentmatric;
-    var location =  req.body.paymentlocation;
-    var newPayment = {paymentfirstname:firstname,paymentlastname:lastname,paymentemail: email,paymentinstitution:institution,paymentmatric:matric,paymentlocation:location  };
+    var paymentfirstname = req.body.paymentfirstname;
+    var paymentlastname = req.body.paymentlastname;
+    var paymentemail =  req.body.paymentemail;
+    var paymentinstitution =  req.body.paymentinstitution;
+    var paymentmatric =  req.body.paymentmatric;
+    var paymentlocation =  req.body.paymentlocation;
+    var paymentnumber =  req.body.paymentnumber;
+    var newPayment = {paymentfirstname:paymentfirstname,paymentlastname:paymentlastname,
+                        paymentemail: paymentemail,
+                        paymentinstitution:paymentinstitution,
+                        paymentmatric:paymentmatric,
+                         paymentlocation:paymentlocation ,
+                         paymentnumber:paymentnumber };
     //create a new subscription and save to DB
     payment.create(newPayment, function(err, newlyCreatedPayment){
         if (err){
             console.log(err);
         }else{
+            req.flash("success" , "Your details has been submitted successfully");
           res.redirect("/getstarted")
         }
     })
