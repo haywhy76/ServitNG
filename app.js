@@ -15,8 +15,6 @@ var express    = require("express"),
     
     Comment = require("./models/nyscnewscomments"),
     internjob = require("./models/internjobs")
-    Comment   = require("./models/nyscnewscomments"),
-    internjob = require("./models/corperjobs")
     Setting = require("./models/settings")
     nyscnews = require("./models/nyscnews")
     roomates = require("./models/roomates")
@@ -53,6 +51,7 @@ var express    = require("express"),
     getstartedRoutes = require("./routes/getstarted")
     imageUploadRoutes = require("./routes/imageupload")
     campExperienceRoutes = require("./routes/campexperiences")
+    
 
    
     faqRoutes = require("./routes/faq")
@@ -80,13 +79,6 @@ app.use(require("express-session")({
  app.use(passport.initialize());
  app.use(passport.session());
 passport.use(new LocalStrategy(User.authenticate()));
-
-
-
-
-
-
-
  passport.serializeUser(User.serializeUser());
  passport.deserializeUser(User.deserializeUser());
  
@@ -95,6 +87,11 @@ app.use(function(req, res, next){
     res.locals.currentUser = req.user;
     res.locals.error = req.flash("error");
     res.locals.success = req.flash("success");
+    next();
+});
+
+app.use(function(req, res, next){
+    res.locals.currentUser = req.user;
     next();
 });
 
@@ -108,10 +105,6 @@ app.use(function(req, res, next){
     });
 
 
-app.use(function(req, res, next){
-    res.locals.currentUser = req.user;
-    next();
-})
 
 app.use("/", indexRoutes);
 app.use( keylinksRoutes);
@@ -135,7 +128,8 @@ app.use(findyourwaytocampRoutes);
 
 
 
-mongoose.connect('mongodb+srv://itandppa:itandppa@clusteritandppa-ffmfj.mongodb.net/test?retryWrites=true&w=majority')
+
+mongoose.connect('mongodb+srv://itandppa:itandppa@clusteritandppa-ffmfj.mongodb.net/test?retryWrites=true&w=majority',)
 
 
 // let gfs

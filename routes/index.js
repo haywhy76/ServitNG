@@ -13,7 +13,7 @@ var campexperience = require("../models/campexperiences");
 var campexperiencesthree = require("../models/campexperiences");
 var campexperiencesfour = require("../models/campexperiences");
 var campexperiencesfive = require("../models/campexperiences");
-var payment = require("../models/payment");
+var verified = require("../models/payment");
 let gfs
 var subscriber = require("../models/subscribe");
 var contact = require("../models/contact");
@@ -254,22 +254,23 @@ router.post("/subscribe", function(req, res){
 
 //Handle payment form
 
-router.post("/payment", function(req, res){
-    var paymentfirstname = req.body.paymentfirstname;
-    var paymentlastname = req.body.paymentlastname;
-    var paymentemail =  req.body.paymentemail;
-    var paymentinstitution =  req.body.paymentinstitution;
-    var paymentmatric =  req.body.paymentmatric;
-    var paymentlocation =  req.body.paymentlocation;
-    var paymentnumber =  req.body.paymentnumber;
-    var newPayment = {paymentfirstname:paymentfirstname,paymentlastname:paymentlastname,
-                        paymentemail: paymentemail,
-                        paymentinstitution:paymentinstitution,
-                        paymentmatric:paymentmatric,
-                         paymentlocation:paymentlocation ,
-                         paymentnumber:paymentnumber };
+router.post("/verify", function(req, res){
+    var verifiedfirstname = req.body.verifiedfirstname;
+    var verifiedlastname = req.body.verifiedlastname;
+    var verifiedemail =  req.body.verifiedemail;
+    var verifiedinstitution =  req.body.verifiedinstitution;
+    var verifiedmatric =  req.body.verifiedmatric;
+    var verifiedlocation =  req.body.verifiedlocation;
+    var verifiednumber =  req.body.verifiednumber;
+    var newVerified = {verifiedfirstname:verifiedfirstname,verifiedlastname:verifiedlastname,
+        verifiedemail: verifiedemail,
+        verifiedinstitution:verifiedinstitution,
+        verifiedmatric:verifiedmatric,
+        verifiedlocation:verifiedlocation ,
+        verifiednumber:verifiednumber
+                         };
     //create a new subscription and save to DB
-    payment.create(newPayment, function(err, newlyCreatedPayment){
+    verified.create(newVerified, function(err, newlyCreatedVerified){
         if (err){
             console.log(err);
         }else{

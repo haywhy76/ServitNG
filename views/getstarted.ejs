@@ -101,101 +101,55 @@
             </div>
                 <h2 class="heading headingtwo">Step 2</h2>
             <p class="fill">Fill this form and your login details will be sent to you shortly.</p>
-<!-- 
-            <form class="col s12" action="/payment" method="POST">
+
+            <form class="col s12" action="/verify" method="POST">
               <div class="row">
                 <div class="input-field col s6">
-                  <input type="text" name="paymentfirstname" placeholder="First Name" required>
+                  <input type="text" name="verifiedfirstname" placeholder="First Name" required>
                
                 </div>
                 <div class="input-field col s6">
-                  <input type="text" name="paymentlastname"  placeholder="Last Name" required>
+                  <input type="text" name="verifiedlastname"  placeholder="Last Name" required>
                  
                 </div>
               </div>
             
               <div class="row">
                 <div class="input-field col s6">
-                  <input type="email" name="paymentemail" placeholder="Email" required>
+                  <input type="email" name="verifiedemail" placeholder="Email" required>
                   
                 </div>
                 <div class="input-field col s6">
-                  <input type="text" name="paymentinstitution" placeholder="Institution" required>
+                  <input type="text" name="verifiedinstitution" placeholder="Institution" required>
                   
                 </div>
               </div>
            
               <div class="row">
                 <div class="input-field col s6">
-                  <input type="text" name="paymentmatric" placeholder="Matric No/State code" required>
+                  <input type="text" name="verifiedmatric" placeholder="Matric No/State code" required>
                   
                 </div>
                 <div class="input-field col s6">
-                  <input type="text" name="paymentlocation" placeholder="Location" required>
+                  <input type="text" name="verifiedlocation" placeholder="Location" required>
                 
                 </div>
               </div>
 
               <div class="row">
                 <div class="input-field col s6">
-                  <input  type="text" name="paymentnumber" placeholder="Phone Number (use the same number you inputed on the payment page)" required>
+                  <input  type="text" name="verifiednumber" placeholder="Phone Number (use the same number you inputed on the payment page)" required>
                  
                 </div>
               </div>
 
               <p class="getstartedloginbutton"> <button type="submit" class="ui labeled icon green button"><i class="right arrow icon"></i>SUBMIT</button></p>
-            </form> -->
+            </form>
 
-            <form action="/payment" method="POST">
-              <div class="form-row">
-              <div class="form-group col-md-6">
-                <input type="text" class="form-control" name="paymentfirstname" placeholder="First Name">
-              </div>
-              </div>
-
-              <div class="form-row">
-              <div class="form-group col-md-6">
-                <input type="text" class="form-control" name="paymentlastname" placeholder="Last Name">
-              </div>
-              </div>
-
-              <div class="form-row">
-                <div class="form-group col-md-6">
-              
-                  <input type="email" class="form-control" name="paymentemail" id="inputEmail4" placeholder="Email">
-                </div>
-           
-              </div>
-
-              <div class="form-row">
-                  <div class="form-group col-md-6">
-                    <input type="text" class="form-control" name="paymentinstitution" placeholder="Institution">
-                  </div>
-                  </div>
-
-                  <div class="form-row">
-                      <div class="form-group col-md-6">
-                        <input type="text" class="form-control" name="paymentmatric" placeholder="Matric">
-                      </div>
-                      </div>
-
-              <div class="form-row">
-                <div class="form-group col-md-6">
-               
-                    <input type="text" class="form-control" name="paymentlocation" placeholder="location">
-                </div>
+          
             
-              </div>
-
-              <div class="form-row">
-                  <div class="form-group col-md-6">
-                 
-                      <input type="text" class="form-control" name="paymentnumber" placeholder="phone number">
-                  </div>
-              
-                </div>
             
-              <button type="submit" class="btn btn-primary">Submit</button>
+  
               
             </form>
 

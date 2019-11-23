@@ -2,18 +2,18 @@ var mongoose   = require("mongoose");
 var passportLocalMongoose = require("passport-local-mongoose");
 
 
-var verifiedpaymentSchema = new mongoose.Schema({
-    paymentfirstname: String,
-    paymentlastname: String,
-    paymentemail: String,
-    paymentinstitution: String,
-    paymentmatric: String,
-    paymentlocation: String,
-    paymentnumber: String
+var verifiedSchema = new mongoose.Schema({
+    verifiedfirstname: String,
+    verifiedlastname: String,
+    verifiedemail: String,
+    verifiedinstitution: String,
+    verifiedmatric: String,
+    verifiedlocation: String,
+    verifiednumber: String
 })
 
-verifiedpaymentSchema.plugin(passportLocalMongoose);
+verifiedSchema.plugin(passportLocalMongoose);
 
-var payment = mongoose.model("payment", verifiedpaymentSchema);
+var verified = mongoose.model("verified", verifiedSchema);
 
-module.exports = payment;
+module.exports = verified;

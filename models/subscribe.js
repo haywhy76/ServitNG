@@ -3,7 +3,14 @@ var passportLocalMongoose = require("passport-local-mongoose");
 
 
 var SubscribeSchema = new mongoose.Schema({
-    email: String
+    email: String,
+    author: {
+        id: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "User"
+        },
+        username: String
+    },
 })
 
 SubscribeSchema.plugin(passportLocalMongoose);
