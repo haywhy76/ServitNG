@@ -372,6 +372,14 @@
     font-size: 18px;
 }
 
+.servits{
+    color: #4A724E;
+}
+
+.search{
+    text-align:justify;
+}
+
   /* MediaQueries */
 
   @media screen and (max-width: 833px) {    
