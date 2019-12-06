@@ -176,6 +176,11 @@ router.get("/registerlol", function(req, res){
    
 });
 
+
+router.get("/sitemap", function(req, res){
+    res.render("sitemap")
+   
+});
 //Handle signup logic
 
 router.post("/registerlol", function(req, res){
