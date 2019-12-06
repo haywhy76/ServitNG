@@ -8,7 +8,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
         <link href="https://fonts.googleapis.com/css?family=Cantarell&display=swap" rel="stylesheet">
        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-
+       <meta name="google-site-verification" content="75hVf4n3uOHK3W3deSw4MANO7nKTJetmEDic3soA4PY" />
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
         <link rel="stylesheet"  href="/stylesheets/app.css">
@@ -95,7 +95,7 @@
             <% roomatesss.forEach(function(roomate){ %>
                 <div>
                     <img class="hh" height="150" width="250" src="<%=roomate.roomatepicture%>" >
-                    <h5 class="nyscnewsindextitle" ><%=roomate.roomatetitle.substring(0, 28)%>... </h5>
+                    <h5 class="nyscnewsindextitle" ><%=roomate.roomatetitle.substring(0, 28)%></h5>
                     <h5 class="nyscnewsindexlocation"><a href="/roomates/"><button class="ui icon blasck button">Find a roomate</button></a>  <span class="landingbodyexcerpt"><%= roomate.created.toDateString() %></span></span></h5>
                     <p><a href="/roomates/<%=roomate._id%>"><button class="ui  labeled icon green button"><i class="right arrow icon"></i>Read More</button></a></p>
                   </div> 
@@ -126,9 +126,9 @@
         <div class="col-md-4 col-sm-12">
         <div class="">
             <img class="hhfirst" height="250" width="350"  src="<%=nyscnew.newspicture%>" >
-            <h5 class="nyscnewsindextitle" > <%=nyscnew.newstitle.substring(0, 40)%>... </h5>
-            <h5 class="landingbodyexcerpt" > <%=nyscnew.newsbody.substring(0, 55)%>...</h5>
-            <h5 class="nyscnewsindexlocation"><span class="landingbodyexcerpt"> <%= nyscnew.created.toDateString() %></span></h5>
+            <h5 class="nyscnewsindextitle" > <%=nyscnew.newstitle.substring(0, 75)%> </h5>
+            <h5 class="landingbodyexcerpt" > <%=nyscnew.newsbody.substring(0, 106)%>[...]</h5>
+  
             <p><a href="/nyscnews/<%=nyscnew._id%>"><button class="ui  labeled icon green button"><i class="right arrow icon"></i>Read More</button></a></p>
           </div>   
         </div>
@@ -145,7 +145,7 @@
       </div>
 
       <div class="col-md-6">
-          <span><a class="" href="/nyscnews/<%=nyscnew._id%>"> <%=nyscnew.newstitle.substring(0, 70)%>... </a></span>
+          <span class=""><a class="landingthirdsegment2substring" href="/nyscnews/<%=nyscnew._id%>"> <%=nyscnew.newstitle.substring(0, 75)%> </a></span>
         </div>
   </div>
     </div>
@@ -168,10 +168,9 @@
             <div class="">
             <div class="col-md-4 col-sm-12">
             <div class="landingthirdsegment1">
-                <img class="campeexperiencespicture" height="250" width="350" src="<%=campexperience.campexperiencepicture%>" >
+                <img class="campeexperiencespicture" height="250" width="350" src="/images/campimage.jpg" >
                 <h5 class="nyscnewsindextitle" ><%=campexperience.campexperiencetitle%> </h5>
-
-                <h5 class="nyscnewsindexlocation"><span class="landingbodyexcerpt"> <%= campexperience.created.toDateString() %></span></h5>
+                <h5 class="landingbodyexcerpt" > <%=campexperience.campexperiencebody.substring(0, 106)%>[...]</h5>
                 <p><a href="/campexperience/<%=campexperience._id%>"><button class="ui  labeled icon green button"><i class="right arrow icon"></i>Read More</button></a></p>
               </div> 
             </div>

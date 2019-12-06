@@ -74,7 +74,7 @@
 
   <form class="ui form" action="/nyscnews/<%=nyscnew._id%>?_method=PUT" method="POST"> 
           <div class="field">
-                  <p class="internformfield">  <input type="text" name="nyscnew[newstitle]" value="<%= nyscnew.newstitle %>"></p>
+                  <p class="internformfield">  <input type="text" name="nyscnew[newstitle]" maxlength="75" value="<%= nyscnew.newstitle %>"></p>
            </div>
            <div class="field">
                   <p class="internformfield">  <input type="text" name="nyscnew[newsbody]" value="<%= nyscnew.newsbody %>"></p>

@@ -18,7 +18,8 @@
         <link rel="shortcut icon" href="/images/ico.png">
     </head>
     <body>
-        
+        <div id="fb-root"></div>
+        <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v5.0"></script>
       <div class="container">
         <nav class="navbar navbar-default ">
           <div class="container-fluid">
@@ -84,8 +85,8 @@
               <div class="col-md-4 col-sm-12">
               <div class="">
                   <img class="hh" height="250" width="350"  src="<%=nyscnew.newspicture%>" >
-                  <h5 class="nyscnewsindextitle" > <%=nyscnew.newstitle.substring(0, 40)%>... </h5>
-                  <h5 class="landingbodyexcerpt" > <%=nyscnew.newsbody.substring(0, 55)%>...</h5>
+                  <h5 class="nyscnewsindextitle" > <%=nyscnew.newstitle.substring(0, 75)%> </h5>
+                  <h5 class="landingbodyexcerpt" > <%=nyscnew.newsbody.substring(0, 104)%>[...]</h5>
                   <h5 class="nyscnewsindexlocation"><span> By <%= nyscnew.author.username %> |<span class="landingbodyexcerpt"> <%= nyscnew.created.toDateString() %></span></span></h5>
                   <p><a href="/nyscnews/<%=nyscnew._id%>"><button class="ui  labeled icon green button"><i class="right arrow icon"></i>Read More</button></a></p>
                 </div>   
@@ -101,8 +102,8 @@
             <div class="col-md-6 col-sm-12">
             <div class="">
                 <img class="hh gg" height="250" width="350"  src="<%=nyscnew.newspicture%>" >
-                <h5 class="nyscnewsindextitle" > <%=nyscnew.newstitle.substring(0, 40)%>... </h5>
-                <h5 class="landingbodyexcerpt" > <%=nyscnew.newsbody.substring(0, 55)%>...</h5>
+                <h5 class="nyscnewsindextitle" > <%=nyscnew.newstitle.substring(0, 75)%> </h5>
+                <h5 class="landingbodyexcerpt" > <%=nyscnew.newsbody.substring(0, 100)%>...</h5>
                 <h5 class="nyscnewsindexlocation"><span> By <%= nyscnew.author.username %> |<span class="landingbodyexcerpt"> <%= nyscnew.created.toDateString() %></span></span></h5>
                 <p><a href="/nyscnews/<%=nyscnew._id%>"><button class="ui  labeled icon green button"><i class="right arrow icon"></i>Read More</button></a></p>
               </div>   
@@ -112,11 +113,25 @@
 
         <div id="" class="col-md-1" ></div>
         <div id="premiumtwo" class="col-md-3 ui segment" >
+            <h3 class="design">Like Our Facebook Page</h3>
+            <div class="fb-page" data-href="https://www.facebook.com/servitng/" 
+            data-tabs="timeline" data-width="500" 
+            data-height="70" 
+            data-small-header="false" 
+            data-adapt-container-width="true" 
+            data-hide-cover="false" 
+            data-show-facepile="true"><blockquote cite="https://www.facebook.com/servitng/" 
+            class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/servitng/">Servit</a></blockquote>
+          </div>
+
+          <h3 class="design">Instagram Feed</h3>
+          <div id="pixlee_container"></div><script type="text/javascript">window.PixleeAsyncInit = function() {Pixlee.init({apiKey:'LGcaZ4JlwxOnRbbxXA_m'});Pixlee.addSimpleWidget({widgetId:'23719'});};</script>
+          <script src="//instafeed.assets.pixlee.com/assets/pixlee_widget_1_0_0.js"></script>
     
             <h3 class="design">Twitter Feed</h3>
-            <a class="twitter-timeline" width="300px" height="700px" href="https://twitter.com/officialnyscng?ref_src=twsrc%5Etfw">Tweets by officialnyscng</a>
-             <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-           
+            <a class="twitter-timeline" href="https://twitter.com/servit_ng?ref_src=twsrc%5Etfw">Tweets by servit_ng</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+         
 
  
              <hr class="hrline">

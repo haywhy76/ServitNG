@@ -85,7 +85,7 @@
     font-family: "Tiempos Text",Georgia,"Times New Roman",serif;
     font-style: italic;
     font-size: 18px;
-    line-height: 32px;
+   
     font-weight: 400;
 }
 
@@ -181,7 +181,8 @@
 }
 
 .pbanner{
-    text-align:center;
+    margin:0 auto;
+    padding-bottom:30px;
 }
 
 #sub{
@@ -332,6 +333,9 @@
     padding-bottom:150px;
 }
 
+.getstartedpagebutton{
+    text-align: center;
+}
 .stepone{
     margin-top:40px;
 }
@@ -378,6 +382,14 @@
 
 .search{
     text-align:justify;
+}
+
+.landingthirdsegment2substring{
+    text-align:right;
+}
+
+.sharebutton{
+    text-align:center;
 }
 
   /* MediaQueries */
