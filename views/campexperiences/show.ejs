@@ -73,15 +73,10 @@
             <div class="col-md-8 ">  
                 <h1 class="nyscnewsshowtitle"><%=campexperience.campexperiencetitle%></h1>
                 <p class="nyscnewsshowdescription">Created on <%= campexperience.created.toDateString() %></p>
-                <p class="nyscnewsshowshare">Share this post:
-                   
-                        <img src="/images/facebook.jpg" height="32" width="32">
-                        <img src="/images/instagram.jpg" height="32" width="32">
-                        <img src="/images/twitter.jpg" height="32" width="32">
-                        
-                </p>
+                <p class="nyscnewsshowshare"></p>
                 <img class="ui centred rounded image" src="<%=campexperience.campexperiencepicture%>" >
                     <p class="nyscnewsshowbody"><%=campexperience.campexperiencebody%></p>
+                    <div class="sharethis-inline-share-buttons"></div>
                     <p class="backbutton"><button class="ui green basic button"><a href="/nyscnews"><< Back</a></button></p>
                     <p class="followtheauthor">Follow the author: </p>
                     <a href="https://www.fb.com/<%=campexperience.campexperiencefb%>" target="_blank"> <img src="/images/facebook.jpg" height="32" width="32"></a>
@@ -157,5 +152,9 @@
               </div> 
         </div>
     </div>
+
+    <script type="text/javascript"
+    src="https://platform-api.sharethis.com/js/sharethis.js#property=5dea678dec246d0012b11860&product=inline-share-buttons" async="async">
+    </script>
  </body>
  </html>

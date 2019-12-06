@@ -17,37 +17,24 @@
         <link rel="stylesheet"  href="/stylesheets/app.scss">
         <link rel="stylesheet"  href="/stylesheets/accordion.min.css">
         <link rel="shortcut icon" href="/images/ico.png">
+
+
+<!-- Start of Async Callbell Code -->
+<script>
+    window.callbellSettings = {
+      token: "HQ7dAdmnRzhut6CfdkdYmXV8"
+    };
+  </script>
+  <script>
+    (function(){var w=window;var ic=w.callbell;if(typeof ic==="function"){ic('reattach_activator');ic('update',callbellSettings);}else{var d=document;var i=function(){i.c(arguments)};i.q=[];i.c=function(args){i.q.push(args)};w.Callbell=i;var l=function(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://dash.callbell.eu/include/'+window.callbellSettings.token+'.js';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);};if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})()
+  </script>
+  <!-- End of Async Callbell Code -->
+  
+  
+  
     </head>
     <body>
         
-
-<!-- Load Facebook SDK for JavaScript -->
-<div id="fb-root"></div>
-<script>
-  window.fbAsyncInit = function() {
-    FB.init({
-      xfbml            : true,
-      version          : 'v5.0'
-    });
-  };
-
-  (function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-
-<!-- Your customer chat code -->
-<div class="fb-customerchat"
-  attribution=setup_tool
-  page_id="121289935941916"
-logged_in_greeting="Hi! Welcome to Servit How can we help you?"
-logged_out_greeting="Hi! Welcome to Servit How can we help you?">
-</div>
-
-
       <div class="container">
         <nav class="navbar navbar-default ">
           <div class="container-fluid">
@@ -272,9 +259,6 @@ logged_out_greeting="Hi! Welcome to Servit How can we help you?">
   <script>
       new Accordion('.accordion-container'); 
     </script>
-  
-
-
   
   </body>
   </html>
