@@ -74,14 +74,12 @@
 
   <form class="ui form" action="/roomates/<%=roomate._id%>?_method=PUT" method="POST"> 
           <div class="field">
-                  <p class="internformfield">  <input type="text" name="roomate[roomatetitle]" value="<%= roomate.roomatetitle %>"></p>
+                  <p class="internformfield">  <input type="text" name="roomate[roomatetitle]" value="<%= roomate.roomatetitle %>" required></p>
            </div>
            <div class="field">
-                  <p class="internformfield">  <input type="text" name="roomate[roomatebody]" value="<%= roomate.roomatebody %>"></p>
+                  <p class="internformfield">  <input type="text" name="roomate[roomatebody]" value="<%= roomate.roomatebody %>" required></p>
            </div>
-           <div class="field">
-              <p class="internformfield">  <input type="text" name="roomate[roomatepicture]" value="<%= roomate.roomatepicture %>"></p>
-       </div>
+         
           <p class="editbutton"><button type="submit" class="btn btn-default btn-lg loginsubmitbutton">UPDATE </button></p>
           
   </form>
