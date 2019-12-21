@@ -8,7 +8,7 @@ var UserSchema = new mongoose.Schema({
     username: String, 
     email: String, 
     password: String,
-    expire_at: {type: Date, default: Date.now, expires: 200} 
+    expire_at: {type: Date, default: Date.now, expires: 259200} 
    
 })
 
