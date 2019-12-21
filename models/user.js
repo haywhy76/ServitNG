@@ -8,8 +8,7 @@ var UserSchema = new mongoose.Schema({
     username: String, 
     email: String, 
     password: String,
-    resetPasswordToken: String,
-    resetPasswordExpires: Date
+    expire_at: {type: Date, default: Date.now, expires: 200} 
    
 })
 
