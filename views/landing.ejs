@@ -105,7 +105,7 @@
            <div class="col-md-6 col-sm-12 landingfourthimage">
               <% campexperiences.forEach(function(campexperience){ %>
                 <div>
-                    <img class="hh" height="150" width="250" src="<%=campexperience.campexperiencepicture%>" >
+                  <img class="campeexperiencespicture" height="150" width="250" src="/images/campimage.jpg" >
                     <h5 class="nyscnewsindextitle"> <%=campexperience.campexperiencetitle%> </h5>
                   <h5 class="nyscnewsindexlocation"><span><a href="/campexperiences/"><button class="ui icon blasck button">Camp Stories</button></a>  <span class="landingbodyexcerpt"><%= campexperience.created.toDateString() %></span></span></h5>
                   <p><a href="/campexperience/<%=campexperience._id%>"><button class="ui  labeled icon green button"><i class="right arrow icon"></i>Read More</button></a></p>
