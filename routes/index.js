@@ -191,7 +191,7 @@ router.post("/registerlol", function(req, res){
                     return res.render("register")
                 }
                 else{
-                    passport.authenticate("userLocal")(req, res, function(){
+                    passport.authenticate("Local")(req, res, function(){
                         req.flash("success", "Welcome to Servit NG, " + user.username + ".");
                         res.redirect("/settings/new");
                     });
@@ -208,7 +208,7 @@ router.get("/login", function(req, res){
 
 //Handle login logic
 
-router.post("/login", passport.authenticate("userLocal", {
+router.post("/login", passport.authenticate("Local", {
     successRedirect: "/jobs", 
     failureRedirect:"/login"
 }), function(req, res){
