@@ -56,7 +56,8 @@ router.get("/createalisting",function(req, res){
 // VIEW ALL INTERN JOBS
 
 router.get("/internjobs", middleware.isLoggedIn, function(req, res){
-    
+  
+        
     internjob.find({},  function(err, allInternJobs){
 
         if (err){
@@ -126,7 +127,7 @@ router.get("/internjobs/:id",middleware.isLoggedIn, function(req, res){
     
 
 //EDIT AN INTERN JOB LISTING
-router.get("/internjobs/:id/edit",middleware.checkInternJobOwnership,function(req, res){ 
+router.get("/internjobs/:id/edit",function(req, res){ 
        
     internjob.findById(req.params.id, function(err, foundinternjob){
                 res.render("internjobs/edit", {internjob: foundinternjob});
@@ -135,13 +136,13 @@ router.get("/internjobs/:id/edit",middleware.checkInternJobOwnership,function(re
 
 //UPDATE INTERN JOB LISTING
 
-router.put("/internjobs/:id",middleware.checkInternJobOwnership, function(req, res){
+router.put("/internjobs/:id", function(req, res){
     internjob.findByIdAndUpdate(req.params.id, req.body.internjob, function(err, updatedInternJob){
         if (err){
             res.redirect("/internjobs")
         }
         else{
-            res.redirect("/internjobs/" + req.params.id)
+            res.redirect("/admin/internlistings/")
         }
     })
 });
@@ -149,13 +150,13 @@ router.put("/internjobs/:id",middleware.checkInternJobOwnership, function(req, r
 
 //DELETE INTERN JOB LISTING
 
-router.delete("/internjobs/:id",middleware.checkInternJobOwnership, function(req, res){
+router.delete("/internjobs/:id", function(req, res){
     internjob.findByIdAndRemove(req.params.id, function(err){
         if(err){
             res.redirect("/internjobs");
         }
         else{
-            res.redirect("/internjobs");
+            res.redirect("/admin/internlistings/")
         }
     })
 })
@@ -236,7 +237,7 @@ router.get("/corperjobs/:id",middleware.isLoggedIn, function(req, res){
     
 
 //EDIT A CORPER JOB LISTING
-router.get("/corperjobs/:id/edit",middleware.checkCorperJobOwnership, function(req, res){ 
+router.get("/corperjobs/:id/edit", function(req, res){ 
        
     corperjob.findById(req.params.id, function(err, foundcorperjob){
                 res.render("corperjobs/edit", {corperjob: foundcorperjob});
@@ -245,27 +246,27 @@ router.get("/corperjobs/:id/edit",middleware.checkCorperJobOwnership, function(r
 
 //UPDATE CORPER JOB LISTING
 
-router.put("/corperjobs/:id",middleware.checkCorperJobOwnership, function(req, res){
+router.put("/corperjobs/:id", function(req, res){
     corperjob.findByIdAndUpdate(req.params.id, req.body.corperjob, function(err, updatedCorperJob){
         if (err){
             res.redirect("/corperjobs")
         }
         else{
-            res.redirect("/corperjobs/" + req.params.id)
+            res.redirect("/admin/corpsmemberslistings/")
         }
     })
 });
 
 
-//DELETE INTERN JOB LISTING
+//DELETE CORPER JOB LISTING
 
-router.delete("/corperjobs/:id",middleware.checkCorperJobOwnership, function(req, res){
+router.delete("/corperjobs/:id", function(req, res){
     corperjob.findByIdAndRemove(req.params.id, function(err){
         if(err){
-            res.redirect("/corperjobs");
+            res.redirect("/admin/corpsmemberslistings/")
         }
         else{
-            res.redirect("/corperjobs");
+            res.redirect("/admin/corpsmemberslistings/")
         }
     })
 })

@@ -1,15 +1,12 @@
-
-
 var mongoose   = require("mongoose");
 var passportLocalMongoose = require("passport-local-mongoose");
 
 
 var UserSchema = new mongoose.Schema({
     username: String, 
-    email: String, 
     password: String,
-    expire_at: {type: Date, default: Date.now, expires: 259200} 
-   
+    expire_at: {type: Date, default: Date.now, expires: 259200} ,
+    created: {type: Date, default:Date.now}
 })
 
 

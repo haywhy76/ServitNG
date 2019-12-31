@@ -31,7 +31,7 @@ router.get("/", function(req, res){
             console.log(err);
         }
         else{
-            nyscnews=allNyscNews;
+            nyscnews=allNyscNews
         }
     }).limit(1).sort({'_id':-1});
 
@@ -40,7 +40,7 @@ router.get("/", function(req, res){
             console.log(err);
         }
         else{
-            nyscnewsthree=allNyscNewsThree;
+            nyscnewsthree=allNyscNewsThree
         }
     }).limit(3).sort({'_id':-1});
 
@@ -49,7 +49,7 @@ router.get("/", function(req, res){
             console.log(err);
         }
         else{
-            nyscnewsfour=allNyscNewsFour;
+            nyscnewsfour=allNyscNewsFour
         }
     }).skip(3).limit(6).sort({'_id':-1}); 
 
@@ -58,7 +58,7 @@ router.get("/", function(req, res){
             console.log(err);
         }
         else{
-            nyscnewsfive=allNyscNewsFive;
+            nyscnewsfive=allNyscNewsFive
         }
     }).skip(6).limit(3).sort({'_id':-1}); 
 
@@ -67,7 +67,7 @@ router.get("/", function(req, res){
             console.log(err);
         }
         else{
-            roomatess=allRoomates;
+            roomatess=allRoomates
         }
     }).limit(4).sort({'_id':-1});
 
@@ -76,7 +76,7 @@ router.get("/", function(req, res){
             console.log(err);
         }
         else{
-            roomatesss=allRoomates;
+            roomatesss=allRoomates
         }
     }).limit(1).sort({'_id':-1});
 
@@ -85,7 +85,7 @@ router.get("/", function(req, res){
             console.log(err);
         }
         else{
-            campexperiencesthree=allCampExperiencesThree;
+            campexperiencesthree=allCampExperiencesThree
         }
     }).limit(6).sort({'_id':-1});
 
@@ -94,7 +94,7 @@ router.get("/", function(req, res){
             console.log(err);
         }
         else{
-            campexperiencesfour=allCampExperiencesFour;
+            campexperiencesfour=allCampExperiencesFour
         }
     }).skip(3).limit(2).sort({'_id':-1});
 
@@ -103,7 +103,7 @@ router.get("/", function(req, res){
             console.log(err);
         }
         else{
-            campexperiencesfive=allCampExperiencesFive;
+            campexperiencesfive=allCampExperiencesFive
         }
     }).skip(6).limit(2).sort({'_id':-1});
 
@@ -191,39 +191,13 @@ router.post("/registerlol", function(req, res){
                     return res.render("register")
                 }
                 else{
-                    passport.authenticate("local")(req, res, function(){
-                        req.flash("success", "Welcome to Placements NG, " + user.username + ".");
+                    passport.authenticate("userLocal")(req, res, function(){
+                        req.flash("success", "Welcome to Servit NG, " + user.username + ".");
                         res.redirect("/settings/new");
                     });
                 }
     });
 });
-
-
-// router.get("/paidregister", function(req, res){
-//     res.render("paidregister")
-   
-// });
-
-//Handle signup logic
-
-// router.post("/paidregister", function(req, res){
-//     var newpaidUser = new paidUser({username: req.body.username,email: req.body.email});
-//     paidUser.register(newpaidUser, req.body.password, function(err, user){
-//                 if (err){
-//                     req.flash("error", err.message);
-//                     return res.render("paidregister")
-//                 }
-//                 else{
-//                     passport.authenticate("local")(req, res, function(){
-//                         req.flash("success", "Welcome to Placements NG, " + paiduser.username + ".");
-//                         res.redirect("/settings/new");
-//                     });
-//                 }
-//     });
-// });
-
-
 
 
 //Show login form
@@ -234,7 +208,7 @@ router.get("/login", function(req, res){
 
 //Handle login logic
 
-router.post("/login", passport.authenticate("local", {
+router.post("/login", passport.authenticate("userLocal", {
     successRedirect: "/jobs", 
     failureRedirect:"/login"
 }), function(req, res){

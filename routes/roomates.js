@@ -5,7 +5,7 @@ var middleware = require("../middleware");
 
 
 
-//VIEW ALL NYSC NEWS
+//VIEW ALL ROOMATES
 router.get("/roomates", function(req, res){
     roomate.find({},  function(err, allRoomates){
         if (err){
@@ -18,13 +18,13 @@ router.get("/roomates", function(req, res){
 
 })
 
-//ADD A NEW NEWS
+//ADD A NEW ROOMATE
 
 router.get("/roomates/new", function(req, res){
    res.render("roomates/new")
 })
 
-router.post("/roomates",middleware.isLoggedIn,function(req, res){
+router.post("/roomates",function(req, res){
    
     var roomatetitle =  req.body.roomatetitle;
     var roomatebody = req.body.roomatebody;
@@ -46,7 +46,7 @@ router.post("/roomates",middleware.isLoggedIn,function(req, res){
     })
 });
 
-//SHOW PAGE FOR NEWS
+//SHOW PAGE FOR ROOMATE
 router.get("/roomates/:id", function(req, res){
     //find the post with provided ID
     roomate.find({},  function(err, allRoomates){
@@ -70,17 +70,17 @@ router.get("/roomates/:id", function(req, res){
 });
 
 
-//EDIT NEWS
-router.get("/roomates/:id/edit",middleware.checkRoomateOwnership,function(req, res){ 
+//EDIT ROOMATE
+router.get("/roomates/:id/edit",function(req, res){ 
        
     roomate.findById(req.params.id, function(err, foundroomate){
                 res.render("roomates/edit", {roomate: foundroomate});
     });
 }); 
 
-//UPDATE INTERN JOB LISTING
+//UPDATE ROOMATE
 
-router.put("/roomates/:id",middleware.checkRoomateOwnership, function(req, res){
+router.put("/roomates/:id", function(req, res){
     roomate.findByIdAndUpdate(req.params.id, req.body.roomate, function(err, updatedRoomate){
         if (err){
             res.redirect("/roomates/index")
@@ -92,9 +92,9 @@ router.put("/roomates/:id",middleware.checkRoomateOwnership, function(req, res){
 });
 
 
-//DELETE INTERN JOB LISTING
+//DELETE ROOMATE
 
-router.delete("/nyscnews/:id",middleware.checkRoomateOwnership, function(req, res){
+router.delete("/nyscnews/:id", function(req, res){
     roomate.findByIdAndRemove(req.params.id, function(err){
         if(err){
             res.redirect("/roomates");

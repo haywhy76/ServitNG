@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Servit | Admin Dashboard | Corp Members</title>
+        <meta name='viewport' content='width=device-width' />
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Cantarell&display=swap" rel="stylesheet">
+       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+        <link rel="stylesheet"  href="/stylesheets/admin.css">
+        <link rel="stylesheet" type="text/css" href="/stylesheets/util.css">
+        <link rel="stylesheet" type="text/css" href="/stylesheets/main.css">
+        <link rel="stylesheet" type="text/css" href="/stylesheets/animate.css">
+        <link rel="stylesheet" type="text/css" href="/stylesheets/perfect-scrollbar.css">
+        <link rel="stylesheet" type="text/css" href="/stylesheets/select2.min.css">
+        <link rel="stylesheet"  href="/stylesheets/accordion.min.css">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="shortcut icon" href="/images/ico.png">
+    </head>
+    <body>
+                <!-- Sidebar Menu -->
+                <a href="/adminlol"><img src="/images/logo.png"></a>
+                <div  class="w3-sidebar w3-bar-block w3-collapse w3-card w3-animate-left" style="width:280px; padding-top:40px;" id="mySidebar">
+                  <button class="w3-bar-item w3-button w3-large w3-hide-large" onclick="w3_close()">Close &times;</button>
+                  <a href="/admin/" class="w3-bar-item w3-button"><i class="fa fa-bookmark" aria-hidden="true"></i> Overview <span>></span></a>
+                  <a href="/admin/internlistings" class="w3-bar-item w3-button"><i class="fa fa-bookmark" aria-hidden="true"></i> Intern Listings <span>></span></a>
+                  <a href="/admin/corpsmemberslistings" class="w3-bar-item w3-button"><i class="fa fa-bookmark" aria-hidden="true"></i> Corps Members Listings<span>></span></a>
+                  <a href="/admin/campexperiences" class="w3-bar-item w3-button"><i class="fa fa-bookmark" aria-hidden="true"></i> Camp Experiences<span>></span></a>
+                  <!-- <a href="/admin/messages" class="w3-bar-item w3-button"><i class="fa fa-comments" aria-hidden="true"></i> Messages<span>></span></a> -->
+                  <!-- <a href="/admin/news" class="w3-bar-item w3-button"><i class="fa fa-file-text" aria-hidden="true"></i> News<span>></span></a> -->
+                  <!-- <a href="/admin/newscomments" class="w3-bar-item w3-button"><i class="fa fa-commenting" aria-hidden="true"></i> News Comments<span>></span></a> -->
+                  <!-- <a href="/admin/premiumjobs" class="w3-bar-item w3-button"><i class="fa fa-briefcase" aria-hidden="true"></i> Premium Jobs<span>></span></a> -->
+                  <a href="/admin/roomates" class="w3-bar-item w3-button"><i class="fa fa-home" aria-hidden="true"></i> Roomates Listings<span>></span></a>
+                  <!-- <a href="/email/emailsubscribers" class="w3-bar-item w3-button"><i class="fa fa-envelope" aria-hidden="true"></i> Email Subscribers<span>></span></a> -->
+                  <a href="/admin/paidusers" class="w3-bar-item w3-button"><i class="fa fa-user" aria-hidden="true"></i> Paid Users<span>></span></a>
+                  <a href="/admin/approvedusers" class="w3-bar-item w3-button"><i class="fa fa-user" aria-hidden="true"></i> Approved Users<span>></span></a>
+                  <a href="/admin/users" class="w3-bar-item w3-button"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
+                </div>
+                <div class="w3-main" style="margin-left:300px">
+                  <div class="w3-teal">
+                    <button class="w3-button w3-teal w3-xlarge w3-hide-large" onclick="w3_open()">&#9776;</button>
+                  </div>
+            
+<!-- End of sidebar Menu -->
+
+<div class="w3-container firstsegment">
+  <h3><i class="fa fa-user-secret" aria-hidden="true"></i> Welcome Back, Servit.</h3>
+   <p>Listings For Interns.</p>
+  <hr class="adminhr">
+</div>
+             
+         
+
+     <!-- Pop up notification -->
+        <div class="container">
+          <% if (error && error.length > 0){%>
+            <div class="alert alert-danger" role="alert">
+             <%= error %>
+          </div>
+          <%}%>
+
+          <% if (success && success.length > 0){%>
+            <div class="alert alert-success" role="alert">
+               <%= success %>
+            </div>
+            <%}%>
+        </div>      
+   <!-- End of pop up notification -->
+
+   <!-- Table -->
+    <div class="limiter">
+		<div class="container-table100">
+			<div class="wrap-table100">
+				<div class="table100">
+					<table>
+						<thead>
+							<tr class="table100-head">
+								<th class="column1">Company</th>
+								<th class="column2">Location</th>
+								<th class="column3">Allowance</th>
+								<th class="column4">Description</th>
+                <th class="column5">Date created</th>	
+                <th class="column6">Action</th>
+							</tr>
+						</thead>
+						<tbody>
+								
+                                    <% corperjobs.forEach(function(corperjob){ %>
+                                        <tr>
+                                    <td class="column1"><%=corperjob.company%></td>
+									                  <td class="column2"><%=corperjob.location%></td>
+								                  	<td class="column3"><%=corperjob.allowance%></td>
+								                  	<td class="column4"><%=corperjob.description%></td>
+                                    <td class="column5"><%= corperjob.created.toDateString() %></td> 
+                                    <td class="column6">
+                                      <a class="ui grey button" href="/corperjobs/<%=corperjob._id%>/edit">EDIT</a>
+                                   <form id="delete" action="/corperjobs/<%=corperjob._id%>?_method=DELETE" method="POST"> 
+                                   <button class="ui red button">DELETE</button>
+                                   </form>
+
+                                    </td>   
+                                </tr> 
+                                    <% }); %>                           
+										
+						</tbody>
+                    </table>
+                    </div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+    <script>
+        function w3_open() {
+          document.getElementById("mySidebar").style.display = "block";
+        }
+        
+        function w3_close() {
+          document.getElementById("mySidebar").style.display = "none";
+        }
+        </script>
+    <p class="goupbutton"><button onclick="topFunction()" id="myBtn" class="waves-effect waves-light btn-large">GO UP   <i class="large material-icons">arrow_upward</i></button></p>
+    <script src="http://code.jquery.com/jquery-3.4.1.js"integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="/js/app.js"></script>
+  <script src="/js/accordion.min.js"></script>
+  <script src="/js/select2.min.js"></script>
+	<script src="js/main.js"></script>
+
+
+  </body>
+  </html>
+   
+  
+  
+  

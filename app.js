@@ -23,6 +23,7 @@ var express    = require("express"),
     passport = require("passport"),
     LocalStrategy = require("passport-local"),
     User = require("./models/user");
+    adminUser = require("./models/adminuser");
     paidUser = require("./models/paiduser");
     path = require("path");
     crypto = require("crypto");
@@ -51,6 +52,7 @@ var express    = require("express"),
     getstartedRoutes = require("./routes/getstarted")
     imageUploadRoutes = require("./routes/imageupload")
     campExperienceRoutes = require("./routes/campexperiences")
+    adminRoutes = require("./routes/admin")
     
 
    
@@ -73,15 +75,25 @@ app.use(require("express-session")({
     saveUnintialized: false
 }))
 
-
-
-
  app.use(passport.initialize());
  app.use(passport.session());
-passport.use(new LocalStrategy(User.authenticate()));
+
+
+
+ passport.use('userLocal', new LocalStrategy(User.authenticate()));
+ passport.use('adminLocal', new LocalStrategy(adminUser.authenticate()));
+
+//  passport.use(new LocalStrategy(User.authenticate()));
  passport.serializeUser(User.serializeUser());
  passport.deserializeUser(User.deserializeUser());
+
+//  passport.use(new LocalStrategy(Adminuser.authenticate()));
+ passport.serializeUser(adminUser.serializeUser());
+ passport.deserializeUser(adminUser.deserializeUser());
  
+
+
+
 
 app.use(function(req, res, next){
     res.locals.currentUser = req.user;
@@ -91,20 +103,17 @@ app.use(function(req, res, next){
 });
 
 app.use(function(req, res, next){
-    res.locals.currentUser = req.user;
+    res.locals.currentUser = req.adminuser;
+    res.locals.error = req.flash("error");
+    res.locals.success = req.flash("success");
     next();
 });
 
 
-    // app.use(function(req, res, next)
-    // {
-    //     if (req.headers['x-forwarded-proto'] != 'https')
-    //         res.redirect(['https://', req.get('Host'), req.url].join(''));
-    //     else
-    //         next();
-    // });
-
-
+app.use(function(req, res, next){
+    res.locals.currentUser = req.user;
+    next();
+});
 
 app.use("/", indexRoutes);
 app.use( keylinksRoutes);
@@ -123,27 +132,9 @@ app.use(getstartedRoutes);
 app.use( nyscnewscommentsRoutes);
 app.use(campExperienceRoutes);
 app.use(findyourwaytocampRoutes);
-
-
-
-
-
+app.use(adminRoutes);
 
 mongoose.connect('mongodb+srv://itandppa:itandppa@clusteritandppa-ffmfj.mongodb.net/test?retryWrites=true&w=majority',)
-
-
-// let gfs
-
-// conn.once('open', () => {
-//   gfs = Grid(conn.db, mongoose.mongo)
-//   gfs.collection('uploads')
-//   console.log('Connection Successful')
-// })
-
-
-
-
-
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {

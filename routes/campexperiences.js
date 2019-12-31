@@ -15,7 +15,7 @@ router.get("/campexperiences", function(req, res){
             console.log(err);
         }
         else{
-            campexperiencesthree=allCampExperiencesThree;
+            campexperiencesthree=allCampExperiencesThree
         }
     }).limit(3).sort({'_id':-1});
 
@@ -24,7 +24,7 @@ router.get("/campexperiences", function(req, res){
             console.log(err);
         }
         else{
-            campexperiencestwo=allCampExperiencesTwo;
+            campexperiencestwo=allCampExperiencesTwo
         }
     }).limit(3).sort({'_id':-1});
 
@@ -33,7 +33,9 @@ router.get("/campexperiences", function(req, res){
             console.log(err);
         }
         else{
-            res.render("campexperiences/index",{campexperiencesthree:campexperiencesthree, campexperiencestwo:campexperiencestwo, campexperiences:allCampExperiences});
+            res.render("campexperiences/index",{campexperiencesthree:campexperiencesthree, 
+                campexperiencestwo:campexperiencestwo, 
+                campexperiences:allCampExperiences});
         }
     }).sort({'_id':-1});
 
