@@ -53,9 +53,6 @@ var express    = require("express"),
     imageUploadRoutes = require("./routes/imageupload")
     campExperienceRoutes = require("./routes/campexperiences")
     adminRoutes = require("./routes/admin")
-    
-
-   
     faqRoutes = require("./routes/faq")
     contactRoutes = require("./routes/contact")
 
@@ -79,31 +76,14 @@ app.use(require("express-session")({
  app.use(passport.session());
 
 
-
- passport.use('userLocal', new LocalStrategy(User.authenticate()));
- passport.use('adminLocal', new LocalStrategy(adminUser.authenticate()));
-
-//  passport.use(new LocalStrategy(User.authenticate()));
+ passport.use(new LocalStrategy(User.authenticate()));
  passport.serializeUser(User.serializeUser());
  passport.deserializeUser(User.deserializeUser());
 
-//  passport.use(new LocalStrategy(Adminuser.authenticate()));
- passport.serializeUser(adminUser.serializeUser());
- passport.deserializeUser(adminUser.deserializeUser());
+
  
-
-
-
-
 app.use(function(req, res, next){
     res.locals.currentUser = req.user;
-    res.locals.error = req.flash("error");
-    res.locals.success = req.flash("success");
-    next();
-});
-
-app.use(function(req, res, next){
-    res.locals.currentUser = req.adminuser;
     res.locals.error = req.flash("error");
     res.locals.success = req.flash("success");
     next();
@@ -113,6 +93,14 @@ app.use(function(req, res, next){
 app.use(function(req, res, next){
     res.locals.currentUser = req.user;
     next();
+});
+
+app.use(function(req, res, next)
+{
+if (req.headers['x-forwarded-proto'] != 'https')
+res.redirect(['https://', req.get('Host'), req.url].join(''));
+else
+next();
 });
 
 app.use("/", indexRoutes);
