@@ -464,8 +464,10 @@
 }
 
 .hhtwo{
-    display:none;
+    /* display:none; */
+    width:300px;
 }
+
 
 
 
