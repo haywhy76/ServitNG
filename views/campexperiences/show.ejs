@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Servit | <%=campexperience.campexperiencetitle%></title>
+        <title>Servit | <%=campexperience.title%></title>
         <meta name='viewport' content='width=device-width' />
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
@@ -70,51 +70,51 @@
 
  <div class="container">
         <div class="row">
-            <div class="col-md-8 ">  
-                <h1 class="nyscnewsshowtitle"><%=campexperience.campexperiencetitle%></h1>
-                <p class="nyscnewsshowdescription">Created on <%= campexperience.created.toDateString() %></p>
-                <p class="nyscnewsshowshare"></p>
-                <img class="ui centred rounded image" src="<%=campexperience.campexperiencepicture%>" >
-                    <p class="nyscnewsshowbody"><%=campexperience.campexperiencebody%></p>
-                
-                    <p class="backbutton"><button class="ui green basic button"><a href="/campexperiences"><< Back</a></button></p>
-                    <p class="followtheauthor">Follow the author: </p>
-                    <a href="https://www.fb.com/<%=campexperience.campexperiencefb%>" target="_blank"> <img src="/images/facebook.jpg" height="32" width="32"></a>
-                    <a href="https://www.instagram.com/<%=campexperience.campexperienceig%>" target="_blank"> <img src="/images/instagram.jpg" height="32" width="32"></a>
-                    <a href="https://twitter.com/<%=campexperience.campexperiencetwitter%>" target="_blank"><img src="/images/twitter.jpg" height="32" width="32"></a>
-                   
-                    <div class="item">     
-                    <br>
-                    <br>
-                    <hr>
-                    <br>
+          <div class="col-md-8 ">  
+            <h1 class="nyscnewsshowtitle"><%=campexperience.title%></h1>
+            <p class="nyscnewsshowdescription">Created on <%= campexperience.created.toDateString() %></p>
+            <p class="nyscnewsshowshare"></p>
+           <p class="showcampimagep"> <img class="showcampexpimg" src="<%= campexperience.image %>" ></p>
+                <p class="nyscnewsshowbody"><%=campexperience.body%></p>
             
-                   </p>
+                <p class="backbutton"><button class="ui green basic button"><a href="/campexperiences"><< Back</a></button></p>
+                <p class="followtheauthor">Follow the author: </p>
+                <a href="https://www.fb.com/<%=campexperience.campexperiencefb%>" target="_blank"> <img src="/images/facebook.jpg" height="32" width="32"></a>
+                <a href="https://www.instagram.com/<%=campexperience.campexperienceig%>" target="_blank"> <img src="/images/instagram.jpg" height="32" width="32"></a>
+                <a href="https://twitter.com/<%=campexperience.campexperiencetwitter%>" target="_blank"><img src="/images/twitter.jpg" height="32" width="32"></a>
+               
+                <div class="item">     
+                <br>
+                <br>
+                <hr>
+                <br>
+        
+               </p>
+                </div>
+                
+                <h1 class="nyscnewsshowothernews">Other Camp Experiences</h1>
+                <div>
+                <% campexperiences.forEach(function(campexperience){ %>
+                  <div class="">
+                  <!-- <div class="ui segment"> -->
+                    <p class="">
+                      <hr class="nyscnewsindexhrline">
+                      <h1 class="nyscnewsshowothernewsheading"><a class="" href="/campexperiences/<%=campexperience._id%>"> <%=campexperience.campexperiencetitle%> </a></h1>
+                    <p class="nyscnewsshowothernewsdescription"><span> <%= campexperience.created.toDateString() %></span></p>
+                    <span></span>
+                    <p><a href="/campexperiences/<%=campexperience._id%>"><button class="ui  labeled icon green button"><i class="right arrow icon"></i>Read More</button></a></p>
+                  </p>
+                    <!-- </div>   -->
+                      
                     </div>
-                    
-                    <h1 class="nyscnewsshowothernews">Other Camp Experiences</h1>
-                    <div>
-                    <% campexperiences.forEach(function(campexperience){ %>
-                      <div class="">
-                      <!-- <div class="ui segment"> -->
-                        <p class="">
-                          <hr class="nyscnewsindexhrline">
-                          <h1 class="nyscnewsshowothernewsheading"><a class="" href="/campexperiences/<%=campexperience._id%>"> <%=campexperience.campexperiencetitle%> </a></h1>
-                        <p class="nyscnewsshowothernewsdescription"><span> <%= campexperience.created.toDateString() %></span></p>
-                        <span></span>
-                        <p><a href="/campexperiences/<%=campexperience._id%>"><button class="ui  labeled icon green button"><i class="right arrow icon"></i>Read More</button></a></p>
-                      </p>
-                        <!-- </div>   -->
-                          
-                        </div>
-                     <% }); %> 
-                    </div>
+                 <% }); %> 
+                </div>
 
-                    <br>
-                    
-    
-                    
-            </div>
+                <br>
+                
+
+                
+        </div>
     
             <div id="" class="col-md-1" >
             </div>
@@ -159,10 +159,42 @@
                    
               </div> 
         </div>
+        <hr class="hrfooterlinetwo">
+  <div class="container lastsegment">
+    <div class="row">
+        <div class="col-md-3 col-sm-12">
+            <h2>About Us</h2>
+            <p class="search">At <span class="servits">Servit</span>, we serve as link between undergraduates in search of an organisation
+               where they can undergo their industrial training and the companies.<br>
+              We also help make the tedious search of PPA for corps members (redeployed corps members especially)
+               easy by providing access to openings in several companies. </p>
+          </div>
+  
+        <div class="col-md-3 col-sm-12">
+            <h2 class="categories">Categories</h2>
+           <p> <a href="/nyscnews">NYSC News</a></p>
+           <p> <a href="/campexperiences">Camp Experiences</a></p>
+           <p> <a href="/roomates">Find a Roomie</a></p>
+          </div>
+          <div class="col-md-3 col-sm-12">
+              <h2 class="categories">Contact</h2>
+              <p><span class="phone">Phone:</span> 08023007357</p>
+              <p><span class="phone">Email:</span> ngservit@gmail.com</p>
+              <p><span class="phone">Address:</span> FCT, Abuja</p>
+             
+            </div>
+
+            <div class="col-md-3 col-sm-12">
+              <h2 class="categories">Social</h2>
+              <a href="https://www.fb.com/servitng" target="_blank"> <img src="/images/facebook.jpg" height="32" width="32"></a>
+              <a href="https://www.instagram.com/servit.ng/" target="_blank"> <img src="/images/instagram.jpg" height="32" width="32"></a>
+              <a href="https://twitter.com/servitng" target="_blank"><img src="/images/twitter.jpg" height="32" width="32"></a>
+              <a href="mailto:hello@servit.ng" target="_blank"><img src="/images/mail.png" height="32" width="32"></a>
+            </div>
+    </div>
+    </div>
     </div>
 
-    <script type="text/javascript"
-    src="https://platform-api.sharethis.com/js/sharethis.js#property=5dea678dec246d0012b11860&product=inline-share-buttons" async="async">
-    </script>
+   
  </body>
  </html>

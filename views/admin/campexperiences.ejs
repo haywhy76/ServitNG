@@ -92,15 +92,15 @@
 								
                             <% campexperiences.forEach(function(campexperience){ %>
                                         <tr>
-                                    <td class="column1"><%=campexperience.campexperiencetitle%></td>
-									<td class="column2"><%=campexperience.campexperiencebody.substring(0, 104)%>...</td>
+                                    <td class="column1"><%=campexperience.title%></td>
+									<td class="column2"><%=campexperience.body.substring(0, 104)%>...</td>
 								    <td class="column3"><%=campexperience.campexperiencepicturess%></td>
-								    <td class="column4"><%=campexperience.campexperiencefb%></td>
-                                    <td class="column5"><%=campexperience.campexperienceig%></td> 
-                                    <td class="column6"><%=campexperience.campexperiencetwitter%></td> 
+								    <td class="column4"><%=campexperience.fb%></td>
+                                    <td class="column5"><%=campexperience.ig%></td> 
+                                    <td class="column6"><%=campexperience.twitter%></td> 
                                     <td class="column7">
-                                      <a class="ui grey button" href="/campexperiences/<%=campexperience._id%>/edit">EDIT</a>
-                                   <form id="delete" action="/campexperiences/<%=campexperience._id%>?_method=DELETE" method="POST"> 
+                                      <a class="ui grey button" href="/campexperience/<%=campexperience._id%>/edit">EDIT</a>
+                                   <form id="delete" action="/campexperience/<%=campexperience._id%>?_method=DELETE" method="POST"> 
                                    <button class="ui red button">DELETE</button>
                                    </form>
                               

@@ -72,24 +72,27 @@
 <div id="editlistingcontainer" class="ui main text container ">
   <div class="editjobheading">EDIT CAMP EXPERIENCE</div>
 
-  <form class="ui form" action="/campexperience/<%=campexperience._id%>?_method=PUT" method="POST"> 
+  <form class="ui form" action="/campexperience/<%=campexperience._id%>?_method=PUT" method="POST" enctype="multipart/form-data"> 
           <div class="field">
-                  <p class="internformfield">  <input type="text" name="campexperience[campexperiencetitle]" value="<%= campexperience.campexperiencetitle %>"></p>
+                  <p class="internformfield">  <input type="text" name="campexperience[title]" value="<%= campexperience.title %>"></p>
            </div>
            <div class="field">
-                  <p class="internformfield">  <input type="text" name="campexperience[campexperiencebody]" value="<%= campexperience.campexperiencebody %>"></p>
+                  <p class="internformfield">  <input type="text" name="campexperience[body]" value="<%= campexperience.body %>"></p>
            </div>
-           <div class="field">
-              <p class="internformfield">  <input type="text" name="campexperience[campexperiencepicture]" value="<%= campexperience.campexperiencepicture %>"></p>
-       </div>
+           
        <div class="field">
-        <p class="internformfield">  <input type="text" name="campexperience[campexperiencefb]" value="<%= campexperience.campexperiencefb %>"></p>
+        <p class="internformfield">  <input type="text" name="campexperience[fb]" value="<%= campexperience.fb %>"></p>
  </div>
  <div class="field">
-  <p class="internformfield">  <input type="text" name="campexperience[campexperienceig]" value="<%= campexperience.campexperienceig %>"></p>
+  <p class="internformfield">  <input type="text" name="campexperience[ig]" value="<%= campexperience.ig %>"></p>
 </div>
 <div class="field">
-  <p class="internformfield">  <input type="text" name="campexperience[campexperiencetwitter]" value="<%= campexperience.campexperiencetwitter %>"></p>
+  <p class="internformfield">  <input type="text" name="campexperience[twitter]" value="<%= campexperience.twitter %>"></p>
+</div>
+
+<div class="field">
+  <label for="image">Upload an Image</label>
+  <input type="file" id="image" name="image" accept="image/*" >
 </div>
           <p class="editbutton"><button type="submit" class="btn btn-default btn-lg loginsubmitbutton">UPDATE </button></p>
           

@@ -83,9 +83,9 @@
         <% campexperiencesthree.forEach(function(campexperience){ %>
           <div class="col-md-4 col-sm-12">
             <div class="">
-                <img class="hh" height="250" width="350" src="/images/campimage.jpg" >
-                <h5 class="nyscnewsindextitle" ><%=campexperience.campexperiencetitle%> </h5>
-                <h5 class="landingbodyexcerpt" > <%=campexperience.campexperiencebody.substring(0, 104)%>...</h5>
+              <img class="indexcampexpimg" src="<%= campexperience.image %>">
+                <h5 class="nyscnewsindextitle" ><%=campexperience.title%> </h5>
+                <h5 class="landingbodyexcerpt" > <%=campexperience.body.substring(0, 104)%>...%></h5>
                
                 <p><a href="/campexperience/<%=campexperience._id%>"><button class="ui  labeled icon green button"><i class="right arrow icon"></i>Read More</button></a></p>
               </div> 
@@ -95,13 +95,13 @@
 
 
         <div id="" class="col-md-8 editthis ">
-          <p class="pbanner"> <a href="/getstarted"><img class="hhtwo" src="/images/adbanner3.png"></a></p>
+          <p class=""> <a href="/getstarted"><img class="hhtwo" src="/images/adbanner3.png"></a></p>
           <% campexperiencestwo.forEach(function(campexperience){ %>
             <div class="col-md-6 col-sm-12">
             <div class="">
-              <img class="hh" height="250" width="350"  src="/images/campimage.jpg">
-              <h5 class="nyscnewsindextitle" ><%=campexperience.campexperiencetitle%> </h5>
-              <h5 class="landingbodyexcerpt" > <%=campexperience.campexperiencebody.substring(0, 104)%>...</h5>
+              <img class="indexcampexpimg" src="<%= campexperience.image %>">
+              <h5 class="nyscnewsindextitle" ><%=campexperience.title%> </h5>
+              <h5 class="landingbodyexcerpt" > <%=campexperience.body.substring(0, 104)%>...%></h5>
               
               <p><a href="/campexperience/<%=campexperience._id%>"><button class="ui  labeled icon green button"><i class="right arrow icon"></i>Read More</button></a></p>
               </div>   
@@ -171,8 +171,8 @@
           </div>
           <div class="col-md-3 col-sm-12">
               <h2 class="categories">Contact</h2>
-              <p><span class="phone">Phone:</span> +2347014899225</p>
-              <p><span class="phone">Email:</span> hello@servitng.com</p>
+              <p><span class="phone">Phone:</span> 08023007357</p>
+              <p><span class="phone">Email:</span> ngservit@gmail.com</p>
               <p><span class="phone">Address:</span> FCT, Abuja</p>
              
             </div>

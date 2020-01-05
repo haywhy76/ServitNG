@@ -5,6 +5,35 @@ var campexperiencestwo = require("../models/campexperiences");
 var campexperiencesthree = require("../models/campexperiences");
 // var campexperiencesthree = require("../models/campexperiences");
 var middleware = require("../middleware");
+var request = require("request");
+
+
+var multer = require('multer');
+var storage = multer.diskStorage({
+  filename: function(req, file, callback) {
+    callback(null, Date.now() + file.originalname);
+  }
+});
+var imageFilter = function (req, file, cb) {
+    // accept image files only
+    if (!file.originalname.match(/\.(jpg|jpeg|png|gif)$/i)) {
+        return cb(new Error('Only image files are allowed!'), false);
+    }
+    cb(null, true);
+};
+var upload = multer({ storage: storage, fileFilter: imageFilter})
+
+var cloudinary = require('cloudinary');
+cloudinary.config({ 
+  cloud_name: 'servitng', 
+  api_key: '149265356114627', 
+  api_secret: process.env.CLOUDINARY_API_SECRET
+});
+
+
+
+
+
 
 
 //VIEW ALL CAMPGROUND EXPERIENCES
@@ -47,25 +76,21 @@ router.get("/campexperience/new", function(req, res){
    res.render("campexperiences/new")
 })
 
-router.post("/campexperience",  function(req, res){
-   
-    var campexperiencetitle =  req.body.campexperiencetitle;
-    var campexperiencebody = req.body.campexperiencebody;
-    var campexperiencepicture = req.body.campexperiencepicture;
-    var campexperiencefb = req.body.campexperiencefb;
-    var campexperienceig = req.body.campexperienceig;
-    var campexperiencetwitter = req.body.campexperiencetwitter;
-    var newCampExperience = {campexperiencetitle: campexperiencetitle, campexperiencebody:campexperiencebody,
-        campexperiencepicture:campexperiencepicture,campexperiencefb:campexperiencefb, campexperienceig:campexperienceig, campexperiencetwitter:campexperiencetwitter };
-    //create a new news and save to DB
-    campexperience.create(newCampExperience, function(err, newlyCreatedCampExperience){
-        if (err){
-            console.log(err);
-        }else{
-            res.redirect("/campexperiences")
-        }
-    })
-});
+router.post("/campexperience",upload.single('image'), function(req, res) {
+    cloudinary.uploader.upload(req.file.path, function(result) {
+        // add cloudinary url for the image to the campground object under image property
+        req.body.campexperience.image =  result.secure_url;
+        req.body.campexperience.imageId = result.public_id;
+        // add author to campground
+       
+        campexperience.create(req.body.campexperience, function(err, newlyCreatedCampExperience){
+            if (err){
+                console.log(err);
+            }else{
+                res.redirect("/campexperiences")
+        };
+      });
+})});
 
 //SHOW PAGE FOR CAMP EXPERIENCE
 router.get("/campexperience/:id", function(req, res){
@@ -100,29 +125,61 @@ router.get("/campexperience/:id/edit", function(req, res){
 
 //UPDATE CAMP EXPERIENCE
 
-router.put("/campexperience/:id", function(req, res){
-    campexperience.findByIdAndUpdate(req.params.id, req.body.campexperience, function(err, updatedCampExperience){
+router.put("/campexperience/:id",upload.single('image'), function(req, res){
+    campexperience.findById(req.params.id, async function(err, camexperience){
         if (err){
-            res.redirect("/campexperiences/index")
+            req.flash("error", err.message);
+            res.redirect("back");
         }
         else{
+            if (req.file){
+                try{
+                    await cloudinary.v2.uploader.destroy(campexperience.imageId);
+                    var result = await cloudinary.v2.uploader.upload(req.file.path);
+                    campexperience.imageId = result.public_id; 
+                    campexperience.image =  result.secure_url;
+                    console.log(campexperience.imageId)
+                }catch(err){
+                    req.flash("error", err.message);
+                    res.redirect("back");
+                }        
+        }
+                campexperience.title = req.body.campexperience.title;
+                campexperience.body = req.body.campexperience.body;
+                campexperience.fb = req.body.campexperience.fb;
+                campexperience.ig = req.body.campexperience.ig;
+                campexperience.twitter = req.body.campexperience.twitter;
+                campexperience.save();
+                
+                
+                console.log(campexperience)
+                req.flash("success","Successfully Updated!");
             res.redirect("/campexperience/" + req.params.id)
         }
-    })
+    });
 });
 
 
 //DELETE CAMP EXPERIENCE
 
 router.delete("/campexperience/:id", function(req, res){
-    campexperience.findByIdAndRemove(req.params.id, function(err){
-        if(err){
-            res.redirect("/campexperiences");
+    campexperience.findById(req.params.id, async function(err, campexperience) {
+        if(err) {
+          req.flash("error", err.message);
+          return res.redirect("back");
         }
-        else{
-            res.redirect("/campexperiences");
+        try {
+            await cloudinary.v2.uploader.destroy(campexperience.imageId);
+            campexperience.remove();
+            req.flash('success', 'Campground deleted successfully!');
+            res.redirect('/adminlol');
+        } catch(err) {
+            if(err) {
+              req.flash("error", err.message);
+              return res.redirect("back");
+            }
         }
-    })
+      });
 })
 
 

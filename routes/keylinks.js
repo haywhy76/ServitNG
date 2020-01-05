@@ -5,14 +5,13 @@ var router = express.Router({mergeParams: true});
 
 
 router.get("/keylinks", function(req, res){
-    Settings.find({},function(err, foundSetting){
-        if(err){
-            console.log(err);
-        }else{
-            res.render("keylinks", {settings:foundSetting});
-        }
-    });
-   
-});
+    res.render("keylinks");
+        } 
+);
+
+router.get("/termsofuse", function(req, res){
+    res.render("termsofuse");
+        } 
+);
 
 module.exports = router;

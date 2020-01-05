@@ -1,12 +1,13 @@
 var mongoose  = require("mongoose")
 
 var campexperiencesSchema = new mongoose.Schema({
-    campexperiencetitle: String,
-    campexperiencebody: String,
-    campexperiencepicture: String,
-    campexperiencefb: String,
-    campexperienceig: String,
-    campexperiencetwitter: String,
+    title: String,
+    body: String,
+    fb: String,
+    ig: String,
+    image: String,
+   imageId: String,
+    twitter: String,
     author: {
         id: {
             type: mongoose.Schema.Types.ObjectId,

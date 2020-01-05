@@ -70,26 +70,32 @@
 <div id="newlistingcontainer" class="ui main text container">
     <div class="openingheadern">ADD A NEW CAMP EXPERIENCE</div>
     <h3 class="usn"></a></h3>
-    <form class="ui form newform" action="/campexperience" method="POST"> 
+    <form class="ui form newform" action="/campexperience" method="POST" enctype="multipart/form-data"> 
 
             <div class="field">
-                   <p class="internformfield"> <input type="text" name="campexperiencetitle" placeholder="camp experience title" required></p>
+                   <p class="internformfield"> <input type="text" name="campexperience[title]" placeholder="camp experience title" required></p>
              </div>
             <div class="field">
-                    <p class="internformfield">   <textarea name="campexperiencebody" placeholder="camp experience content" required></textarea></p>
+                    <p class="internformfield">   <textarea name="campexperience[body]" placeholder="camp experience content" required></textarea></p>
             </div>
-            <div class="field">
+            <!-- <div class="field">
                 <p class="internformfield"> <input type="text" name="campexperiencepicture" placeholder="campexperience picture"></p>
+              </div> -->
+              <div class="field">
+                <p class="internformfield"> <input type="text" name="campexperience[fb]" placeholder="Your facebook username (Optional)" ></p>
               </div>
               <div class="field">
-                <p class="internformfield"> <input type="text" name="campexperiencefb" placeholder="Your facebook username" ></p>
+                <p class="internformfield"> <input type="text" name="campexperience[ig]" placeholder="Your instagram username (Optional)" ></p>
               </div>
               <div class="field">
-                <p class="internformfield"> <input type="text" name="campexperienceig" placeholder="Your instagram username" ></p>
+                <p class="internformfield"> <input type="text" name="campexperience[twitter]" placeholder="Your twitter username (Optional)"></p>
               </div>
+
               <div class="field">
-                <p class="internformfield"> <input type="text" name="campexperiencetwitter" placeholder="Your twitter username"></p>
-              </div>
+                <label for="image">Upload an Image</label>
+                <input type="file" id="image" name="image" accept="image/*" >
+            </div>
+
           <p class="pjobsubmitbutton">  <button type="submit" class="btn btn-default btn-lg jobsubmitbuttonn">SUBMIT </button></p>
          
           

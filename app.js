@@ -12,6 +12,7 @@ var express    = require("express"),
     storage = new GridFsStorage({ url }),
     upload = multer({ storage }),
     bodyParser = require("body-parser");
+    require('dotenv').config()
     
     Comment = require("./models/nyscnewscomments"),
     internjob = require("./models/internjobs")
