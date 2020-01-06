@@ -96,13 +96,13 @@ app.use(function(req, res, next){
     next();
 });
 
-// app.use(function(req, res, next)
-// {
-// if (req.headers['x-forwarded-proto'] != 'https')
-// res.redirect(['https://', req.get('Host'), req.url].join(''));
-// else
-// next();
-// });
+app.use(function(req, res, next)
+{
+if (req.headers['x-forwarded-proto'] != 'https')
+res.redirect(['https://', req.get('Host'), req.url].join(''));
+else
+next();
+});
 
 
 app.use("/", indexRoutes);
