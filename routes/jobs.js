@@ -90,16 +90,16 @@ router.post("/internjobs", function(req, res){
     var company  =  req.body.company;
     var location = req.body.location;
     var allowance = req.body.allowance;
- 
+    var quantity = req.body.quantity;
     var description = req.body.description;
-    var newJob = {title: title, company:company, location:location, allowance:allowance, description:description};
+    var newJob = {title: title, company:company, location:location, allowance:allowance, quantity:quantity, description:description};
     //create a new job and save to DB
     internjob.create(newJob, function(err, newlyCreated){
         if (err){
             console.log(err);
         }else{
             req.flash("success" , "Your listing has been created successfully");
-            res.redirect("/");
+            res.redirect("/createalisting");
         }
     })
 });
@@ -200,16 +200,16 @@ router.post("/corperjobs", function(req, res){
     var company  =  req.body.company;
     var location = req.body.location;
     var allowance = req.body.allowance;
- 
+    var quantity = req.body.quantity;
     var description = req.body.description;
-    var newJob = {title: title, company:company, location:location, allowance:allowance, description:description};
+    var newJob = {title: title, company:company, location:location, allowance:allowance, quantity:quantity, description:description};
     //create a new job and save to DB
     corperjob.create(newJob, function(err, newlyCreated){
         if (err){
             console.log(err);
         }else{
             req.flash("success" , "Your listing has been created successfully");
-            res.redirect("/");
+            res.redirect("/createalisting");
         }
     })
 });

@@ -7,7 +7,8 @@
                 <h3 class="location"><i class="fa fa-university" aria-hidden="true"></i><b>Company Name:</b> <%=corperjob.company%></h3>
                 <h3 class="locationlocation"><i class="fa fa-map-marker" aria-hidden="true"></i><b>        Location:</b> <%=corperjob.location%></h3>
                 <h3 class="location"><i class="fa fa-users" aria-hidden="true"></i><b>  Looking For:</b> A Corp Member</h3>
-                <h3 class="locationlocation"><i class="fa fa-money" aria-hidden="true"></i><b>        Allowance:</b> &#8358; <%=corperjob.allowance%></h3>
+                <h3 class="locationlocation"><i class="fa fa-money" aria-hidden="true"></i><b> Allowance:</b> &#8358; <%=corperjob.allowance%></h3>
+                <h3 class="locationlocation"><i class="fa fa-sort-numeric-asc" aria-hidden="true"></i><b> No of corps members needed:</b>  <%=corperjob.quantity%></h3>
                 <p class="jobcreated"><b>Created On:</b> <%= corperjob.created.toDateString() %></p>
                 <p class="backbutton"><button class="ui green basic button"><a href="/corperjobs"><< Back</a></button></p> 
                 <div class="item">     

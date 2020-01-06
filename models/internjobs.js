@@ -5,6 +5,7 @@ var internjobsSchema = new mongoose.Schema({
     company: String,
     location: String,
     description: String,
+    quantity: Number,
     allowance: Number,
     
     author: {
