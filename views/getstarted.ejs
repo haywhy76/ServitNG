@@ -112,8 +112,8 @@
           <div class="stepone">
                 <h2 class="heading">Step 1</h2>
                 <p class="fill">Make payment.</p>
-                <p class="pay"><span class="note">NOTE:</span> Payments are only valid for 7 days</p>
-                <p class="inscard">You can pay via instant card deposit or Bank Transfer</p>
+                <p class="pay"><span class="note">NOTE:</span> Payments are only valid for 3 days</p>
+                <!-- <p class="inscard">You can pay via instant card deposit or Bank Transfer</p> -->
                 <p class="inscard">Click the button below to pay &#8358 1,000 service charge with your atm card.</p>
                 <p class="getstartedloginbuttontwo"> <a href="https://paystack.com/pay/servitng"><button class="ui labeled icon green button"><i class="right arrow icon"></i>PAY NOW</button></a></p>
                 <!-- <p class="or">OR</p>
@@ -121,9 +121,10 @@
                 <p class="accdetails"> Account Name: Servit NG | Account Number: 0127602360</p> -->
             </div>
                 <h2 class="heading headingtwo">Step 2</h2>
-            <p class="fill">Fill this form and your login details will be sent to you shortly.</p>
+            <p class="fill">Fill this form and your login details will be sent to you shortly.<br>
+            Please use the same details you inputted on the payment page. </p>
 
-            <form class="col s12" action="/verify" method="POST">
+            <div class="col s12" action="/verify" method="POST">
               <div class="row">
                 <div class="input-field col s6">
                   <input type="text" name="verifiedfirstname" placeholder="First Name" required>
@@ -138,40 +139,18 @@
               <div class="row">
                 <div class="input-field col s6">
                   <input type="email" name="verifiedemail" placeholder="Email" required>
-                  
+                  </div>
+                  <div class="input-field col s6">
+                    <input  type="text" name="verifiednumber" placeholder="Phone Number (use the same number you inputed on the payment page)" required>
+                  </div>
                 </div>
-                <div class="input-field col s6">
-                  <input type="text" name="verifiedinstitution" placeholder="Institution" required>
-                  
-                </div>
-              </div>
-           
-              <div class="row">
-                <div class="input-field col s6">
-                  <input type="text" name="verifiedmatric" placeholder="Matric No/State code (Not required)">
-                  
-                </div>
-                <div class="input-field col s6">
-                  <input type="text" name="verifiedlocation" placeholder="Location" required>
                 
-                </div>
               </div>
 
-              <div class="row">
-                <div class="input-field col s6">
-                  <input  type="text" name="verifiednumber" placeholder="Phone Number (use the same number you inputed on the payment page)" required>
-                 
-                </div>
-              </div>
+             
 
               <p class="getstartedloginbutton"> <button type="submit" class="ui labeled icon green button"><i class="right arrow icon"></i>SUBMIT</button></p>
             </form>
-
-          
-            
-            
-  
-              
             </form>
 
             <h2 class="heading headingthree">Step 3</h2>
