@@ -25,100 +25,100 @@ var internjob = require("../models/internjobs");
 
 
 // Landing Page
-router.get("/", function(req, res){
-    nyscnew.find({},  function(err, allNyscNews){
-        if (err){
-            console.log(err);
-        }
-        else{
-            nyscnews=allNyscNews
-        }
-    }).limit(1).sort({'_id':-1});
+// router.get("/", function(req, res){
+//     nyscnew.find({},  function(err, allNyscNews){
+//         if (err){
+//             console.log(err);
+//         }
+//         else{
+//             nyscnews=allNyscNews
+//         }
+//     }).limit(1).sort({'_id':-1});
 
-    nyscnew.find({},  function(err, allNyscNewsThree){
-        if (err){
-            console.log(err);
-        }
-        else{
-            nyscnewsthree=allNyscNewsThree
-        }
-    }).limit(3).sort({'_id':-1});
+//     nyscnew.find({},  function(err, allNyscNewsThree){
+//         if (err){
+//             console.log(err);
+//         }
+//         else{
+//             nyscnewsthree=allNyscNewsThree
+//         }
+//     }).limit(3).sort({'_id':-1});
 
-    nyscnew.find({},  function(err, allNyscNewsFour){
-        if (err){
-            console.log(err);
-        }
-        else{
-            nyscnewsfour=allNyscNewsFour
-        }
-    }).skip(3).limit(6).sort({'_id':-1}); 
+//     nyscnew.find({},  function(err, allNyscNewsFour){
+//         if (err){
+//             console.log(err);
+//         }
+//         else{
+//             nyscnewsfour=allNyscNewsFour
+//         }
+//     }).skip(3).limit(6).sort({'_id':-1}); 
 
-    nyscnew.find({},  function(err, allNyscNewsFive){
-        if (err){
-            console.log(err);
-        }
-        else{
-            nyscnewsfive=allNyscNewsFive
-        }
-    }).skip(6).limit(3).sort({'_id':-1}); 
+//     nyscnew.find({},  function(err, allNyscNewsFive){
+//         if (err){
+//             console.log(err);
+//         }
+//         else{
+//             nyscnewsfive=allNyscNewsFive
+//         }
+//     }).skip(6).limit(3).sort({'_id':-1}); 
 
-    roomate.find({},  function(err, allRoomates){
-        if (err){
-            console.log(err);
-        }
-        else{
-            roomatess=allRoomates
-        }
-    }).limit(4).sort({'_id':-1});
+//     roomate.find({},  function(err, allRoomates){
+//         if (err){
+//             console.log(err);
+//         }
+//         else{
+//             roomatess=allRoomates
+//         }
+//     }).limit(4).sort({'_id':-1});
 
-    roomate.find({},  function(err, allRoomates){
-        if (err){
-            console.log(err);
-        }
-        else{
-            roomatesss=allRoomates
-        }
-    }).limit(1).sort({'_id':-1});
+//     roomate.find({},  function(err, allRoomates){
+//         if (err){
+//             console.log(err);
+//         }
+//         else{
+//             roomatesss=allRoomates
+//         }
+//     }).limit(1).sort({'_id':-1});
 
-    campexperience.find({},  function(err, allCampExperiencesThree){
-        if (err){
-            console.log(err);
-        }
-        else{
-            campexperiencesthree=allCampExperiencesThree
-        }
-    }).limit(6).sort({'_id':-1});
+//     campexperience.find({},  function(err, allCampExperiencesThree){
+//         if (err){
+//             console.log(err);
+//         }
+//         else{
+//             campexperiencesthree=allCampExperiencesThree
+//         }
+//     }).limit(6).sort({'_id':-1});
 
-    campexperience.find({},  function(err, allCampExperiencesFour){
-        if (err){
-            console.log(err);
-        }
-        else{
-            campexperiencesfour=allCampExperiencesFour
-        }
-    }).skip(3).limit(2).sort({'_id':-1});
+//     campexperience.find({},  function(err, allCampExperiencesFour){
+//         if (err){
+//             console.log(err);
+//         }
+//         else{
+//             campexperiencesfour=allCampExperiencesFour
+//         }
+//     }).skip(3).limit(2).sort({'_id':-1});
 
-    campexperience.find({},  function(err, allCampExperiencesFive){
-        if (err){
-            console.log(err);
-        }
-        else{
-            campexperiencesfive=allCampExperiencesFive
-        }
-    }).skip(6).limit(2).sort({'_id':-1});
+//     campexperience.find({},  function(err, allCampExperiencesFive){
+//         if (err){
+//             console.log(err);
+//         }
+//         else{
+//             campexperiencesfive=allCampExperiencesFive
+//         }
+//     }).skip(6).limit(2).sort({'_id':-1});
 
-    campexperience.find({},  function(err, allCampExperiences){
+//     campexperience.find({},  function(err, allCampExperiences){
 
-        if (err){
-            console.log(err);
-        }
-        else{
-            campexperiences=allCampExperiences;
-            res.render("landing",{nyscnews:nyscnews,nyscnewsthree: nyscnewsthree, nyscnewsfour:nyscnewsfour, nyscnewsfive:nyscnewsfive, roomatess:roomatess, roomatesss:roomatesss,campexperiencesthree:campexperiencesthree, campexperiencesfour:campexperiencesfour, campexperiencesfive:campexperiencesfive, campexperiences:campexperiences});
-        }
-    }).limit(1).sort({'_id':-1});
+//         if (err){
+//             console.log(err);
+//         }
+//         else{
+//             campexperiences=allCampExperiences;
+//             res.render("landing",{nyscnews:nyscnews,nyscnewsthree: nyscnewsthree, nyscnewsfour:nyscnewsfour, nyscnewsfive:nyscnewsfive, roomatess:roomatess, roomatesss:roomatesss,campexperiencesthree:campexperiencesthree, campexperiencesfour:campexperiencesfour, campexperiencesfive:campexperiencesfive, campexperiences:campexperiences});
+//         }
+//     }).limit(1).sort({'_id':-1});
     
-})
+// })
 
 router.get("/connect", function(req, res){
     res.render("connect")

@@ -12,7 +12,7 @@ var setting = require("../models/settings");
 //ALL JOBS
 
 
-router.get("/jobs", middleware.isLoggedIn, function(req, res){
+router.get("/",  function(req, res){
     
     internjob.find({},  function(err, allInternJobs){
 
@@ -55,7 +55,7 @@ router.get("/createalisting",function(req, res){
 //INTERNS
 // VIEW ALL INTERN JOBS
 
-router.get("/internjobs", middleware.isLoggedIn, function(req, res){
+router.get("/internjobs",  function(req, res){
   
         
     internjob.find({},  function(err, allInternJobs){
@@ -166,7 +166,7 @@ router.delete("/internjobs/:id", function(req, res){
 //INTERNS
 // VIEW ALL CORPER JOBS
 
-router.get("/corperjobs", middleware.isLoggedIn, function(req, res){
+router.get("/corperjobs",  function(req, res){
     
     corperjob.find({},  function(err, allCorperJobs){
 
