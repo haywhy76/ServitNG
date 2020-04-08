@@ -2,9 +2,9 @@ var express = require("express");
 var router = express.Router();
 var middleware = require("../middleware");
 var internjob = require("../models/internjobs");
-var internjobs = require("../models/internjobs");
+// var internjobs = require("../models/internjobs");
 var corperjob = require("../models/corperjobs");
-var corperjobs = require("../models/corperjobs");
+// var corperjobs = require("../models/corperjobs");
 var premiumJob = require("../models/premiumjobs");
 var setting = require("../models/settings");
 
@@ -22,7 +22,7 @@ router.get("/",  function(req, res){
         else{
             internjobs=allInternJobs;
         }
-    }).sort({'_id':-1});
+    }).limit(5).sort({'_id':-1});
 
     corperjob.find({},  function(err, allCorperJobs){
 
@@ -32,7 +32,7 @@ router.get("/",  function(req, res){
         else{
             corperjobs=allCorperJobs;
         }
-    }).sort({'_id':-1});
+    }).limit(5).sort({'_id':-1});
    
     premiumJob.find({}, function(err, allPremiumJobs){
         if (err){
@@ -112,7 +112,7 @@ router.get("/internjobs/new",function(req, res){
 
 //SHOW INFO ABOUT AN INTERN JOB LISTING
 
-router.get("/internjobs/:id",middleware.isLoggedIn, function(req, res){
+router.get("/internjobs/:id", function(req, res){
     //find the post with provided ID
    
     internjob.findById(req.params.id, function(err, foundinternjob){
@@ -222,7 +222,7 @@ router.get("/corperjobs/new", function(req, res){
 
 //SHOW INFO ABOUT AN CORPER JOB LISTING
 
-router.get("/corperjobs/:id",middleware.isLoggedIn, function(req, res){
+router.get("/corperjobs/:id", function(req, res){
     //find the post with provided ID
    
     corperjob.findById(req.params.id, function(err, foundcorperjob){

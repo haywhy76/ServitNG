@@ -62,11 +62,9 @@ router.post("/nyscnews",middleware.isLoggedIn,function(req, res){
     var newNew = {newstitle: newstitle, newsbody:newsbody, newspicture:newspicture, author:author};
     //create a new news and save to DB
     nyscnew.create(newNew, function(err, newlyCreatedNyscNew){
-     
         if (err){
             console.log(err);
         }else{
-           
             res.redirect("/nyscnews")
         }
        

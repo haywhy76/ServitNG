@@ -6,12 +6,13 @@ var express    = require("express"),
     flash     =  require("connect-flash"),
     methodOverride = require("method-override");
     mongoose   = require("mongoose"),
+    bodyParser = require("body-parser");
     multer = require('multer'),
     GridFsStorage = require('multer-gridfs-storage'),
     url = 'mongodb+srv://itandppa:itandppa@clusteritandppa-ffmfj.mongodb.net/test?retryWrites=true&w=majority',
     storage = new GridFsStorage({ url }),
     upload = multer({ storage }),
-    bodyParser = require("body-parser");
+    
     require('dotenv').config()
     
     Comment = require("./models/nyscnewscomments"),
